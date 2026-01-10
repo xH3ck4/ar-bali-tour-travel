@@ -381,6 +381,24 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Event listeners for tour details and cart buttons
+document.addEventListener('click', (e) => {
+    // Handle tour details buttons
+    if (e.target.matches('.btn-details[data-tour]')) {
+        const tourName = e.target.getAttribute('data-tour');
+        if (typeof showTourDetails === 'function') {
+            showTourDetails(tourName);
+        }
+    }
+
+    // Handle cart buttons
+    if (e.target.matches('.btn-outline[data-cart-item]')) {
+        const itemName = e.target.getAttribute('data-cart-item');
+        const price = parseInt(e.target.getAttribute('data-price'));
+        addToCart(itemName, price);
+    }
+});
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     updateCartDisplay();

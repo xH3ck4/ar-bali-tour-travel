@@ -972,6 +972,12 @@ function showActivityDetails(activityName) {
     const title = document.getElementById('activityDetailsTitle');
     const content = document.getElementById('activityDetailsContent');
 
+    // Check if modal elements exist
+    if (!modal || !title || !content) {
+        console.warn('Activity details modal not found on this page');
+        return;
+    }
+
     title.textContent = details.title;
     content.innerHTML = html;
     modal.style.display = 'block';

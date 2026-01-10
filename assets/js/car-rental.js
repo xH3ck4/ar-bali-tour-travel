@@ -725,6 +725,12 @@ function showCarDetails(carName) {
     const title = document.getElementById('carDetailsTitle');
     const content = document.getElementById('carDetailsContent');
 
+    // Check if modal elements exist
+    if (!modal || !title || !content) {
+        console.warn('Car details modal not found on this page');
+        return;
+    }
+
     title.textContent = details.title;
     content.innerHTML = html;
     modal.style.display = 'block';
