@@ -965,8 +965,10 @@ const tourDetailsData = {
 
 // Show tour details modal
 function showTourDetails(tourName) {
+    console.log('showTourDetails called with:', tourName);
     const details = tourDetailsData[tourName];
     if (!details) {
+        console.warn('Tour details not found for:', tourName);
         showNotification('Details not found for this tour', 'error');
         return;
     }
@@ -974,6 +976,8 @@ function showTourDetails(tourName) {
     const modal = document.getElementById('tourDetailsModal');
     const title = document.getElementById('tourDetailsTitle');
     const content = document.getElementById('tourDetailsContent');
+
+    console.log('Modal elements found:', { modal: !!modal, title: !!title, content: !!content });
 
     // Check if modal elements exist
     if (!modal || !title || !content) {

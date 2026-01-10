@@ -147,10 +147,10 @@ function updateCartDisplay() {
                     <p>${priceFormatted} × ${item.quantity}</p>
                 </div>
                 <div class="cart-item-controls">
-                    <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                    <button class="quantity-btn" data-action="decrease" data-id="${item.id}">-</button>
                     <span>${item.quantity}</span>
-                    <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
-                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                    <button class="quantity-btn" data-action="increase" data-id="${item.id}">+</button>
+                    <button class="cart-item-remove" data-id="${item.id}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
@@ -381,13 +381,16 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Event listeners for tour details and cart buttons
+// Event listeners for tour details, cart buttons, and cart controls
 document.addEventListener('click', (e) => {
     // Handle tour details buttons
     if (e.target.matches('.btn-details[data-tour]')) {
         const tourName = e.target.getAttribute('data-tour');
+        console.log('Tour details button clicked:', tourName);
         if (typeof showTourDetails === 'function') {
             showTourDetails(tourName);
+        } else {
+            console.warn('showTourDetails function not found');
         }
     }
 
@@ -396,6 +399,24 @@ document.addEventListener('click', (e) => {
         const itemName = e.target.getAttribute('data-cart-item');
         const price = parseInt(e.target.getAttribute('data-price'));
         addToCart(itemName, price);
+    }
+
+    // Handle quantity buttons
+    if (e.target.matches('.quantity-btn')) {
+        const action = e.target.getAttribute('data-action');
+        const id = parseInt(e.target.getAttribute('data-id'));
+
+        if (action === 'increase') {
+            updateQuantity(id, cart.find(item => item.id === id).quantity + 1);
+        } else if (action === 'decrease') {
+            updateQuantity(id, cart.find(item => item.id === id).quantity - 1);
+        }
+    }
+
+    // Handle remove from cart buttons
+    if (e.target.matches('.cart-item-remove') || e.target.closest('.cart-item-remove')) {
+        const id = parseInt(e.target.getAttribute('data-id') || e.target.closest('.cart-item-remove').getAttribute('data-id'));
+        removeFromCart(id);
     }
 });
 
