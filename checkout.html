@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - AR Bali Tour and Travel</title>
+    <meta name="description" content="Complete your booking for Bali tours, car rentals, and activities. Secure checkout with instant confirmation.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-container">
+                            <span class="logo-text">AR</span>
+                        </div>
+                        <span class="logo-company">Bali Tour & Travel</span>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="pages/tours/index.html" class="nav-link">Tours</a>
+                    <a href="pages/activities/index.html" class="nav-link">Activities</a>
+                    <a href="car-rental.html" class="nav-link">Car Rental</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-cart">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-container">
+                <div class="checkout-header">
+                    <h1>Complete Your Booking</h1>
+                    <p>Review your items and provide your details to confirm the booking</p>
+                </div>
+
+                <div class="checkout-content">
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <div class="cart-items-summary" id="cartItemsSummary">
+                            <!-- Cart items will be populated here -->
+                        </div>
+                        <div class="order-total">
+                            <div class="total-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">Rp 0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Service Fee:</span>
+                                <span id="serviceFee">Rp 0</span>
+                            </div>
+                            <div class="total-row final-total">
+                                <span><strong>Total:</strong></span>
+                                <span id="finalTotal"><strong>Rp 0</strong></span>
+                            </div>
+                        </div>
+                        <div class="payment-info">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure booking - Pay upon arrival or via bank transfer</span>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <div class="booking-details">
+                        <h2>Booking Details</h2>
+                        <form id="checkoutForm" class="checkout-form">
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-user"></i> Personal Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="country">Country *</label>
+                                        <select id="country" name="country" required>
+                                            <option value="">Select Country</option>
+                                            <option value="indonesia">Indonesia</option>
+                                            <option value="australia">Australia</option>
+                                            <option value="singapore">Singapore</option>
+                                            <option value="malaysia">Malaysia</option>
+                                            <option value="japan">Japan</option>
+                                            <option value="china">China</option>
+                                            <option value="south-korea">South Korea</option>
+                                            <option value="usa">United States</option>
+                                            <option value="uk">United Kingdom</option>
+                                            <option value="germany">Germany</option>
+                                            <option value="france">France</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nationality">Nationality *</label>
+                                        <input type="text" id="nationality" name="nationality" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Travel Information -->
+                            <div class="form-section" id="travelInfoSection">
+                                <h3><i class="fas fa-plane"></i> Travel Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="arrivalDate">Arrival Date</label>
+                                        <input type="date" id="arrivalDate" name="arrivalDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="departureDate">Departure Date</label>
+                                        <input type="date" id="departureDate" name="departureDate">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="hotelName">Hotel Name (if known)</label>
+                                        <input type="text" id="hotelName" name="hotelName" placeholder="Your accommodation in Bali">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hotelLocation">Hotel Location</label>
+                                        <select id="hotelLocation" name="hotelLocation">
+                                            <option value="">Select area</option>
+                                            <option value="seminyak">Seminyak</option>
+                                            <option value="kuta">Kuta</option>
+                                            <option value="legian">Legian</option>
+                                            <option value="canggu">Canggu</option>
+                                            <option value="ubud">Ubud</option>
+                                            <option value="sanur">Sanur</option>
+                                            <option value="nusa-dua">Nusa Dua</option>
+                                            <option value="jimbaran">Jimbaran</option>
+                                            <option value="denpasar">Denpasar</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Car Rental Information -->
+                            <div class="form-section" id="carRentalSection" style="display: none;">
+                                <h3><i class="fas fa-car"></i> Car Rental Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="pickupDate">Pickup Date & Time *</label>
+                                        <input type="datetime-local" id="pickupDate" name="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="returnDate">Return Date & Time *</label>
+                                        <input type="datetime-local" id="returnDate" name="returnDate">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Pickup Location *</label>
+                                        <select id="pickupLocation" name="pickupLocation">
+                                            <option value="">Select pickup location</option>
+                                            <option value="ngurah-rai-airport">Ngurah Rai International Airport</option>
+                                            <option value="denpasar">Denpasar City</option>
+                                            <option value="sanur">Sanur</option>
+                                            <option value="kuta">Kuta</option>
+                                            <option value="seminyak">Seminyak</option>
+                                            <option value="ubud">Ubud</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="returnLocation">Return Location *</label>
+                                        <select id="returnLocation" name="returnLocation">
+                                            <option value="">Select return location</option>
+                                            <option value="ngurah-rai-airport">Ngurah Rai International Airport</option>
+                                            <option value="denpasar">Denpasar City</option>
+                                            <option value="sanur">Sanur</option>
+                                            <option value="kuta">Kuta</option>
+                                            <option value="seminyak">Seminyak</option>
+                                            <option value="ubud">Ubud</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="passengers">Number of Passengers *</label>
+                                        <select id="passengers" name="passengers">
+                                            <option value="">Select passengers</option>
+                                            <option value="1-2">1-2 Passengers</option>
+                                            <option value="3-4">3-4 Passengers</option>
+                                            <option value="5-7">5-7 Passengers</option>
+                                            <option value="8-12">8-12 Passengers</option>
+                                            <option value="13+">13+ Passengers</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="serviceType">Service Type *</label>
+                                        <select id="serviceType" name="serviceType">
+                                            <option value="">Select service type</option>
+                                            <option value="self-drive">Self-Drive Rental</option>
+                                            <option value="with-driver">With Driver/Chauffeur</option>
+                                            <option value="airport-transfer">Airport Transfer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-info-circle"></i> Additional Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="specialRequests">Special Requests</label>
+                                        <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Dietary restrictions, accessibility needs, celebration occasions, etc."></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="emergencyContact">Emergency Contact</label>
+                                        <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Name and phone number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <div class="terms-section">
+                                    <div class="terms-checkbox">
+                                        <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                                        <label for="termsAgree">I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="terms-link">Cancellation Policy</a></label>
+                                    </div>
+                                    <div class="terms-checkbox">
+                                        <input type="checkbox" id="newsletterAgree" name="newsletterAgree">
+                                        <label for="newsletterAgree">I would like to receive promotional emails and special offers</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Booking Actions -->
+                            <div class="booking-actions">
+                                <button type="button" class="btn btn-outline" onclick="window.history.back()">
+                                    <i class="fas fa-arrow-left"></i> Back to Cart
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-large">
+                                    <i class="fab fa-whatsapp"></i> Complete Booking via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty Cart Message -->
+    <section class="empty-cart-section" id="emptyCartSection" style="display: none;">
+        <div class="container">
+            <div class="empty-cart-content">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h2>Your cart is empty</h2>
+                <p>Add some amazing experiences to your cart before proceeding to checkout.</p>
+                <div class="empty-cart-actions">
+                    <a href="pages/tours/index.html" class="btn btn-primary">Explore Tours</a>
+                    <a href="pages/activities/index.html" class="btn btn-secondary">View Activities</a>
+                    <a href="car-rental.html" class="btn btn-outline">Car Rental</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AR Bali Tour & Travel</h3>
+                    <p>Your trusted partner for unforgettable Bali experiences. We specialize in premium tours, luxury car rentals, and exclusive activities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="pages/tours/index.html">Tours</a></li>
+                        <li><a href="pages/activities/index.html">Activities</a></li>
+                        <li><a href="car-rental.html">Car Rental</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Private Tours</a></li>
+                        <li><a href="#">Group Tours</a></li>
+                        <li><a href="#">Airport Transfer</a></li>
+                        <li><a href="#">Day Trips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span><a href="https://wa.me/6281337742281" target="_blank" style="color: inherit; text-decoration: none;">0813-3774-2281</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:arbalitourandtravel@gmail.com" style="color: inherit; text-decoration: none;">arbalitourandtravel@gmail.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Griya Anyar, Kuta, Denpasar Selatan, Kabupaten Badung, Bali 80221</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map"></i>
+                            <span><a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" style="color: var(--primary-color); text-decoration: none;">View on Google Maps <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AR Bali Tour & Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span id="cartTotal">Rp 0</span></span>
+                </div>
+                <div class="cart-footer-buttons">
+                    <button class="btn btn-outline" id="clearCartBtn">
+                        <i class="fas fa-trash-alt"></i> Clear Cart
+                    </button>
+                    <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>

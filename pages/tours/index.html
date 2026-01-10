@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours - AR Bali Tour and Travel</title>
+    <meta name="description" content="Explore Bali's most beautiful destinations with our curated tour packages. From cultural experiences to adventure activities, discover the best of Bali.">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../../index.html" class="logo-link">
+                        <div class="logo-container">
+                            <span class="logo-text">AR</span>
+                        </div>
+                        <span class="logo-company">Bali Tour & Travel</span>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active">Tours</a>
+                    <a href="../activities/index.html" class="nav-link">Activities</a>
+                    <a href="../../car-rental.html" class="nav-link">Car Rental</a>
+                    <a href="../../index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-cart">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero tours-hero" style="background: linear-gradient(135deg, rgba(45, 95, 93, 0.35), rgba(255, 107, 53, 0.25)), url('../../assets/images/hero-tours.jpg') center/cover; background-attachment: fixed;">
+        <div class="hero-overlay bali-overlay"></div>
+        <div class="bali-pattern"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Bali's Hidden Treasures</h1>
+            <p class="hero-subtitle">Embark on unforgettable journeys through Bali's most spectacular destinations with our expert-guided tours</p>
+        </div>
+    </section>
+
+    <!-- Tour Categories -->
+    <section class="tour-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore by Category</h2>
+                <p>Find the perfect tour that matches your interests and preferences</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="cultural">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Cultural Tours</h3>
+                    <p>Immerse yourself in Bali's rich cultural heritage, traditional ceremonies, and ancient temples.</p>
+                </div>
+                <div class="category-card" data-category="nature">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Nature & Adventure</h3>
+                    <p>Explore stunning landscapes, hike volcanoes, and experience Bali's natural beauty.</p>
+                </div>
+                <div class="category-card" data-category="beach">
+                    <div class="category-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Beach & Relaxation</h3>
+                    <p>Visit pristine beaches, luxury resorts, and enjoy the perfect tropical getaway.</p>
+                </div>
+                <div class="category-card" data-category="food">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Culinary Experiences</h3>
+                    <p>Discover Bali's vibrant food culture with cooking classes and local dining experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter and Search -->
+    <section class="tour-filters">
+        <div class="container">
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" id="tourSearch" placeholder="Search tours...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-options">
+                    <select id="durationFilter">
+                        <option value="">Duration</option>
+                        <option value="half-day">Half Day (4-6 hours)</option>
+                        <option value="full-day">Full Day (8-10 hours)</option>
+                        <option value="multi-day">Multi Day</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="">Price Range</option>
+                        <option value="budget">$0 - $50</option>
+                        <option value="mid">$50 - $100</option>
+                        <option value="premium">$100+</option>
+                    </select>
+                    <select id="groupFilter">
+                        <option value="">Group Size</option>
+                        <option value="private">Private Tour</option>
+                        <option value="small">Small Group (2-8)</option>
+                        <option value="large">Large Group (9+)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tours Grid -->
+    <section class="tours-section">
+        <div class="container">
+            <div class="tours-grid" id="toursGrid">
+                <!-- Tour Card 1 -->
+                <div class="tour-card" data-category="cultural" data-duration="full-day" data-price="mid" data-group="private,small">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-ubud.jpg" alt="Ubud Cultural Tour" onerror="this.src='https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400'">
+                        <div class="tour-badge">Most Popular</div>
+                        <div class="tour-price">Rp 1,215,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Ubud Cultural Tour</h3>
+                        <p>Explore the artistic heart of Bali with traditional dance performances, monkey forest visits, and sacred temples.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 8 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 8</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Traditional Dance Performance</span>
+                            <span>• Monkey Forest Sanctuary</span>
+                            <span>• Rice Terrace Views</span>
+                            <span>• Local Artisan Villages</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Ubud Cultural Tour', 1215000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 2 -->
+                <div class="tour-card" data-category="nature" data-duration="full-day" data-price="mid" data-group="private,small">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-batur.jpg" alt="Mount Batur Sunrise Trek" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400'">
+                        <div class="tour-badge">Adventure</div>
+                        <div class="tour-price">Rp 915,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Mount Batur Sunrise Trek</h3>
+                        <p>Witness breathtaking sunrise views while trekking Bali's most active volcano with experienced local guides.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 6</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Professional Mountain Guide</span>
+                            <span>• Sunrise Breakfast</span>
+                            <span>• Hot Spring Visit</span>
+                            <span>• Scenic Views</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Mount Batur Sunrise Trek', 915000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 3 -->
+                <div class="tour-card" data-category="beach" data-duration="full-day" data-price="premium" data-group="private,small">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-beaches.jpg" alt="South Bali Beach Tour" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400'">
+                        <div class="tour-badge">Relaxation</div>
+                        <div class="tour-price">Rp 1,365,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>South Bali Beach Tour</h3>
+                        <p>Visit pristine beaches, luxury resorts, and hidden coves for the perfect tropical beach experience.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 10 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 8</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Jimbaran Beach</span>
+                            <span>• Luxury Resort Visit</span>
+                            <span>• Seafood Lunch</span>
+                            <span>• Water Sports</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('South Bali Beach Tour', 1365000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 4 -->
+                <div class="tour-card" data-category="cultural" data-duration="half-day" data-price="budget" data-group="small,large">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-tanah-lot.jpg" alt="Tanah Lot Temple Tour" onerror="this.src='https://images.unsplash.com/photo-1573790387438-4da905039392?w=400'">
+                        <div class="tour-badge">Iconic</div>
+                        <div class="tour-price">Rp 615,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Tanah Lot Temple Tour</h3>
+                        <p>Visit Bali's most iconic sea temple, perched on a rock formation surrounded by the Indian Ocean.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 4 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 15</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Iconic Sea Temple</span>
+                            <span>• Sunset Views</span>
+                            <span>• Traditional Offerings</span>
+                            <span>• Photo Opportunities</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Tanah Lot Temple Tour', 615000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 5 -->
+                <div class="tour-card" data-category="food" data-duration="half-day" data-price="mid" data-group="private,small">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-cooking.jpg" alt="Bali Cooking Class" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400'">
+                        <div class="tour-badge">Culinary</div>
+                        <div class="tour-price">Rp 1,065,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Traditional Cooking Class</h3>
+                        <p>Learn to prepare authentic Balinese dishes with fresh local ingredients and traditional cooking methods.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 5 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 6</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Local Market Visit</span>
+                            <span>• Traditional Recipes</span>
+                            <span>• Hands-on Cooking</span>
+                            <span>• Lunch with Locals</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Traditional Cooking Class', 1065000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 6 -->
+                <div class="tour-card" data-category="nature" data-duration="multi-day" data-price="premium" data-group="private">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-east-bali.jpg" alt="East Bali Exploration" onerror="this.src='https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400'">
+                        <div class="tour-badge">Premium</div>
+                        <div class="tour-price">Rp 3,690,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>East Bali Cultural Journey</h3>
+                        <p>A 2-day exploration of Bali's eastern region, featuring ancient villages, pristine beaches, and cultural experiences.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Days</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Private</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Traditional Villages</span>
+                            <span>• Tirta Gangga Water Palace</span>
+                            <span>• Virgin Beaches</span>
+                            <span>• Local Homestay</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('East Bali Cultural Journey - 2 Days', 3690000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 7 -->
+                <div class="tour-card" data-category="nature" data-duration="full-day" data-price="mid" data-group="private,small">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-waterfalls.jpg" alt="Bali Waterfalls Tour" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400'">
+                        <div class="tour-badge">Adventure</div>
+                        <div class="tour-price">Rp 990,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Hidden Waterfalls Adventure</h3>
+                        <p>Discover Bali's most beautiful waterfalls with jungle treks, natural pools, and refreshing swims.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 8 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 8</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Jungle Trekking</span>
+                            <span>• Natural Pools</span>
+                            <span>• Local Guide</span>
+                            <span>• Picnic Lunch</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Hidden Waterfalls Adventure', 990000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tour Card 8 -->
+                <div class="tour-card" data-category="beach" data-duration="half-day" data-price="budget" data-group="small,large">
+                    <div class="tour-image">
+                        <img src="../../assets/images/tour-nusa-dua.jpg" alt="Nusa Dua Beach Tour" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400'">
+                        <div class="tour-badge">Family</div>
+                        <div class="tour-price">Rp 540,000</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Nusa Dua Beach Experience</h3>
+                        <p>Relax on Bali's most luxurious beach area with pristine white sand, crystal clear waters, and resort views.</p>
+                        <div class="tour-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 4 Hours</span>
+                            <span class="group-size"><i class="fas fa-users"></i> Max 12</span>
+                        </div>
+                        <div class="tour-features">
+                            <span>• Luxury Beach Area</span>
+                            <span>• Water Activities</span>
+                            <span>• Resort Views</span>
+                            <span>• Relaxing Atmosphere</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Nusa Dua Beach Experience', 540000)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Booking Form -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Tour</h2>
+                <p>Customize your Bali experience with our flexible booking options</p>
+            </div>
+            <div class="booking-form-container">
+                <form id="tourBookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tourSelect">Select Tour</label>
+                            <select id="tourSelect" name="tourSelect" required>
+                                <option value="">Choose a tour</option>
+                                <option value="ubud-cultural">Ubud Cultural Tour - Rp 1,215,000</option>
+                                <option value="batur-sunrise">Mount Batur Sunrise Trek - Rp 915,000</option>
+                                <option value="south-beach">South Bali Beach Tour - Rp 1,365,000</option>
+                                <option value="tanah-lot">Tanah Lot Temple Tour - Rp 615,000</option>
+                                <option value="cooking-class">Traditional Cooking Class - Rp 1,065,000</option>
+                                <option value="east-bali">East Bali Cultural Journey - Rp 3,690,000</option>
+                                <option value="waterfalls">Hidden Waterfalls Adventure - Rp 990,000</option>
+                                <option value="nusa-dua">Nusa Dua Beach Experience - Rp 540,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tourDate">Preferred Date</label>
+                            <input type="date" id="tourDate" name="tourDate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="participants">Number of Participants</label>
+                            <select id="participants" name="participants" required>
+                                <option value="">Select participants</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6+">6+ People (Custom Quote)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tourTime">Preferred Time</label>
+                            <select id="tourTime" name="tourTime" required>
+                                <option value="">Select time</option>
+                                <option value="early-morning">Early Morning (6:00 AM)</option>
+                                <option value="morning">Morning (9:00 AM)</option>
+                                <option value="afternoon">Afternoon (1:00 PM)</option>
+                                <option value="custom">Custom Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupLocation">Pickup Location</label>
+                            <select id="pickupLocation" name="pickupLocation" required>
+                                <option value="">Select pickup location</option>
+                                <option value="hotel">Hotel/Resort</option>
+                                <option value="airport">Airport</option>
+                                <option value="central-location">Central Location</option>
+                                <option value="custom">Custom Location</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietary">Dietary Requirements (Optional)</label>
+                            <input type="text" id="dietary" name="dietary" placeholder="Vegetarian, vegan, allergies, etc.">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="specialRequests">Special Requests or Notes</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special requirements or preferences..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Request Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AR Bali Tour & Travel</h3>
+                    <p>Your trusted partner for unforgettable Bali experiences. We specialize in premium tours, luxury car rentals, and exclusive activities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../pages/tours/index.html">Tours</a></li>
+                        <li><a href="../../pages/activities/index.html">Activities</a></li>
+                        <li><a href="../../car-rental.html">Car Rental</a></li>
+                        <li><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Private Tours</a></li>
+                        <li><a href="#">Group Tours</a></li>
+                        <li><a href="#">Airport Transfer</a></li>
+                        <li><a href="#">Day Trips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@arbali-tour.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+62 123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sanur, Bali, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AR Bali Tour & Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span id="cartTotal">Rp 0</span></span>
+                </div>
+                <div class="cart-footer-buttons">
+                    <button class="btn btn-outline" id="clearCartBtn">
+                        <i class="fas fa-trash-alt"></i> Clear Cart
+                    </button>
+                    <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/tours.js"></script>
+</body>
+</html>

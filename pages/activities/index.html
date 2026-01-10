@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities - AR Bali Tour and Travel</title>
+    <meta name="description" content="Experience thrilling activities in Bali including water sports, adventure experiences, cultural workshops, and wellness activities.">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../../index.html" class="logo-link">
+                        <div class="logo-container">
+                            <span class="logo-text">AR</span>
+                        </div>
+                        <span class="logo-company">Bali Tour & Travel</span>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="../tours/index.html" class="nav-link">Tours</a>
+                    <a href="index.html" class="nav-link active">Activities</a>
+                    <a href="../../car-rental.html" class="nav-link">Car Rental</a>
+                    <a href="../../index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-cart">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero activities-hero" style="background: linear-gradient(135deg, rgba(45, 95, 93, 0.35), rgba(255, 107, 53, 0.25)), url('../../assets/images/hero-activities.jpg') center/cover; background-attachment: fixed;">
+        <div class="hero-overlay bali-overlay"></div>
+        <div class="bali-pattern"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Adventure Awaits</h1>
+            <p class="hero-subtitle">Experience Bali's most thrilling activities and create unforgettable memories with our adventure packages</p>
+        </div>
+    </section>
+
+    <!-- Activity Categories -->
+    <section class="activity-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Adventure</h2>
+                <p>Discover exciting activities that will make your Bali trip truly memorable</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="water">
+                    <div class="category-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Water Sports</h3>
+                    <p>Dive into Bali's crystal-clear waters with snorkeling, diving, and thrilling water adventures.</p>
+                </div>
+                <div class="category-card" data-category="adventure">
+                    <div class="category-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Adventure Sports</h3>
+                    <p>Experience heart-pumping activities like ATV tours, zip-lining, and jungle trekking.</p>
+                </div>
+                <div class="category-card" data-category="cultural">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Cultural Workshops</h3>
+                    <p>Learn traditional Balinese arts, cooking, and cultural practices with local experts.</p>
+                </div>
+                <div class="category-card" data-category="wellness">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Wellness & Spa</h3>
+                    <p>Relax and rejuvenate with traditional Balinese spa treatments and wellness experiences.</p>
+                </div>
+                <div class="category-card" data-category="aerial">
+                    <div class="category-icon">
+                        <i class="fas fa-helicopter"></i>
+                    </div>
+                    <h3>Aerial Experiences</h3>
+                    <p>Get a bird's eye view of Bali with helicopter tours and hot air balloon adventures.</p>
+                </div>
+                <div class="category-card" data-category="nightlife">
+                    <div class="category-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Night Experiences</h3>
+                    <p>Enjoy Bali's vibrant nightlife with beach clubs, traditional dance shows, and sunset cruises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Grid -->
+    <section class="activities-section">
+        <div class="container">
+            <div class="activities-grid" id="activitiesGrid">
+                <!-- Activity Card 1 -->
+                <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-diving.jpg" alt="Scuba Diving in Nusa Penida" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+                        <div class="activity-badge">Popular</div>
+                        <div class="activity-price">Rp 1,740,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Scuba Diving - Nusa Penida</h3>
+                        <p>Explore Bali's underwater paradise with crystal-clear waters and abundant marine life. Perfect for both beginners and experienced divers.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner-Friendly</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Professional Instructor</span>
+                            <span>• Full Equipment</span>
+                            <span>• Marine Life Guarantee</span>
+                            <span>• Underwater Photos</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Scuba Diving - Nusa Penida', 1740000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="activity-card" data-category="adventure" data-duration="half-day" data-difficulty="intermediate">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-atv.jpg" alt="ATV Adventure Tour" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
+                        <div class="activity-badge">Adventure</div>
+                        <div class="activity-price">Rp 1,215,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>ATV Adventure Tour</h3>
+                        <p>Ride through Bali's lush landscapes and rice terraces on an exciting ATV adventure. No experience required!</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 4 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Safety Briefing</span>
+                            <span>• Professional Guide</span>
+                            <span>• Helmet & Gear</span>
+                            <span>• Refreshments</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('ATV Adventure Tour', 1215000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 3 -->
+                <div class="activity-card" data-category="cultural" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-painting.jpg" alt="Traditional Painting Workshop" onerror="this.src='https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400'">
+                        <div class="activity-badge">Creative</div>
+                        <div class="activity-price">Rp 915,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Traditional Painting Workshop</h3>
+                        <p>Learn the ancient art of Balinese painting with local artists. Create your own masterpiece to take home.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 3 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Local Artist Instructor</span>
+                            <span>• All Materials Included</span>
+                            <span>• Take Home Artwork</span>
+                            <span>• Certificate</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Traditional Painting Workshop', 915000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 4 -->
+                <div class="activity-card" data-category="wellness" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-spa.jpg" alt="Balinese Traditional Spa" onerror="this.src='https://images.unsplash.com/photo-1596178060810-fb4bd482ee2c?w=400'">
+                        <div class="activity-badge">Relaxing</div>
+                        <div class="activity-price">Rp 1,365,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Balinese Traditional Spa</h3>
+                        <p>Indulge in authentic Balinese spa treatments using traditional herbs, oils, and ancient healing techniques.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Traditional Massage</span>
+                            <span>• Herbal Treatments</span>
+                            <span>• Flower Bath</span>
+                            <span>• Herbal Tea</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Balinese Traditional Spa', 1365000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 5 -->
+                <div class="activity-card" data-category="aerial" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-helicopter.jpg" alt="Helicopter Tour" onerror="this.src='https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400'">
+                        <div class="activity-badge">Premium</div>
+                        <div class="activity-price">Rp 3,690,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Helicopter Sightseeing Tour</h3>
+                        <p>Get breathtaking aerial views of Bali's volcanoes, beaches, and rice terraces on a luxury helicopter tour.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Professional Pilot</span>
+                            <span>• Stunning Views</span>
+                            <span>• Photo Session</span>
+                            <span>• Luxury Transport</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Helicopter Sightseeing Tour', 3690000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 6 -->
+                <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-snorkeling.jpg" alt="Snorkeling Adventure" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+                        <div class="activity-badge">Family</div>
+                        <div class="activity-price">Rp 765,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Snorkeling in Menjangan Island</h3>
+                        <p>Discover vibrant coral reefs and tropical fish in the crystal-clear waters of Menjangan Island.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 5 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Boat Transfer</span>
+                            <span>• Snorkeling Gear</span>
+                            <span>• Marine Guide</span>
+                            <span>• Lunch Included</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Snorkeling in Menjangan Island', 765000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 7 -->
+                <div class="activity-card" data-category="adventure" data-duration="full-day" data-difficulty="advanced">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-zipline.jpg" alt="Zip Line Adventure" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
+                        <div class="activity-badge">Thrilling</div>
+                        <div class="activity-price">Rp 1,065,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Zip Line & Jungle Adventure</h3>
+                        <p>Fly through the jungle canopy on thrilling zip lines and explore hidden trails in Bali's lush forests.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Advanced</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Multiple Zip Lines</span>
+                            <span>• Jungle Trekking</span>
+                            <span>• Safety Equipment</span>
+                            <span>• Professional Guides</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Zip Line & Jungle Adventure', 1065000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 8 -->
+                <div class="activity-card" data-category="nightlife" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-sunset.jpg" alt="Sunset Catamaran Cruise" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400'">
+                        <div class="activity-badge">Romantic</div>
+                        <div class="activity-price">Rp 1,140,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Sunset Catamaran Cruise</h3>
+                        <p>Sail into the sunset on a luxury catamaran with champagne, canapés, and stunning ocean views.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 3 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Luxury Catamaran</span>
+                            <span>• Champagne & Canapés</span>
+                            <span>• Live Music</span>
+                            <span>• Photo Service</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Sunset Catamaran Cruise', 1140000)">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 9 -->
+                <div class="activity-card" data-category="cultural" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-dance.jpg" alt="Traditional Dance Performance" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400'">
+                        <div class="activity-badge">Cultural</div>
+                        <div class="activity-price">Rp 615,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Traditional Dance Performance</h3>
+                        <p>Witness authentic Balinese dance performances featuring Kecak, Legong, and other traditional dances.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Traditional Costumes</span>
+                            <span>• Live Gamelan Music</span>
+                            <span>• Cultural Explanation</span>
+                            <span>• Photo Opportunities</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart('Traditional Dance Performance', 615000)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Booking Form -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Activity</h2>
+                <p>Reserve your spot for Bali's most exciting adventures</p>
+            </div>
+            <div class="booking-form-container">
+                <form id="activityBookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="activitySelect">Select Activity</label>
+                            <select id="activitySelect" name="activitySelect" required>
+                                <option value="">Choose an activity</option>
+                                <option value="scuba-diving">Scuba Diving - Nusa Penida - Rp 1,740,000</option>
+                                <option value="atv-tour">ATV Adventure Tour - Rp 1,215,000</option>
+                                <option value="painting-workshop">Traditional Painting Workshop - Rp 915,000</option>
+                                <option value="balinese-spa">Balinese Traditional Spa - Rp 1,365,000</option>
+                                <option value="helicopter-tour">Helicopter Sightseeing Tour - Rp 3,690,000</option>
+                                <option value="snorkeling">Snorkeling in Menjangan Island - Rp 765,000</option>
+                                <option value="zipline">Zip Line & Jungle Adventure - Rp 1,065,000</option>
+                                <option value="sunset-cruise">Sunset Catamaran Cruise - Rp 1,140,000</option>
+                                <option value="dance-performance">Traditional Dance Performance - Rp 615,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityDate">Preferred Date</label>
+                            <input type="date" id="activityDate" name="activityDate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="participants">Number of Participants</label>
+                            <select id="participants" name="participants" required>
+                                <option value="">Select participants</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People (Contact for pricing)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityTime">Preferred Time</label>
+                            <select id="activityTime" name="activityTime" required>
+                                <option value="">Select time</option>
+                                <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                                <option value="afternoon">Afternoon (12:00 PM - 5:00 PM)</option>
+                                <option value="evening">Evening (5:00 PM - 9:00 PM)</option>
+                                <option value="custom">Custom Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experienceLevel">Experience Level</label>
+                            <select id="experienceLevel" name="experienceLevel" required>
+                                <option value="">Select experience level</option>
+                                <option value="beginner">Beginner (First time)</option>
+                                <option value="intermediate">Intermediate (Some experience)</option>
+                                <option value="advanced">Advanced (Experienced)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupLocation">Meeting Point</label>
+                            <select id="pickupLocation" name="pickupLocation" required>
+                                <option value="">Select meeting point</option>
+                                <option value="hotel">Hotel Pickup</option>
+                                <option value="activity-location">Direct at Activity Location</option>
+                                <option value="central-point">Central Meeting Point</option>
+                                <option value="custom">Custom Location</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="specialRequirements">Special Requirements or Medical Conditions</label>
+                            <textarea id="specialRequirements" name="specialRequirements" rows="3" placeholder="Please mention any allergies, medical conditions, or special accommodations needed..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalNotes">Additional Notes</label>
+                            <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Any other information or requests..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AR Bali Tour & Travel</h3>
+                    <p>Your trusted partner for unforgettable Bali experiences. We specialize in premium tours, luxury car rentals, and exclusive activities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../pages/tours/index.html">Tours</a></li>
+                        <li><a href="../../pages/activities/index.html">Activities</a></li>
+                        <li><a href="../../car-rental.html">Car Rental</a></li>
+                        <li><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Water Sports</a></li>
+                        <li><a href="#">Adventure Activities</a></li>
+                        <li><a href="#">Cultural Workshops</a></li>
+                        <li><a href="#">Wellness & Spa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@arbali-tour.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+62 123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sanur, Bali, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AR Bali Tour & Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span id="cartTotal">Rp 0</span></span>
+                </div>
+                <div class="cart-footer-buttons">
+                    <button class="btn btn-outline" id="clearCartBtn">
+                        <i class="fas fa-trash-alt"></i> Clear Cart
+                    </button>
+                    <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/activities.js"></script>
+</body>
+</html>

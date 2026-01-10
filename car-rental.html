@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental - AR Bali Tour and Travel</title>
+    <meta name="description" content="Premium car rental services in Bali with professional drivers and luxury vehicles. Airport transfer, daily rental, and chauffeur services available.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-container">
+                            <span class="logo-text">AR</span>
+                        </div>
+                        <span class="logo-company">Bali Tour & Travel</span>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="pages/tours/index.html" class="nav-link">Tours</a>
+                    <a href="pages/activities/index.html" class="nav-link">Activities</a>
+                    <a href="car-rental.html" class="nav-link active">Car Rental</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-cart">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero bali-hero">
+        <div class="hero-overlay bali-overlay"></div>
+        <div class="bali-pattern"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Car Rental in Bali</h1>
+            <p class="hero-subtitle">Experience the beauty of Bali in comfort with our luxury fleet and professional drivers</p>
+        </div>
+    </section>
+
+    <!-- Car Rental Services -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Car Rental Services</h2>
+                <p>Choose from our comprehensive range of vehicle rental options</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-arrival"></i>
+                    </div>
+                    <h3>Airport Transfer</h3>
+                    <p>Reliable airport pickup and drop-off services with professional drivers and comfortable vehicles.</p>
+                    <div class="service-features">
+                        <span>• Meet & Greet Service</span>
+                        <span>• 24/7 Availability</span>
+                        <span>• Flight Tracking</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Self-Drive Rental</h3>
+                    <p>Freedom to explore Bali at your own pace with our well-maintained rental cars.</p>
+                    <div class="service-features">
+                        <span>• GPS Navigation</span>
+                        <span>• Insurance Included</span>
+                        <span>• 24/7 Support</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Chauffeur Service</h3>
+                    <p>Professional chauffeur-driven vehicles for business travel and special occasions.</p>
+                    <div class="service-features">
+                        <span>• Experienced Drivers</span>
+                        <span>• Luxury Vehicles</span>
+                        <span>• Custom Itineraries</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Fleet -->
+    <section class="car-fleet">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Fleet</h2>
+                <p>Choose from our collection of luxury and comfortable vehicles</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Vehicles</button>
+                <button class="filter-btn" data-filter="sedan">Economy</button>
+                <button class="filter-btn" data-filter="suv">Comfort</button>
+                <button class="filter-btn" data-filter="van">Van/Bus</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+            </div>
+
+            <!-- Car Grid -->
+            <div class="cars-grid">
+                <!-- Avanza / Xenia / APV / Mobilio / Ertiga / Sigra -->
+                <div class="car-card" data-category="sedan">
+                    <div class="car-image">
+                        <img src="assets/images/car-avanza.jpg" alt="Avanza / Xenia / APV / Mobilio / Ertiga / Sigra" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Toyota+Avanza'">
+                        <div class="car-badge bali-badge">Economy</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Avanza / Xenia / APV / Mobilio / Ertiga / Sigra</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 7 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="450000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 450,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="600000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 600,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Avanza/Xenia/APV/Mobilio/Ertiga/Sigra" data-hd-price="450000" data-fd-price="600000">
+                                <option value="FD">Full Day (12H) - Rp 600,000</option>
+                                <option value="HD">Half Day (6H) - Rp 450,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Avanza/Xenia/APV/Mobilio/Ertiga/Sigra', 600000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Toyota Grand Innova -->
+                <div class="car-card" data-category="suv">
+                    <div class="car-image">
+                        <img src="assets/images/car-grand-innova.jpg" alt="Toyota Grand Innova" onerror="this.src='https://via.placeholder.com/800x500/FF6B35/FFFFFF?text=Toyota+Grand+Innova'">
+                        <div class="car-badge bali-badge">Comfort</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Toyota Grand Innova</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 7 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="600000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 600,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="750000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 750,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Toyota Grand Innova" data-hd-price="600000" data-fd-price="750000">
+                                <option value="FD">Full Day (12H) - Rp 750,000</option>
+                                <option value="HD">Half Day (6H) - Rp 600,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Grand Innova', 750000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Toyota Avanza - Nusa Penida Island -->
+                <div class="car-card" data-category="sedan">
+                    <div class="car-image">
+                        <img src="assets/images/car-avanza-nusapenida.jpg" alt="Toyota Avanza - Nusa Penida Island" onerror="this.src='https://via.placeholder.com/800x500/F7931E/FFFFFF?text=Nusa+Penida+Avanza'">
+                        <div class="car-badge bali-badge">Nusa Penida Only</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Toyota Avanza - Nusa Penida Island</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 5 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol (8 Hours Only)</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="800000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 800,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="800000" data-type="FD">
+                                <span class="duration">Full Day (8H)</span>
+                                <span class="price">Rp 800,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Toyota Avanza - Nusa Penida Island" data-hd-price="800000" data-fd-price="800000">
+                                <option value="FD">Full Day (8H) - Rp 800,000</option>
+                                <option value="HD">Half Day (6H) - Rp 800,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Avanza - Nusa Penida Island', 800000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Toyota Innova Reborn -->
+                <div class="car-card" data-category="suv">
+                    <div class="car-image">
+                        <img src="assets/images/car-innova-reborn.jpg" alt="Toyota Innova Reborn" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Toyota+Innova+Reborn'">
+                        <div class="car-badge bali-badge">Comfort</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Toyota Innova Reborn</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 7 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="700000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 700,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="950000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 950,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Toyota Innova Reborn" data-hd-price="700000" data-fd-price="950000">
+                                <option value="FD">Full Day (12H) - Rp 950,000</option>
+                                <option value="HD">Half Day (6H) - Rp 700,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Innova Reborn', 950000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Toyota Hiace -->
+                <div class="car-card" data-category="van">
+                    <div class="car-image">
+                        <img src="assets/images/car-hiace.jpg" alt="Toyota Hiace" onerror="this.src='https://via.placeholder.com/800x500/FF6B35/FFFFFF?text=Toyota+Hiace'">
+                        <div class="car-badge bali-badge">Van / Group</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Toyota Hiace</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 14 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="950000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 950,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="1250000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 1,250,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Toyota Hiace" data-hd-price="950000" data-fd-price="1250000">
+                                <option value="FD">Full Day (12H) - Rp 1,250,000</option>
+                                <option value="HD">Half Day (6H) - Rp 950,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Hiace', 1250000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Toyota Hiace Premio -->
+                <div class="car-card" data-category="van">
+                    <div class="car-image">
+                        <img src="assets/images/car-hiace-premio.jpg" alt="Toyota Hiace Premio" onerror="this.src='https://via.placeholder.com/800x500/F7931E/FFFFFF?text=Hiace+Premio'">
+                        <div class="car-badge bali-badge">Comfort / Van</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Toyota Hiace Premio</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 10 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="1450000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 1,450,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="1850000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 1,850,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Toyota Hiace Premio" data-hd-price="1450000" data-fd-price="1850000">
+                                <option value="FD">Full Day (12H) - Rp 1,850,000</option>
+                                <option value="HD">Half Day (6H) - Rp 1,450,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Hiace Premio', 1850000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Elf Giga Long -->
+                <div class="car-card" data-category="van">
+                    <div class="car-image">
+                        <img src="assets/images/car-elf-giga.jpg" alt="Elf Giga Long" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Elf+Giga+Long'">
+                        <div class="car-badge bali-badge">Mini Bus</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Elf Giga Long</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 19 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="1500000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 1,500,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="1800000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 1,800,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Elf Giga Long" data-hd-price="1500000" data-fd-price="1800000">
+                                <option value="FD">Full Day (12H) - Rp 1,800,000</option>
+                                <option value="HD">Half Day (6H) - Rp 1,500,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Elf Giga Long', 1800000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Premio Luxury -->
+                <div class="car-card" data-category="luxury">
+                    <div class="car-image">
+                        <img src="assets/images/car-premio-luxury.jpg" alt="Premio Luxury" onerror="this.src='https://via.placeholder.com/800x500/FF6B35/FFFFFF?text=Premio+Luxury'">
+                        <div class="car-badge bali-badge">Luxury</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Premio Luxury</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 8 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="2200000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 2,200,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="3000000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 3,000,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Premio Luxury" data-hd-price="2200000" data-fd-price="3000000">
+                                <option value="FD">Full Day (12H) - Rp 3,000,000</option>
+                                <option value="HD">Half Day (6H) - Rp 2,200,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Premio Luxury', 3000000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Bus 22, 28, 33, 35, 48, 54 Seats -->
+                <div class="car-card" data-category="van">
+                    <div class="car-image">
+                        <img src="assets/images/car-bus.jpg" alt="Bus 22, 28, 33, 35, 48, 54 Seats" onerror="this.src='https://via.placeholder.com/800x500/F7931E/FFFFFF?text=Big+Bus'">
+                        <div class="car-badge bali-badge">Big Group</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Bus 22, 28, 33, 35, 48, 54 Seats</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 54 Seats</span>
+                            <span><i class="fas fa-info-circle"></i> Custom Quote</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="3000000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 3,000,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="4000000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 4,000,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Bus 22, 28, 33, 35, 48, 54 Seats" data-hd-price="3000000" data-fd-price="4000000">
+                                <option value="FD">Full Day (12H) - Rp 4,000,000</option>
+                                <option value="HD">Half Day (6H) - Rp 3,000,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Bus 22, 28, 33, 35, 48, 54 Seats', 4000000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Toyota Alphard 2024/2025 -->
+                <div class="car-card" data-category="luxury">
+                    <div class="car-image">
+                        <img src="assets/images/car-alphard.jpg" alt="Toyota Alphard 2024/2025" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Toyota+Alphard+2024'">
+                        <div class="car-badge bali-badge">Premium Luxury</div>
+                    </div>
+                    <div class="car-content">
+                        <h3>Toyota Alphard 2024/2025</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-users"></i> 6 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-user-tie"></i> With Driver</span>
+                        </div>
+                        <div class="car-pricing">
+                            <div class="price-option" data-price="3000000" data-type="HD">
+                                <span class="duration">Half Day (6H)</span>
+                                <span class="price">Rp 3,000,000</span>
+                            </div>
+                            <div class="price-option featured" data-price="4000000" data-type="FD">
+                                <span class="duration">Full Day (12H)</span>
+                                <span class="price">Rp 4,000,000</span>
+                            </div>
+                        </div>
+                        <div class="rental-type-selector">
+                            <select class="rental-type-select" data-car="Toyota Alphard 2024/2025" data-hd-price="3000000" data-fd-price="4000000">
+                                <option value="FD">Full Day (12H) - Rp 4,000,000</option>
+                                <option value="HD">Half Day (6H) - Rp 3,000,000</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Alphard 2024/2025', 4000000, 'FD')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Rental</h2>
+                <p>Fill out the form below to reserve your vehicle</p>
+            </div>
+            <div class="booking-form-container">
+                <form id="carBookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Pickup Date & Time</label>
+                            <input type="datetime-local" id="pickupDate" name="pickupDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="returnDate">Return Date & Time</label>
+                            <input type="datetime-local" id="returnDate" name="returnDate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupLocation">Pickup Location</label>
+                            <select id="pickupLocation" name="pickupLocation" required>
+                                <option value="">Select pickup location</option>
+                                <option value="ngurah-rai-airport">Ngurah Rai International Airport</option>
+                                <option value="denpasar">Denpasar City</option>
+                                <option value="sanur">Sanur</option>
+                                <option value="kuta">Kuta</option>
+                                <option value="seminyak">Seminyak</option>
+                                <option value="ubud">Ubud</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="returnLocation">Return Location</label>
+                            <select id="returnLocation" name="returnLocation" required>
+                                <option value="">Select return location</option>
+                                <option value="ngurah-rai-airport">Ngurah Rai International Airport</option>
+                                <option value="denpasar">Denpasar City</option>
+                                <option value="sanur">Sanur</option>
+                                <option value="kuta">Kuta</option>
+                                <option value="seminyak">Seminyak</option>
+                                <option value="ubud">Ubud</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="passengers">Number of Passengers</label>
+                            <select id="passengers" name="passengers" required>
+                                <option value="">Select passengers</option>
+                                <option value="1-2">1-2 Passengers</option>
+                                <option value="3-4">3-4 Passengers</option>
+                                <option value="5-7">5-7 Passengers</option>
+                                <option value="8-12">8-12 Passengers</option>
+                                <option value="13+">13+ Passengers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select service type</option>
+                                <option value="self-drive">Self-Drive Rental</option>
+                                <option value="with-driver">With Driver/Chauffeur</option>
+                                <option value="airport-transfer">Airport Transfer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="specialRequests">Special Requests (Optional)</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special requirements or preferences..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Car Rental Service?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Full Insurance Coverage</h4>
+                    <p>Comprehensive insurance for peace of mind during your rental period.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>24/7 Roadside Assistance</h4>
+                    <p>Round-the-clock support and emergency assistance wherever you are.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h4>Well-Maintained Vehicles</h4>
+                    <p>All vehicles are regularly serviced and cleaned for your comfort.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h4>GPS Navigation</h4>
+                    <p>Free GPS devices available to help you navigate Bali with ease.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h4>Easy Booking Process</h4>
+                    <p>Simple online booking with instant confirmation and flexible payment options.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Professional Drivers</h4>
+                    <p>Experienced, licensed drivers with excellent knowledge of Bali's roads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AR Bali Tour & Travel</h3>
+                    <p>Your trusted partner for unforgettable Bali experiences. We specialize in premium tours, luxury car rentals, and exclusive activities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="pages/tours/index.html">Tours</a></li>
+                        <li><a href="pages/activities/index.html">Activities</a></li>
+                        <li><a href="car-rental.html">Car Rental</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Airport Transfer</a></li>
+                        <li><a href="#">Self-Drive Rental</a></li>
+                        <li><a href="#">Chauffeur Service</a></li>
+                        <li><a href="#">Tour Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span><a href="https://wa.me/6281337742281" target="_blank" style="color: inherit; text-decoration: none;">0813-3774-2281</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:arbalitourandtravel@gmail.com" style="color: inherit; text-decoration: none;">arbalitourandtravel@gmail.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Griya Anyar, Kuta, Denpasar Selatan, Kabupaten Badung, Bali 80221</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map"></i>
+                            <span><a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" style="color: var(--primary-color); text-decoration: none;">View on Google Maps <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AR Bali Tour & Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span id="cartTotal">Rp 0</span></span>
+                </div>
+                <div class="cart-footer-buttons">
+                    <button class="btn btn-outline" id="clearCartBtn">
+                        <i class="fas fa-trash-alt"></i> Clear Cart
+                    </button>
+                    <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/car-rental.js"></script>
+    <script>
+        // Handle rental type selector changes
+        document.addEventListener('DOMContentLoaded', () => {
+            const rentalSelectors = document.querySelectorAll('.rental-type-select');
+            
+            rentalSelectors.forEach(selector => {
+                // Initialize button with default value
+                const carName = selector.getAttribute('data-car');
+                const hdPrice = parseInt(selector.getAttribute('data-hd-price'));
+                const fdPrice = parseInt(selector.getAttribute('data-fd-price'));
+                const defaultType = selector.value;
+                const defaultPrice = defaultType === 'HD' ? hdPrice : fdPrice;
+                const button = selector.closest('.car-card').querySelector('.bali-btn');
+                button.setAttribute('onclick', `addToCartWithType('${carName}', ${defaultPrice}, '${defaultType}')`);
+                
+                selector.addEventListener('change', function() {
+                    const carName = this.getAttribute('data-car');
+                    const hdPrice = parseInt(this.getAttribute('data-hd-price'));
+                    const fdPrice = parseInt(this.getAttribute('data-fd-price'));
+                    const selectedType = this.value;
+                    const selectedPrice = selectedType === 'HD' ? hdPrice : fdPrice;
+                    
+                    // Update button onclick
+                    const button = this.closest('.car-card').querySelector('.bali-btn');
+                    button.setAttribute('onclick', `addToCartWithType('${carName}', ${selectedPrice}, '${selectedType}')`);
+                    
+                    // Update price option highlighting
+                    const priceOptions = this.closest('.car-card').querySelectorAll('.price-option');
+                    priceOptions.forEach(option => {
+                        if (option.getAttribute('data-type') === selectedType) {
+                            option.classList.add('featured');
+                        } else {
+                            option.classList.remove('featured');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+</html>
+</html>
+</html>
