@@ -971,17 +971,11 @@ function showTourDetails(tourName) {
         return;
     }
 
-    const modal = document.getElementById('tourDetailsModal');
-    const title = document.getElementById('tourDetailsTitle');
-    const content = document.getElementById('tourDetailsContent');
-
-    title.textContent = details.title;
-
     let html = '';
 
     if (details.itinerary) {
         html += '<div style="margin-bottom: 20px;">';
-        html += '<h4>Itinerary</h4>';
+        html += '<h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Itinerary</h4>';
         html += '<div style="line-height: 1.6;">';
         details.itinerary.forEach(item => {
             if (item.trim() === '') {
@@ -996,49 +990,60 @@ function showTourDetails(tourName) {
 
     let includedList = '';
     details.included.forEach(item => {
-        includedList += `<li><i class="fas fa-check-circle" style="color: #28a745;"></i> ${item}</li>`;
+        includedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-check-circle" style="color: #28a745; margin-top: 2px;"></i> ${item}</li>`;
     });
 
     let notIncludedList = '';
     details.notIncluded.forEach(item => {
-        notIncludedList += `<li><i class="fas fa-times-circle" style="color: #dc3545;"></i> ${item}</li>`;
+        notIncludedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle" style="color: #dc3545; margin-top: 2px;"></i> ${item}</li>`;
     });
 
     html += `
         <div style="margin-bottom: 20px;">
-            <h4>What's Included</h4>
-            <ul>${includedList}</ul>
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">What's Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                ${includedList}
+            </ul>
         </div>
 
         <div style="margin-bottom: 20px;">
-            <h4>Not Included</h4>
-            <ul>${notIncludedList}</ul>
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Not Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                ${notIncludedList}
+            </ul>
         </div>
 
-        <div class="important-notes">
-            <strong>Important Notes:</strong><br>
-            ${details.importantNotes}
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Important Notes</h4>
+            <p style="background: #fff3cd; border-left: 4px solid #FF6B35; padding: 15px; border-radius: 5px; color: #856404; margin: 0; font-size: 0.95em;">
+                ${details.importantNotes}
+            </p>
         </div>
     `;
 
-    content.innerHTML = html;
-    modal.style.display = 'block';
+    Swal.fire({
+        title: details.title,
+        html: html,
+        width: 800,
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+            popup: 'tour-details-popup',
+            title: 'tour-details-title'
+        },
+        didOpen: () => {
+            const popup = document.querySelector('.tour-details-popup');
+            if (popup) {
+                popup.style.fontFamily = "'Poppins', sans-serif";
+                popup.style.borderRadius = '15px';
+            }
 
-    // Add event listeners for modal
-    const overlay = document.getElementById('tourDetailsOverlay');
-    const closeBtn = document.getElementById('tourDetailsClose');
-
-    const closeModal = () => {
-        modal.style.display = 'none';
-    };
-
-    overlay.addEventListener('click', closeModal);
-    closeBtn.addEventListener('click', closeModal);
-
-    // Close on ESC key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
+            const title = document.querySelector('.tour-details-title');
+            if (title) {
+                title.style.color = '#FF6B35';
+                title.style.fontSize = '1.5em';
+                title.style.fontWeight = '600';
+            }
         }
     });
 }
