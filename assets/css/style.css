@@ -1038,6 +1038,160 @@ p {
     color: var(--gray-500);
 }
 
+/* Contact Links */
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-link-primary {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-link-icon {
+    font-size: 0.8rem;
+}
+
+.contact-link-icon-small {
+    font-size: 0.7rem;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+    min-width: 300px;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification-content {
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    margin-top: -0.25rem;
+}
+
+.notification-close:hover {
+    color: white;
+}
+
+.notification-success {
+    background: #10b981;
+    color: white;
+}
+
+.notification-error {
+    background: #ef4444;
+    color: white;
+}
+
+.notification-warning {
+    background: #f59e0b;
+    color: white;
+}
+
+.notification-info {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Checkout Styles */
+.checkout-empty-cart {
+    text-align: center;
+    color: var(--gray-600);
+    padding: 2rem;
+}
+
+.checkout-item-price {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.checkout-item-quantity {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.checkout-item-total {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 0.25rem;
+}
+
+/* Modal Content Styles for Generated HTML */
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.modal-itinerary {
+    line-height: 1.6;
+}
+
+.modal-itinerary p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.modal-list li i {
+    margin-top: 2px;
+}
+
+.modal-list li .fa-check-circle {
+    color: #28a745;
+}
+
+.modal-list li .fa-times-circle {
+    color: #dc3545;
+}
+
+.modal-important-notes {
+    background: #fff3cd;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    color: #856404;
+    margin: 0;
+    font-size: 0.95em;
+}
+
 /* Cart Modal */
 .cart-modal {
     position: fixed;

@@ -332,44 +332,7 @@ function showNotification(message, type = 'info') {
         </div>
     `;
 
-    // Add notification styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 3000;
-        min-width: 300px;
-        padding: 0;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        animation: slideIn 0.3s ease-out;
-    `;
-
-    const colors = {
-        success: '#10b981',
-        error: '#ef4444',
-        warning: '#f59e0b',
-        info: '#3b82f6'
-    };
-
-    notification.querySelector('.notification-content').style.cssText = `
-        background: ${colors[type]};
-        color: white;
-        padding: 16px;
-        border-radius: 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    `;
-
-    notification.querySelector('.notification-close').style.cssText = `
-        background: none;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        padding: 0;
-        margin-left: 12px;
+    // Notification styling is now handled by CSS classes
     `;
 
     // Add close functionality

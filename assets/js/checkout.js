@@ -695,7 +695,7 @@ function displayCartSummary() {
 
     const cartData = getCart();
     if (cartData.length === 0) {
-        cartItemsSummary.innerHTML = '<p style="text-align: center; color: var(--gray-600); padding: 2rem;">No items in cart</p>';
+        cartItemsSummary.innerHTML = '<p class="checkout-empty-cart">No items in cart</p>';
         subtotalElement.textContent = 'Rp 0';
         serviceFeeElement.textContent = 'Rp 0';
         finalTotalElement.innerHTML = '<strong>Rp 0</strong>';
@@ -723,14 +723,14 @@ function displayCartSummary() {
         // Add rental type if available
         if (item.rentalType) {
             const rentalTypeText = item.rentalType === 'HD' ? 'Half Day (6H)' : 'Full Day (12H)';
-            itemInfoHTML += `<p style="color: var(--accent-color); font-size: 0.85rem; margin-top: 0.25rem;">${rentalTypeText}</p>`;
+            itemInfoHTML += `<p class="checkout-item-price">${rentalTypeText}</p>`;
         }
         
         itemInfoHTML += `
             </div>
             <div class="cart-item-price">
-                <div style="font-size: 0.9rem; color: var(--gray-600);">${priceFormatted} × ${item.quantity}</div>
-                <div style="font-weight: 600; color: var(--primary-color); margin-top: 0.25rem;">${itemTotalFormatted}</div>
+                <div class="checkout-item-quantity">${priceFormatted} × ${item.quantity}</div>
+                <div class="checkout-item-total">${itemTotalFormatted}</div>
             </div>
         `;
         

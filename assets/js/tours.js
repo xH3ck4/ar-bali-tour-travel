@@ -974,14 +974,14 @@ function showTourDetails(tourName) {
     let html = '';
 
     if (details.itinerary) {
-        html += '<div style="margin-bottom: 20px;">';
-        html += '<h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Itinerary</h4>';
-        html += '<div style="line-height: 1.6;">';
+        html += '<div class="modal-section">';
+        html += '<h4>Itinerary</h4>';
+        html += '<div class="modal-itinerary">';
         details.itinerary.forEach(item => {
             if (item.trim() === '') {
                 html += '<br>';
             } else {
-                html += `<p style="margin-bottom: 10px; color: #666;">${item}</p>`;
+                html += `<p>${item}</p>`;
             }
         });
         html += '</div>';
@@ -990,32 +990,32 @@ function showTourDetails(tourName) {
 
     let includedList = '';
     details.included.forEach(item => {
-        includedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-check-circle" style="color: #28a745; margin-top: 2px;"></i> ${item}</li>`;
+        includedList += `<li><i class="fas fa-check-circle"></i> ${item}</li>`;
     });
 
     let notIncludedList = '';
     details.notIncluded.forEach(item => {
-        notIncludedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle" style="color: #dc3545; margin-top: 2px;"></i> ${item}</li>`;
+        notIncludedList += `<li><i class="fas fa-times-circle"></i> ${item}</li>`;
     });
 
     html += `
-        <div style="margin-bottom: 20px;">
-            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">What's Included</h4>
-            <ul style="list-style: none; padding: 0; margin: 0;">
+        <div class="modal-section">
+            <h4>What's Included</h4>
+            <ul class="modal-list">
                 ${includedList}
             </ul>
         </div>
 
-        <div style="margin-bottom: 20px;">
-            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Not Included</h4>
-            <ul style="list-style: none; padding: 0; margin: 0;">
+        <div class="modal-section">
+            <h4>Not Included</h4>
+            <ul class="modal-list">
                 ${notIncludedList}
             </ul>
         </div>
 
-        <div style="margin-bottom: 20px;">
-            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Important Notes</h4>
-            <p style="background: #fff3cd; border-left: 4px solid #FF6B35; padding: 15px; border-radius: 5px; color: #856404; margin: 0; font-size: 0.95em;">
+        <div class="modal-section">
+            <h4>Important Notes</h4>
+            <p class="modal-important-notes">
                 ${details.importantNotes}
             </p>
         </div>
