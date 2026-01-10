@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -406,6 +406,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Tour Details Modal -->
+    <div class="modal" id="tourDetailsModal">
+        <div class="modal-overlay" id="tourDetailsOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="tourDetailsTitle">Tour Details</h3>
+                <button class="modal-close" id="tourDetailsClose">&times;</button>
+            </div>
+            <div class="modal-body" id="tourDetailsContent">
+                <!-- Tour details will be populated here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
