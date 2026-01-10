@@ -322,7 +322,6 @@ function showNotification(message, type = 'info') {
     `;
 
     // Notification styling is now handled by CSS classes
-    `;
 
     // Add close functionality
     notification.querySelector('.notification-close').addEventListener('click', () => {
@@ -381,104 +380,6 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
-
-// Add CSS for notifications and mobile menu
-const style = document.createElement('style');
-style.textContent = `
-@keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-
-    .nav-menu.active {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .header.scrolled {
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .empty-cart {
-        text-align: center;
-        color: #6c757d;
-        padding: 2rem;
-        font-style: italic;
-    }
-
-    .cart-item-controls {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .cart-item-controls button {
-        width: 30px;
-        height: 30px;
-        border: 1px solid #dee2e6;
-        background: white;
-        border-radius: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-
-    .cart-item-controls button:hover {
-        background: #f8f9fa;
-    }
-
-    @media (min-width: 769px) {
-        .nav-menu.active {
-            display: flex !important;
-            position: static;
-            background: none;
-            flex-direction: row;
-            padding: 0;
-            box-shadow: none;
-        }
-    }
-`;
-document.head.appendChild(style);
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
