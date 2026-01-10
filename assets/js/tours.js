@@ -1,44 +1,48 @@
 // Tours page specific functionality
 
 document.addEventListener('DOMContentLoaded', () => {
-    const tourCards = document.querySelectorAll('.tour-card');
+    // Only run tours page specific code if elements exist
     const searchInput = document.getElementById('tourSearch');
     const durationFilter = document.getElementById('durationFilter');
     const priceFilter = document.getElementById('priceFilter');
     const groupFilter = document.getElementById('groupFilter');
     const categoryCards = document.querySelectorAll('.category-card');
 
-    // Category filtering
-    categoryCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const category = card.getAttribute('data-category');
+    // Check if we're on tours page (only run if search/filter elements exist)
+    if (searchInput && durationFilter && priceFilter && groupFilter) {
+        const tourCards = document.querySelectorAll('.tour-card');
 
-            // Remove active class from all categories
-            categoryCards.forEach(c => c.classList.remove('active'));
-            // Add active class to clicked category
-            card.classList.add('active');
+        // Category filtering
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
 
-            filterTours({ category: category });
+                // Remove active class from all categories
+                categoryCards.forEach(c => c.classList.remove('active'));
+                // Add active class to clicked category
+                card.classList.add('active');
+
+                filterTours({ category: category });
+            });
         });
-    });
 
-    // Search functionality
-    searchInput.addEventListener('input', () => {
-        filterTours({ search: searchInput.value.toLowerCase() });
-    });
+        // Search functionality
+        searchInput.addEventListener('input', () => {
+            filterTours({ search: searchInput.value.toLowerCase() });
+        });
 
-    // Filter dropdowns
-    durationFilter.addEventListener('change', () => {
-        filterTours({ duration: durationFilter.value });
-    });
+        // Filter dropdowns
+        durationFilter.addEventListener('change', () => {
+            filterTours({ duration: durationFilter.value });
+        });
 
-    priceFilter.addEventListener('change', () => {
-        filterTours({ price: priceFilter.value });
-    });
+        priceFilter.addEventListener('change', () => {
+            filterTours({ price: priceFilter.value });
+        });
 
-    groupFilter.addEventListener('change', () => {
-        filterTours({ group: groupFilter.value });
-    });
+        groupFilter.addEventListener('change', () => {
+            filterTours({ group: groupFilter.value });
+        });
 
     // Combined filtering function
     function filterTours(filters = {}) {
@@ -672,6 +676,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+    }
 });
 
 function generateTourBookingMessage(bookingDetails) {
