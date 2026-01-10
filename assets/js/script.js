@@ -385,7 +385,7 @@ window.addEventListener('scroll', () => {
 // Add CSS for notifications and mobile menu
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes slideIn {
+@keyframes slideIn {
         from {
             transform: translateX(100%);
             opacity: 0;
