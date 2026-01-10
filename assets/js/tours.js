@@ -977,7 +977,14 @@ function showTourDetails(tourName) {
     const title = document.getElementById('tourDetailsTitle');
     const content = document.getElementById('tourDetailsContent');
 
-    console.log('Modal elements found:', { modal: !!modal, title: !!title, content: !!content });
+    console.log('Modal elements check:', {
+        modal: !!modal,
+        title: !!title,
+        content: !!content,
+        modalElement: modal,
+        titleElement: title,
+        contentElement: content
+    });
 
     // Check if modal elements exist
     if (!modal || !title || !content) {

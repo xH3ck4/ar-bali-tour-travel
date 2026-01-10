@@ -534,7 +534,7 @@ p {
 .tour-badge {
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    left: 1rem;
     background: var(--primary-color);
     color: white;
     padding: 0.25rem 0.75rem;
@@ -568,6 +568,19 @@ p {
     font-weight: 600;
     font-size: 1.1rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tour-price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 1.25rem;
+    font-weight: 600;
+    z-index: 1;
 }
 
 .tour-content {

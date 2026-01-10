@@ -383,6 +383,8 @@ window.addEventListener('scroll', () => {
 
 // Event listeners for tour details, cart buttons, and cart controls
 document.addEventListener('click', (e) => {
+    console.log('Click detected on:', e.target.className, e.target.tagName);
+
     // Handle tour details buttons
     if (e.target.matches('.btn-details[data-tour]') || e.target.matches('.btn-outline[data-tour]')) {
         const tourName = e.target.getAttribute('data-tour');
