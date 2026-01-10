@@ -384,13 +384,48 @@ window.addEventListener('scroll', () => {
 // Event listeners for tour details, cart buttons, and cart controls
 document.addEventListener('click', (e) => {
     // Handle tour details buttons
-    if (e.target.matches('.btn-details[data-tour]')) {
+    if (e.target.matches('.btn-details[data-tour]') || e.target.matches('.btn-outline[data-tour]')) {
         const tourName = e.target.getAttribute('data-tour');
         console.log('Tour details button clicked:', tourName);
         if (typeof showTourDetails === 'function') {
             showTourDetails(tourName);
         } else {
             console.warn('showTourDetails function not found');
+        }
+    }
+
+    // Handle activity details buttons
+    if (e.target.matches('.btn-outline[data-activity]')) {
+        const activityName = e.target.getAttribute('data-activity');
+        console.log('Activity details button clicked:', activityName);
+        if (typeof showActivityDetails === 'function') {
+            showActivityDetails(activityName);
+        } else {
+            console.warn('showActivityDetails function not found');
+        }
+    }
+
+    // Handle car details buttons
+    if (e.target.matches('.details-btn[data-car]')) {
+        const carName = e.target.getAttribute('data-car');
+        console.log('Car details button clicked:', carName);
+        if (typeof showCarDetails === 'function') {
+            showCarDetails(carName);
+        } else {
+            console.warn('showCarDetails function not found');
+        }
+    }
+
+    // Handle car booking buttons
+    if (e.target.matches('.book-btn[data-cart-item]')) {
+        const carName = e.target.getAttribute('data-cart-item');
+        const price = parseInt(e.target.getAttribute('data-price'));
+        const type = e.target.getAttribute('data-type') || 'FD';
+        console.log('Car booking button clicked:', carName, price, type);
+        if (typeof addToCartWithType === 'function') {
+            addToCartWithType(carName, price, type);
+        } else {
+            console.warn('addToCartWithType function not found');
         }
     }
 
