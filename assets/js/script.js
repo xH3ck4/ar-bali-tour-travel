@@ -78,12 +78,23 @@ function clearCart() {
         return;
     }
 
-    if (confirm('Are you sure you want to remove all items from your cart?')) {
-        cart = [];
-        saveCart();
-        updateCartDisplay();
-        showNotification('Cart cleared successfully!', 'success');
-    }
+    Swal.fire({
+        title: 'Clear Cart?',
+        text: 'Are you sure you want to remove all items from your cart?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FF6B35',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Yes, clear cart',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            cart = [];
+            saveCart();
+            updateCartDisplay();
+            showNotification('Cart cleared successfully!', 'success');
+        }
+    });
 }
 
 // Update cart quantity
@@ -383,16 +394,11 @@ window.addEventListener('scroll', () => {
 
 // Event listeners for tour details, cart buttons, and cart controls
 document.addEventListener('click', (e) => {
-    console.log('Click detected on:', e.target.className, e.target.tagName);
-
     // Handle tour details buttons
     if (e.target.matches('.btn-details[data-tour]') || e.target.matches('.btn-outline[data-tour]')) {
         const tourName = e.target.getAttribute('data-tour');
-        console.log('Tour details button clicked:', tourName);
         if (typeof showTourDetails === 'function') {
             showTourDetails(tourName);
-        } else {
-            console.warn('showTourDetails function not found');
         }
     }
 
