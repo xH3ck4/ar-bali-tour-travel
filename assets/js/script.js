@@ -78,23 +78,12 @@ function clearCart() {
         return;
     }
 
-    Swal.fire({
-        title: 'Clear Cart?',
-        text: 'Are you sure you want to remove all items from your cart?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#FF6B35',
-        cancelButtonColor: '#6c757d',
-        confirmButtonText: 'Yes, clear cart',
-        cancelButtonText: 'Cancel'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            cart = [];
-            saveCart();
-            updateCartDisplay();
-            showNotification('Cart cleared successfully!', 'success');
-        }
-    });
+    if (confirm('Are you sure you want to remove all items from your cart?')) {
+        cart = [];
+        saveCart();
+        updateCartDisplay();
+        showNotification('Cart cleared successfully!', 'success');
+    }
 }
 
 // Update cart quantity

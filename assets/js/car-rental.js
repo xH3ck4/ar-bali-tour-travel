@@ -721,30 +721,29 @@ function showCarDetails(carName) {
         </div>
     `;
 
-    Swal.fire({
-        title: details.title,
-        html: html,
-        width: 800,
-        showCloseButton: true,
-        showConfirmButton: false,
-        customClass: {
-            popup: 'car-details-popup',
-            title: 'car-details-title'
-        },
-        didOpen: () => {
-            // Custom styling for the popup
-            const popup = document.querySelector('.car-details-popup');
-            if (popup) {
-                popup.style.fontFamily = "'Poppins', sans-serif";
-                popup.style.borderRadius = '15px';
-            }
+    const modal = document.getElementById('carDetailsModal');
+    const title = document.getElementById('carDetailsTitle');
+    const content = document.getElementById('carDetailsContent');
 
-            const title = document.querySelector('.car-details-title');
-            if (title) {
-                title.style.color = '#FF6B35';
-                title.style.fontSize = '1.5em';
-                title.style.fontWeight = '600';
-            }
+    title.textContent = details.title;
+    content.innerHTML = html;
+    modal.style.display = 'block';
+
+    // Add event listeners for modal
+    const overlay = document.getElementById('carDetailsOverlay');
+    const closeBtn = document.getElementById('carDetailsClose');
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+    };
+
+    overlay.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
         }
     });
 }

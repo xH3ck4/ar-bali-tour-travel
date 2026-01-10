@@ -968,29 +968,29 @@ function showActivityDetails(activityName) {
         </div>
     `;
 
-    Swal.fire({
-        title: details.title,
-        html: html,
-        width: 800,
-        showCloseButton: true,
-        showConfirmButton: false,
-        customClass: {
-            popup: 'activity-details-popup',
-            title: 'activity-details-title'
-        },
-        didOpen: () => {
-            const popup = document.querySelector('.activity-details-popup');
-            if (popup) {
-                popup.style.fontFamily = "'Poppins', sans-serif";
-                popup.style.borderRadius = '15px';
-            }
+    const modal = document.getElementById('activityDetailsModal');
+    const title = document.getElementById('activityDetailsTitle');
+    const content = document.getElementById('activityDetailsContent');
 
-            const title = document.querySelector('.activity-details-title');
-            if (title) {
-                title.style.color = '#FF6B35';
-                title.style.fontSize = '1.5em';
-                title.style.fontWeight = '600';
-            }
+    title.textContent = details.title;
+    content.innerHTML = html;
+    modal.style.display = 'block';
+
+    // Add event listeners for modal
+    const overlay = document.getElementById('activityDetailsOverlay');
+    const closeBtn = document.getElementById('activityDetailsClose');
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+    };
+
+    overlay.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
         }
     });
 }

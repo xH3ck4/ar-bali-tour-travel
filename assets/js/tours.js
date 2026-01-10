@@ -971,6 +971,12 @@ function showTourDetails(tourName) {
         return;
     }
 
+    const modal = document.getElementById('tourDetailsModal');
+    const title = document.getElementById('tourDetailsTitle');
+    const content = document.getElementById('tourDetailsContent');
+
+    title.textContent = details.title;
+
     let html = '';
 
     if (details.itinerary) {
@@ -1021,29 +1027,24 @@ function showTourDetails(tourName) {
         </div>
     `;
 
-    Swal.fire({
-        title: details.title,
-        html: html,
-        width: 800,
-        showCloseButton: true,
-        showConfirmButton: false,
-        customClass: {
-            popup: 'tour-details-popup',
-            title: 'tour-details-title'
-        },
-        didOpen: () => {
-            const popup = document.querySelector('.tour-details-popup');
-            if (popup) {
-                popup.style.fontFamily = "'Poppins', sans-serif";
-                popup.style.borderRadius = '15px';
-            }
+    content.innerHTML = html;
+    modal.style.display = 'block';
 
-            const title = document.querySelector('.tour-details-title');
-            if (title) {
-                title.style.color = '#FF6B35';
-                title.style.fontSize = '1.5em';
-                title.style.fontWeight = '600';
-            }
+    // Add event listeners for modal
+    const overlay = document.getElementById('tourDetailsOverlay');
+    const closeBtn = document.getElementById('tourDetailsClose');
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+    };
+
+    overlay.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
         }
     });
 }
