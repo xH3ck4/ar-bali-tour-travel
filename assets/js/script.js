@@ -78,21 +78,55 @@ function clearCart() {
         return;
     }
 
-    Swal.fire({
-        title: 'Clear Cart?',
-        text: 'Are you sure you want to remove all items from your cart?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#FF6B35',
-        cancelButtonColor: '#6c757d',
-        confirmButtonText: 'Yes, clear cart',
-        cancelButtonText: 'Cancel'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            cart = [];
-            saveCart();
-            updateCartDisplay();
-            showNotification('Cart cleared successfully!', 'success');
+    // Custom confirmation modal instead of SweetAlert2
+    showClearCartConfirmation();
+}
+
+function showClearCartConfirmation() {
+    // Create confirmation modal
+    const modal = document.createElement('div');
+    modal.className = 'confirmation-modal';
+    modal.innerHTML = `
+        <div class="confirmation-overlay"></div>
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <h3>Clear Cart?</h3>
+            </div>
+            <div class="confirmation-body">
+                <p>Are you sure you want to remove all items from your cart?</p>
+            </div>
+            <div class="confirmation-footer">
+                <button class="btn btn-outline" id="cancelClear">Cancel</button>
+                <button class="btn btn-primary" id="confirmClear">Yes, clear cart</button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Handle buttons
+    document.getElementById('cancelClear').addEventListener('click', () => {
+        modal.remove();
+    });
+
+    document.getElementById('confirmClear').addEventListener('click', () => {
+        cart = [];
+        saveCart();
+        updateCartDisplay();
+        showNotification('Cart cleared successfully!', 'success');
+        modal.remove();
+    });
+
+    // Close on overlay click
+    modal.querySelector('.confirmation-overlay').addEventListener('click', () => {
+        modal.remove();
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', function escHandler(e) {
+        if (e.key === 'Escape') {
+            modal.remove();
+            document.removeEventListener('keydown', escHandler);
         }
     });
 }
@@ -405,7 +439,6 @@ document.addEventListener('click', (e) => {
     // Handle activity details buttons
     if (e.target.matches('.btn-outline[data-activity]')) {
         const activityName = e.target.getAttribute('data-activity');
-        console.log('Activity details button clicked:', activityName);
         if (typeof showActivityDetails === 'function') {
             showActivityDetails(activityName);
         } else {
@@ -416,7 +449,6 @@ document.addEventListener('click', (e) => {
     // Handle car details buttons
     if (e.target.matches('.details-btn[data-car]')) {
         const carName = e.target.getAttribute('data-car');
-        console.log('Car details button clicked:', carName);
         if (typeof showCarDetails === 'function') {
             showCarDetails(carName);
         } else {
@@ -429,7 +461,6 @@ document.addEventListener('click', (e) => {
         const carName = e.target.getAttribute('data-cart-item');
         const price = parseInt(e.target.getAttribute('data-price'));
         const type = e.target.getAttribute('data-type') || 'FD';
-        console.log('Car booking button clicked:', carName, price, type);
         if (typeof addToCartWithType === 'function') {
             addToCartWithType(carName, price, type);
         } else {
