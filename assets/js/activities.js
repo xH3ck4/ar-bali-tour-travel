@@ -312,6 +312,196 @@ document.addEventListener('DOMContentLoaded', () => {
             .booking-form-container {
                 padding: 2rem;
             }
+
+            .activity-actions {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .activity-actions .btn {
+                flex: 1;
+            }
+
+            .details-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .details-modal.show {
+                display: flex !important;
+                opacity: 1;
+            }
+
+            .details-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(5px);
+            }
+
+            .details-content {
+                position: relative;
+                background: white;
+                border-radius: var(--border-radius-lg);
+                max-width: 800px;
+                width: 100%;
+                max-height: 90vh;
+                overflow-y: auto;
+                box-shadow: var(--shadow-lg);
+                z-index: 10001;
+            }
+
+            .details-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.5rem;
+                border-bottom: 2px solid var(--gray-200);
+                position: sticky;
+                top: 0;
+                background: white;
+                z-index: 10;
+            }
+
+            .details-header h3 {
+                margin: 0;
+                color: var(--dark-color);
+                font-size: 1.5rem;
+            }
+
+            .details-close {
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: var(--gray-600);
+                cursor: pointer;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .details-close:hover {
+                color: var(--primary-color);
+                transform: rotate(90deg);
+            }
+
+            .details-body {
+                padding: 1.5rem;
+            }
+
+            .details-section {
+                margin-bottom: 2rem;
+            }
+
+            .details-section h4 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+
+            .itinerary-list {
+                background: var(--gray-100);
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                margin-bottom: 1rem;
+            }
+
+            .itinerary-item {
+                margin: 0.5rem 0;
+                color: var(--gray-700);
+                padding-left: 1rem;
+                position: relative;
+            }
+
+            .itinerary-item::before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                color: var(--primary-color);
+                font-weight: bold;
+            }
+
+            .details-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .details-list li {
+                padding: 0.75rem 0;
+                display: flex;
+                align-items: flex-start;
+                gap: 0.75rem;
+                color: var(--gray-700);
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .details-list li:last-child {
+                border-bottom: none;
+            }
+
+            .details-list li i {
+                margin-top: 0.25rem;
+                flex-shrink: 0;
+            }
+
+            .included-list li i {
+                color: #28a745;
+            }
+
+            .not-included-list li i {
+                color: #dc3545;
+            }
+
+            .important-notes {
+                background: #fff3cd;
+                border-left: 4px solid var(--secondary-color);
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                color: var(--gray-800);
+                margin: 0;
+            }
+
+            @media (max-width: 768px) {
+                .activity-actions {
+                    flex-direction: column;
+                }
+
+                .details-content {
+                    max-height: 95vh;
+                }
+
+                .details-header {
+                    padding: 1rem;
+                }
+
+                .details-header h3 {
+                    font-size: 1.25rem;
+                }
+
+                .details-body {
+                    padding: 1rem;
+                }
+            }
         }
     `;
     document.head.appendChild(style);
@@ -396,3 +586,441 @@ function generateActivityBookingMessage(bookingDetails) {
 
     return message;
 }
+
+// Activity details data
+const activityDetailsData = {
+    'Scuba Diving - Nusa Penida': {
+        title: 'Scuba Diving - Nusa Penida',
+        itinerary: [
+            '07:00 AM → Hotel pickup',
+            '08:30 AM → Arrive at Sanur harbor',
+            '09:00 AM → Boat transfer to Nusa Penida',
+            '10:00 AM → First dive site briefing and dive',
+            '11:30 AM → Surface interval and refreshments',
+            '12:30 PM → Second dive site',
+            '02:00 PM → Return to Sanur',
+            '03:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional PADI certified instructor',
+            'Full scuba diving equipment',
+            'Boat transfer to dive sites',
+            'Two dives at different locations',
+            'Underwater photos (if available)',
+            'Refreshments between dives',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Transport from and to Hotel to Meeting Point (if not included)',
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional dives',
+            'Underwater camera rental'
+        ],
+        importantNotes: 'Requires PADI Open Water certification or equivalent. Minimum age: 12 years. Medical clearance may be required. Duration: Approximately 6 hours. Bring swimwear, towel, and change of clothes. Weather dependent - may be rescheduled in case of rough sea conditions.'
+    },
+    'ATV Adventure Tour': {
+        title: 'ATV Adventure Tour',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Arrive at ATV base camp',
+            '09:30 AM → Safety briefing and equipment fitting',
+            '10:00 AM → ATV ride through rice terraces and jungle',
+            '11:30 AM → Break at scenic viewpoint',
+            '12:00 PM → Continue ATV adventure',
+            '01:00 PM → Return to base camp and refreshments',
+            '02:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'ATV vehicle rental',
+            'Safety equipment (helmet, gloves)',
+            'Professional guide',
+            'Safety briefing',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Food and beverages (except refreshments)'
+        ],
+        importantNotes: 'No experience required. Minimum age: 12 years (with adult supervision). Wear comfortable clothes that can get dirty. Closed-toe shoes mandatory. Duration: Approximately 4 hours. Weather dependent - may be rescheduled in case of heavy rain.'
+    },
+    'Traditional Painting Workshop': {
+        title: 'Traditional Painting Workshop',
+        itinerary: [
+            '09:00 AM → Hotel pickup',
+            '10:00 AM → Arrive at art studio',
+            '10:30 AM → Introduction to Balinese painting techniques',
+            '11:00 AM → Hands-on painting session',
+            '12:30 PM → Break for lunch',
+            '01:30 PM → Continue painting and finishing touches',
+            '03:00 PM → Receive certificate and take home artwork',
+            '04:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Local artist instructor',
+            'All painting materials and canvas',
+            'Traditional painting techniques lesson',
+            'Your completed artwork to take home',
+            'Certificate of completion',
+            'Lunch',
+            'Hotel pickup and drop-off'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional materials',
+            'Frame for artwork'
+        ],
+        importantNotes: 'Duration: Approximately 3 hours. Suitable for all skill levels. Wear clothes that can get paint on them. Your artwork will need time to dry before taking home. All ages welcome.'
+    },
+    'Balinese Traditional Spa': {
+        title: 'Balinese Traditional Spa',
+        itinerary: [
+            '10:00 AM → Hotel pickup',
+            '10:30 AM → Arrive at spa',
+            '11:00 AM → Welcome drink and consultation',
+            '11:15 AM → Traditional Balinese massage',
+            '12:15 PM → Herbal body scrub',
+            '12:45 PM → Flower bath',
+            '01:15 PM → Herbal tea and relaxation',
+            '02:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Traditional Balinese massage (60 minutes)',
+            'Herbal body scrub',
+            'Flower bath',
+            'Herbal tea',
+            'All spa facilities',
+            'Hotel pickup and drop-off'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional treatments',
+            'Food and beverages (except herbal tea)'
+        ],
+        importantNotes: 'Duration: Approximately 2 hours. Please inform about any medical conditions or allergies. Pregnant women should consult before booking. Minimum age: 16 years. Arrive 15 minutes early for consultation.'
+    },
+    'Helicopter Sightseeing Tour': {
+        title: 'Helicopter Sightseeing Tour',
+        itinerary: [
+            '09:00 AM → Hotel pickup',
+            '09:30 AM → Arrive at helipad',
+            '09:45 AM → Safety briefing',
+            '10:00 AM → Helicopter flight over Bali',
+            '10:30 AM → Landing and photo session',
+            '11:00 AM → Refreshments',
+            '11:30 AM → Hotel drop-off'
+        ],
+        included: [
+            'Professional licensed pilot',
+            'Helicopter flight (duration varies by package)',
+            'Safety briefing and equipment',
+            'Photo opportunities',
+            'Refreshments',
+            'Luxury transport to/from helipad',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional flight time',
+            'Professional photography services'
+        ],
+        importantNotes: 'Duration: Approximately 2 hours (flight time varies). Weather dependent - may be rescheduled in case of poor visibility or bad weather. Weight restrictions apply. Minimum age: 2 years. Advance booking recommended.'
+    },
+    'Snorkeling in Menjangan Island': {
+        title: 'Snorkeling in Menjangan Island',
+        itinerary: [
+            '06:00 AM → Hotel pickup',
+            '08:30 AM → Arrive at Pemuteran harbor',
+            '09:00 AM → Boat transfer to Menjangan Island',
+            '09:30 AM → First snorkeling session',
+            '11:00 AM → Break and refreshments',
+            '11:30 AM → Second snorkeling session',
+            '01:00 PM → Lunch on boat',
+            '02:00 PM → Return to harbor',
+            '04:30 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional marine guide',
+            'Full snorkeling equipment',
+            'Boat transfer to Menjangan Island',
+            'Multiple snorkeling sites',
+            'Lunch',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Underwater camera rental'
+        ],
+        importantNotes: 'Duration: Approximately 5 hours. Suitable for all swimming levels. Bring swimwear, towel, sunscreen, and waterproof camera. Weather dependent - may be rescheduled in case of rough sea conditions. Menjangan Island is part of West Bali National Park.'
+    },
+    'Zip Line & Jungle Adventure': {
+        title: 'Zip Line & Jungle Adventure',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Arrive at adventure park',
+            '09:30 AM → Safety briefing and equipment fitting',
+            '10:00 AM → First zip line course',
+            '11:00 AM → Jungle trekking',
+            '12:00 PM → Lunch',
+            '01:00 PM → Additional zip line courses',
+            '02:30 PM → Return journey',
+            '04:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Multiple zip line courses',
+            'Jungle trekking with guide',
+            'Safety equipment and harness',
+            'Professional guides',
+            'Lunch',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Food and beverages (except lunch)'
+        ],
+        importantNotes: 'Duration: Approximately 6 hours. Requires moderate fitness level. Minimum age: 8 years (with adult supervision). Maximum weight: 120kg. Wear comfortable clothes and closed-toe shoes. Weather dependent - may be rescheduled in case of heavy rain or strong winds.'
+    },
+    'Sunset Catamaran Cruise': {
+        title: 'Sunset Catamaran Cruise',
+        itinerary: [
+            '04:00 PM → Hotel pickup',
+            '05:00 PM → Arrive at harbor',
+            '05:30 PM → Board catamaran and welcome drink',
+            '06:00 PM → Cruise begins',
+            '06:30 PM → Sunset viewing',
+            '07:00 PM → Dinner and live music',
+            '08:30 PM → Return to harbor',
+            '09:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Luxury catamaran cruise',
+            'Welcome drink',
+            'Champagne and canapés',
+            'Dinner',
+            'Live music entertainment',
+            'Photo service',
+            'Hotel pickup and drop-off'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional beverages',
+            'Professional photography'
+        ],
+        importantNotes: 'Duration: Approximately 3 hours. Romantic experience perfect for couples. Dress code: Smart casual. Minimum age: All ages welcome. Weather dependent - may be rescheduled in case of rough sea conditions. Advance booking recommended, especially during peak season.'
+    },
+    'Traditional Dance Performance': {
+        title: 'Traditional Dance Performance',
+        itinerary: [
+            '06:00 PM → Hotel pickup',
+            '06:30 PM → Arrive at performance venue',
+            '07:00 PM → Traditional dance performance begins',
+            '08:30 PM → Performance ends',
+            '09:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Traditional Balinese dance performance',
+            'Live Gamelan music',
+            'Cultural explanation',
+            'Traditional costumes showcase',
+            'Photo opportunities',
+            'Hotel pickup and drop-off'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Food and beverages',
+            'Additional activities'
+        ],
+        importantNotes: 'Duration: Approximately 2 hours. Family-friendly cultural experience. Performance includes various traditional dances such as Kecak, Legong, and Barong. Photography allowed but flash photography may be restricted. Arrive early for best seating.'
+    },
+    'Bali Safari & Marine Park Tickets': {
+        title: 'Bali Safari & Marine Park Tickets',
+        itinerary: [
+            '🗓️ Itinerary & Package Options (No Hotel Transport Service)',
+            '(Visit park by yourself; hotel pick-up/drop-off not included.)',
+            '',
+            'Safari Explorer → Basic daytime package: includes Safari Journey + Animal Educational Shows / Edutainment Presentations + Park entry + access to Fun Zone & Water Play',
+            'Adult: IDR 650,000 | Child (3–12): IDR 520,000 | Infant (<3): Free',
+            '',
+            'Safari Legend → Same as Safari Explorer + Bali Agung Show + more premium seating or enhanced show experience',
+            'Adult: IDR 750,000 | Child (3–12): IDR 620,000 | Infant (<3): Free',
+            '',
+            'Jungle Hopper → More inclusive: Safari Journey + shows + Fun Zone & Water Play + Bali Agung Show',
+            'Adult: IDR 820,000 | Child (3–12): IDR 660,000',
+            '',
+            'Elephant Safari → Includes Elephant Ride / Safari among elephants + Safari Journey + other show/presentation inclusions',
+            'Adult: IDR 1,050,000 | Child (3–12): IDR 840,000',
+            '',
+            'Night Safari → Evening experience: Walking Safari, Night Safari tram/journey + Dinner + Night Shows + Welcome Drink',
+            'Adult: IDR 1,100,000 | Child (3–12): IDR 880,000',
+            '',
+            'Feed The Predator → Opportunity to feed predator animals + Safari & show inclusions',
+            'Adult: IDR 1,200,000 | Child (3–12): IDR 1,000,000',
+            '',
+            'Jeep 4×4 Safari → Safari in 4×4 Jeep (off-road) + standard park & show inclusions',
+            'Adult: IDR 1,500,000 | Child (3–12): IDR 1,200,000',
+            '',
+            'Varuna Underwater Dining → Underwater/theatrical dining experience + Safari/show/park entry',
+            'Adult: IDR 1,250,000 | Child (3–12): IDR 1,000,000',
+            '',
+            'Rhino Package → Premium daytime package with animal rides, lunch at Tsavo Lion Restaurant, enhanced seating',
+            'Adult: IDR 1,750,000 | Child (3–12): IDR 1,350,000',
+            '',
+            'Leopard Package → Premium inclusions: safari, shows, animal interactions, meal at Tsavo Restaurant',
+            'Adult: IDR 1,350,000 | Child (3–12): IDR 1,050,000',
+            '',
+            'Dragon Package → Higher tier premium experience: full safari, animal encounters, deluxe meals, cultural show priority seating',
+            'Adult: IDR 1,550,000 | Child (3–12): IDR 1,200,000'
+        ],
+        included: [
+            'Entry to Bali Safari & Marine Park',
+            'Safari Journey (day or night depending on package)',
+            'Animal shows / presentations (predator presentations, edutainment, educational shows)',
+            'Access to Fun Zone & Water Play Zone (if included in the chosen package)',
+            'Cultural shows such as Bali Agung, Fire Dance, Rhythm of Africa (where included)',
+            'Elephant safari / ride (for packages that include Elephant Safari)',
+            'Meals / Dining when specified (e.g. dinner in Night Safari, or lunch in Rhino / Premium packages)',
+            'Welcome drink (for Night Safari)'
+        ],
+        notIncluded: [
+            'Hotel transfers / pick-up & drop-off',
+            'Personal expenses (souvenirs, drinks not included, tipping etc.)',
+            'Any shows or features not explicitly stated in the package',
+            'Age / height / eligibility restrictions for some animal interactions or rides',
+            'Meals or services not mentioned in the package details'
+        ],
+        importantNotes: 'Show schedules (Bali Agung, Rhythm of Africa, Fire Dance etc.) have fixed times; check when booking to ensure availability. Night Safari begins after dusk; walking safari part may have different terms. Some packages (premium / Rhino / Leopard / Dragon) may include special seatings or priority access — may have limited availability. Children under certain age (often below 3 years) may enter free; other children may have discounted rates depending on height or age. Advanced booking recommended for premium / dining / underwater show packages to ensure reservation.'
+    }
+};
+
+// Show activity details modal
+function showActivityDetails(activityName) {
+    const details = activityDetailsData[activityName];
+    if (!details) {
+        showNotification('Details not found for this activity', 'error');
+        return;
+    }
+
+    let html = '';
+
+    if (details.itinerary) {
+        html += '<div style="margin-bottom: 20px;">';
+        html += '<h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Itinerary</h4>';
+        html += '<div style="line-height: 1.6;">';
+        details.itinerary.forEach(item => {
+            if (item.trim() === '') {
+                html += '<br>';
+            } else {
+                html += `<p style="margin-bottom: 10px; color: #666;">${item}</p>`;
+            }
+        });
+        html += '</div>';
+        html += '</div>';
+    }
+
+    let includedList = '';
+    details.included.forEach(item => {
+        includedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-check-circle" style="color: #28a745; margin-top: 2px;"></i> ${item}</li>`;
+    });
+
+    let notIncludedList = '';
+    details.notIncluded.forEach(item => {
+        notIncludedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle" style="color: #dc3545; margin-top: 2px;"></i> ${item}</li>`;
+    });
+
+    html += `
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">What's Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                ${includedList}
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Not Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                ${notIncludedList}
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Important Notes</h4>
+            <p style="background: #fff3cd; border-left: 4px solid #FF6B35; padding: 15px; border-radius: 5px; color: #856404; margin: 0; font-size: 0.95em;">
+                ${details.importantNotes}
+            </p>
+        </div>
+    `;
+
+    Swal.fire({
+        title: details.title,
+        html: html,
+        width: 800,
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+            popup: 'activity-details-popup',
+            title: 'activity-details-title'
+        },
+        didOpen: () => {
+            const popup = document.querySelector('.activity-details-popup');
+            if (popup) {
+                popup.style.fontFamily = "'Poppins', sans-serif";
+                popup.style.borderRadius = '15px';
+            }
+
+            const title = document.querySelector('.activity-details-title');
+            if (title) {
+                title.style.color = '#FF6B35';
+                title.style.fontSize = '1.5em';
+                title.style.fontWeight = '600';
+            }
+        }
+    });
+}
+
+// Close details modal
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('detailsModal');
+    const overlay = document.getElementById('detailsOverlay');
+    const closeBtn = document.getElementById('detailsClose');
+
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+});

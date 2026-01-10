@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <!-- Header -->
@@ -150,7 +151,14 @@
                                 <option value="HD">Half Day (6H) - Rp 450,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Avanza/Xenia/APV/Mobilio/Ertiga/Sigra', 600000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" onclick="addToCartWithType('Avanza/Xenia/APV/Mobilio/Ertiga/Sigra', 600000, 'FD')" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Avanza/Xenia/APV/Mobilio/Ertiga/Sigra')" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -183,7 +191,14 @@
                                 <option value="HD">Half Day (6H) - Rp 600,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Grand Innova', 750000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" onclick="addToCartWithType('Toyota Grand Innova', 750000, 'FD')" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Toyota Grand Innova')" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -216,7 +231,14 @@
                                 <option value="HD">Half Day (6H) - Rp 800,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Avanza - Nusa Penida Island', 800000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Toyota Avanza - Nusa Penida Island', 800000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Toyota Avanza - Nusa Penida Island')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -249,7 +271,14 @@
                                 <option value="HD">Half Day (6H) - Rp 700,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Innova Reborn', 950000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Toyota Innova Reborn', 950000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Toyota Innova Reborn')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -282,7 +311,14 @@
                                 <option value="HD">Half Day (6H) - Rp 950,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Hiace', 1250000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Toyota Hiace', 1250000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Toyota Hiace')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -315,7 +351,14 @@
                                 <option value="HD">Half Day (6H) - Rp 1,450,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Hiace Premio', 1850000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Toyota Hiace Premio', 1850000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Toyota Hiace Premio')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -348,7 +391,14 @@
                                 <option value="HD">Half Day (6H) - Rp 1,500,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Elf Giga Long', 1800000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Elf Giga Long', 1800000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Elf Giga Long')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -381,7 +431,14 @@
                                 <option value="HD">Half Day (6H) - Rp 2,200,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Premio Luxury', 3000000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Premio Luxury', 3000000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Premio Luxury')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -414,7 +471,14 @@
                                 <option value="HD">Half Day (6H) - Rp 3,000,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Bus 22, 28, 33, 35, 48, 54 Seats', 4000000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Bus 22, 28, 33, 35, 48, 54 Seats', 4000000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Bus 22, 28, 33, 35, 48, 54 Seats')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -447,7 +511,14 @@
                                 <option value="HD">Half Day (6H) - Rp 3,000,000</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary bali-btn" onclick="addToCartWithType('Toyota Alphard 2024/2025', 4000000, 'FD')">Book Now</button>
+                        <div class="car-actions" style="display: flex !important; gap: 2.5rem !important; margin-top: 1.5rem !important; width: 100% !important;">
+                            <button class="btn btn-primary bali-btn book-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important;" onclick="addToCartWithType('Toyota Alphard 2024/2025', 4000000, 'FD')">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline details-btn" style="flex: 1 !important; width: 100% !important; padding: 12px 16px !important; min-height: 44px !important; background: transparent !important; border: 2px solid #FF6B35 !important; color: #FF6B35 !important; font-weight: 500 !important;" onclick="showCarDetails('Toyota Alphard 2024/2025')">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -669,6 +740,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Product Details Modal replaced with SweetAlert -->
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/car-rental.js"></script>

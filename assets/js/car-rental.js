@@ -353,10 +353,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 grid-template-columns: 1fr;
             }
 
-            .booking-form-container {
-                padding: 2rem;
+        .booking-form-container {
+            padding: 2rem;
+        }
+
+        /* Car actions styling moved to style.css */
+
+        /* Book button styling moved to style.css */
+
+        /* Modal CSS replaced with SweetAlert implementation */
+
+        @media (max-width: 768px) {
+            /* Mobile car actions styling moved to style.css */
+
+            /* Mobile modal styling replaced with SweetAlert responsive */
+        }
+
+        @media (max-width: 480px) {
+            .car-actions {
+                flex-direction: row !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Small mobile car actions styling moved to style.css */
+
+            .car-actions .btn i {
+                font-size: 0.8rem;
             }
         }
+    }
     `;
     document.head.appendChild(style);
 });
@@ -399,3 +424,329 @@ function generateCarBookingMessage(bookingDetails, duration) {
 
     return message;
 }
+
+// Car details data
+const carDetailsData = {
+    'Avanza/Xenia/APV/Mobilio/Ertiga/Sigra': {
+        title: 'Avanza / Xenia / APV / Mobilio / Ertiga / Sigra',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Toyota Grand Innova': {
+        title: 'Toyota Grand Innova',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Toyota Avanza - Nusa Penida Island': {
+        title: 'Toyota Avanza - Nusa Penida Island',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for Nusa Penida Island area only (8 Hours)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'This package is specifically for Nusa Penida Island tour only. Duration is 8 hours maximum. For mainland Bali, please select other car options.'
+    },
+    'Toyota Innova Reborn': {
+        title: 'Toyota Innova Reborn',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Toyota Hiace': {
+        title: 'Toyota Hiace',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Toyota Hiace Premio': {
+        title: 'Toyota Hiace Premio',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Elf Giga Long': {
+        title: 'Elf Giga Long',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Premio Luxury': {
+        title: 'Premio Luxury',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)',
+            'Premium comfort features',
+            'Luxury amenities'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    },
+    'Bus 22, 28, 33, 35, 48, 54 Seats': {
+        title: 'Bus 22, 28, 33, 35, 48, 54 Seats',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email. Bus size will be determined based on group size.'
+    },
+    'Toyota Alphard 2024/2025': {
+        title: 'Toyota Alphard 2024/2025',
+        included: [
+            'Car',
+            'Driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for South Bali area (Max Ubud)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)',
+            'Premium luxury features',
+            'VIP amenities'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'Another area will be charged for extra fuel cost depend on the area, from 50k-200K, For Custom Area Please Chat Us on WhatsApp or Email'
+    }
+};
+
+// Show car details modal using SweetAlert
+function showCarDetails(carName) {
+    const details = carDetailsData[carName];
+    if (!details) {
+        console.error('Details not found for:', carName);
+        if (typeof showNotification !== 'undefined') {
+            showNotification('Details not found for this car', 'error');
+        } else {
+            alert('Details not found for this car');
+        }
+        return;
+    }
+
+    let includedList = '';
+    details.included.forEach(item => {
+        includedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-check-circle" style="color: #28a745; margin-top: 2px;"></i> ${item}</li>`;
+    });
+
+    let notIncludedList = '';
+    details.notIncluded.forEach(item => {
+        notIncludedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle" style="color: #dc3545; margin-top: 2px;"></i> ${item}</li>`;
+    });
+
+    const html = `
+        <div style="text-align: left; max-height: 60vh; overflow-y: auto;">
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">What's Included</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    ${includedList}
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Not Included</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    ${notIncludedList}
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Important Notes</h4>
+                <p style="background: #fff3cd; border-left: 4px solid #FF6B35; padding: 15px; border-radius: 5px; color: #856404; margin: 0; font-size: 0.95em;">
+                    ${details.importantNotes}
+                </p>
+            </div>
+        </div>
+    `;
+
+    Swal.fire({
+        title: details.title,
+        html: html,
+        width: 800,
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+            popup: 'car-details-popup',
+            title: 'car-details-title'
+        },
+        didOpen: () => {
+            // Custom styling for the popup
+            const popup = document.querySelector('.car-details-popup');
+            if (popup) {
+                popup.style.fontFamily = "'Poppins', sans-serif";
+                popup.style.borderRadius = '15px';
+            }
+
+            const title = document.querySelector('.car-details-title');
+            if (title) {
+                title.style.color = '#FF6B35';
+                title.style.fontSize = '1.5em';
+                title.style.fontWeight = '600';
+            }
+        }
+    });
+}
+
+// Modal functionality replaced with SweetAlert

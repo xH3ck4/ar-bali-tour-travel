@@ -479,6 +479,196 @@ document.addEventListener('DOMContentLoaded', () => {
             .booking-form-container {
                 padding: 2rem;
             }
+
+            .tour-actions {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .tour-actions .btn {
+                flex: 1;
+            }
+
+            .details-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .details-modal.show {
+                display: flex !important;
+                opacity: 1;
+            }
+
+            .details-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(5px);
+            }
+
+            .details-content {
+                position: relative;
+                background: white;
+                border-radius: var(--border-radius-lg);
+                max-width: 800px;
+                width: 100%;
+                max-height: 90vh;
+                overflow-y: auto;
+                box-shadow: var(--shadow-lg);
+                z-index: 10001;
+            }
+
+            .details-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.5rem;
+                border-bottom: 2px solid var(--gray-200);
+                position: sticky;
+                top: 0;
+                background: white;
+                z-index: 10;
+            }
+
+            .details-header h3 {
+                margin: 0;
+                color: var(--dark-color);
+                font-size: 1.5rem;
+            }
+
+            .details-close {
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: var(--gray-600);
+                cursor: pointer;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .details-close:hover {
+                color: var(--primary-color);
+                transform: rotate(90deg);
+            }
+
+            .details-body {
+                padding: 1.5rem;
+            }
+
+            .details-section {
+                margin-bottom: 2rem;
+            }
+
+            .details-section h4 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+
+            .itinerary-list {
+                background: var(--gray-100);
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                margin-bottom: 1rem;
+            }
+
+            .itinerary-item {
+                margin: 0.5rem 0;
+                color: var(--gray-700);
+                padding-left: 1rem;
+                position: relative;
+            }
+
+            .itinerary-item::before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                color: var(--primary-color);
+                font-weight: bold;
+            }
+
+            .details-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .details-list li {
+                padding: 0.75rem 0;
+                display: flex;
+                align-items: flex-start;
+                gap: 0.75rem;
+                color: var(--gray-700);
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .details-list li:last-child {
+                border-bottom: none;
+            }
+
+            .details-list li i {
+                margin-top: 0.25rem;
+                flex-shrink: 0;
+            }
+
+            .included-list li i {
+                color: #28a745;
+            }
+
+            .not-included-list li i {
+                color: #dc3545;
+            }
+
+            .important-notes {
+                background: #fff3cd;
+                border-left: 4px solid var(--secondary-color);
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                color: var(--gray-800);
+                margin: 0;
+            }
+
+            @media (max-width: 768px) {
+                .tour-actions {
+                    flex-direction: column;
+                }
+
+                .details-content {
+                    max-height: 95vh;
+                }
+
+                .details-header {
+                    padding: 1rem;
+                }
+
+                .details-header h3 {
+                    font-size: 1.25rem;
+                }
+
+                .details-body {
+                    padding: 1rem;
+                }
+            }
         }
     `;
     document.head.appendChild(style);
@@ -534,3 +724,349 @@ function generateTourBookingMessage(bookingDetails) {
 
     return message;
 }
+
+// Tour details data
+const tourDetailsData = {
+    'Ubud Cultural Tour': {
+        title: 'Ubud Cultural Tour',
+        itinerary: [
+            '08:00 AM → Hotel pickup from your accommodation',
+            '09:00 AM → Visit Tegalalang Rice Terrace for stunning views',
+            '10:30 AM → Explore Ubud Monkey Forest Sanctuary',
+            '12:00 PM → Traditional Balinese lunch at local restaurant',
+            '01:30 PM → Visit local artisan villages (silver, wood carving)',
+            '03:00 PM → Watch traditional Balinese dance performance',
+            '04:00 PM → Visit Ubud Palace and Ubud Market',
+            '05:00 PM → Return to hotel'
+        ],
+        included: [
+            'Professional English-speaking guide',
+            'Air-conditioned vehicle with driver',
+            'Hotel pickup and drop-off',
+            'Entrance fees to all attractions',
+            'Traditional dance performance ticket',
+            'Lunch at local restaurant'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages',
+ 'Optional activities not mentioned'
+        ],
+        importantNotes: 'Duration: Approximately 8 hours. Comfortable walking shoes recommended. Please bring camera, sunscreen, and hat. Traditional dress code may apply for temple visits.'
+    },
+    'Mount Batur Sunrise Trek': {
+        title: 'Mount Batur Sunrise Trek',
+        itinerary: [
+            '02:00 AM → Hotel pickup (time may vary based on location)',
+            '03:30 AM → Arrive at Mount Batur base camp',
+            '04:00 AM → Begin trekking with professional guide',
+            '06:00 AM → Reach summit and enjoy sunrise',
+            '06:30 AM → Breakfast at the summit',
+            '07:30 AM → Begin descent',
+            '09:00 AM → Visit hot springs (optional)',
+            '10:30 AM → Return to hotel'
+        ],
+        included: [
+            'Professional mountain guide',
+            'Hotel pickup and drop-off',
+            'Breakfast at summit',
+            'Flashlight/headlamp',
+            'Trekking poles (if needed)',
+            'Entrance fees'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Hot springs entrance (optional)',
+            'Additional food and beverages'
+        ],
+        importantNotes: 'Requires moderate fitness level. Wear proper hiking shoes and warm layers. Minimum age: 10 years. Duration: Approximately 6-8 hours. Weather dependent - may be rescheduled in case of extreme conditions.'
+    },
+    'South Bali Beach Tour': {
+        title: 'South Bali Beach Tour',
+        itinerary: [
+            '09:00 AM → Hotel pickup',
+            '10:00 AM → Visit Jimbaran Beach',
+            '11:30 AM → Explore Nusa Dua Beach area',
+            '01:00 PM → Seafood lunch at Jimbaran',
+            '02:30 PM → Visit Padang Padang Beach',
+            '04:00 PM → Uluwatu Temple and Kecak dance show',
+            '06:00 PM → Sunset viewing',
+            '07:00 PM → Return to hotel'
+        ],
+        included: [
+            'Professional guide',
+            'Air-conditioned vehicle',
+            'Hotel pickup and drop-off',
+            'Entrance fees',
+            'Seafood lunch',
+            'Kecak dance performance ticket'
+        ],
+        notIncluded: [
+            'Water sports activities',
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages'
+        ],
+        importantNotes: 'Duration: Approximately 10 hours. Bring swimwear, towel, sunscreen, and camera. Temple visit requires proper attire (sarong provided).'
+    },
+    'Tanah Lot Temple Tour': {
+        title: 'Tanah Lot Temple Tour',
+        itinerary: [
+            '03:00 PM → Hotel pickup',
+            '04:00 PM → Arrive at Tanah Lot Temple',
+            '04:30 PM → Explore temple and surrounding area',
+            '05:30 PM → Witness traditional ceremonies',
+            '06:30 PM → Sunset viewing',
+            '07:30 PM → Return to hotel'
+        ],
+        included: [
+            'Professional guide',
+            'Air-conditioned vehicle',
+            'Hotel pickup and drop-off',
+            'Entrance fees',
+            'Sarong rental'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Food and beverages',
+            'Additional activities'
+        ],
+        importantNotes: 'Duration: Approximately 4 hours. Best time to visit is during sunset. Proper attire required for temple visit. High tide may limit access to temple.'
+    },
+    'Traditional Cooking Class': {
+        title: 'Traditional Cooking Class',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Visit local market for ingredients',
+            '10:00 AM → Arrive at cooking class location',
+            '10:30 AM → Introduction and traditional cooking methods',
+            '11:00 AM → Hands-on cooking session',
+            '01:00 PM → Enjoy your prepared meal',
+            '02:00 PM → Receive recipe booklet and certificate',
+            '03:00 PM → Return to hotel'
+        ],
+        included: [
+            'Professional cooking instructor',
+            'All ingredients and cooking equipment',
+            'Market tour',
+            'Recipe booklet',
+            'Certificate of completion',
+            'Lunch with prepared dishes',
+            'Hotel pickup and drop-off'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages',
+            'Transportation beyond included areas'
+        ],
+        importantNotes: 'Duration: Approximately 5 hours. Suitable for all skill levels. Please inform about dietary restrictions or allergies in advance. Vegetarian options available.'
+    },
+    'East Bali Cultural Journey - 2 Days': {
+        title: 'East Bali Cultural Journey - 2 Days',
+        itinerary: [
+            'Day 1:',
+            '08:00 AM → Hotel pickup',
+            '10:00 AM → Visit Tenganan Ancient Village',
+            '12:00 PM → Lunch at local restaurant',
+            '02:00 PM → Explore Tirta Gangga Water Palace',
+            '04:00 PM → Check-in at local homestay',
+            '06:00 PM → Traditional dinner',
+            '',
+            'Day 2:',
+            '08:00 AM → Breakfast at homestay',
+            '09:00 AM → Visit Virgin Beach',
+            '11:00 AM → Explore traditional villages',
+            '01:00 PM → Lunch',
+            '03:00 PM → Return journey',
+            '05:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional guide',
+            'Air-conditioned vehicle',
+            'Hotel pickup and drop-off',
+            '1 night accommodation at local homestay',
+            'All meals (breakfast, lunch, dinner)',
+            'Entrance fees to all attractions',
+            'Cultural activities'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages',
+            'Optional activities'
+        ],
+        importantNotes: 'Duration: 2 days, 1 night. Accommodation is basic but comfortable. Bring comfortable walking shoes, camera, and light clothing. Cultural sensitivity required when visiting traditional villages.'
+    },
+    'Hidden Waterfalls Adventure': {
+        title: 'Hidden Waterfalls Adventure',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:30 AM → Arrive at first waterfall location',
+            '10:00 AM → Jungle trekking to waterfalls',
+            '12:00 PM → Picnic lunch at natural pool',
+            '01:00 PM → Continue to additional waterfalls',
+            '03:00 PM → Swimming and relaxation',
+            '04:30 PM → Return journey',
+            '06:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional local guide',
+            'Air-conditioned vehicle',
+            'Hotel pickup and drop-off',
+            'Entrance fees',
+            'Picnic lunch',
+            'Safety equipment'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages',
+            'Swimming gear (bring your own)'
+        ],
+        importantNotes: 'Duration: Approximately 8 hours. Requires moderate fitness level. Wear proper hiking shoes and swimwear. Bring towel, change of clothes, and waterproof camera. Some areas may be slippery.'
+    },
+    'Nusa Dua Beach Experience': {
+        title: 'Nusa Dua Beach Experience',
+        itinerary: [
+            '09:00 AM → Hotel pickup',
+            '10:00 AM → Arrive at Nusa Dua Beach',
+            '10:30 AM → Beach activities and relaxation',
+            '12:30 PM → Lunch at beachside restaurant',
+            '02:00 PM → Water sports (optional)',
+            '04:00 PM → Explore resort area',
+            '05:00 PM → Return to hotel'
+        ],
+        included: [
+            'Professional guide',
+            'Air-conditioned vehicle',
+            'Hotel pickup and drop-off',
+            'Beach access',
+            'Lunch',
+            'Beach facilities'
+        ],
+        notIncluded: [
+            'Water sports activities',
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages'
+        ],
+        importantNotes: 'Duration: Approximately 4 hours. Family-friendly activity. Bring swimwear, towel, sunscreen, and camera. Water sports available at additional cost.'
+    }
+};
+
+// Show tour details modal
+function showTourDetails(tourName) {
+    const details = tourDetailsData[tourName];
+    if (!details) {
+        showNotification('Details not found for this tour', 'error');
+        return;
+    }
+
+    let html = '';
+
+    if (details.itinerary) {
+        html += '<div style="margin-bottom: 20px;">';
+        html += '<h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Itinerary</h4>';
+        html += '<div style="line-height: 1.6;">';
+        details.itinerary.forEach(item => {
+            if (item.trim() === '') {
+                html += '<br>';
+            } else {
+                html += `<p style="margin-bottom: 10px; color: #666;">${item}</p>`;
+            }
+        });
+        html += '</div>';
+        html += '</div>';
+    }
+
+    let includedList = '';
+    details.included.forEach(item => {
+        includedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-check-circle" style="color: #28a745; margin-top: 2px;"></i> ${item}</li>`;
+    });
+
+    let notIncludedList = '';
+    details.notIncluded.forEach(item => {
+        notIncludedList += `<li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle" style="color: #dc3545; margin-top: 2px;"></i> ${item}</li>`;
+    });
+
+    html += `
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">What's Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                ${includedList}
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Not Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                ${notIncludedList}
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #FF6B35; margin-bottom: 15px; font-size: 1.1em;">Important Notes</h4>
+            <p style="background: #fff3cd; border-left: 4px solid #FF6B35; padding: 15px; border-radius: 5px; color: #856404; margin: 0; font-size: 0.95em;">
+                ${details.importantNotes}
+            </p>
+        </div>
+    `;
+
+    Swal.fire({
+        title: details.title,
+        html: html,
+        width: 800,
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+            popup: 'tour-details-popup',
+            title: 'tour-details-title'
+        },
+        didOpen: () => {
+            const popup = document.querySelector('.tour-details-popup');
+            if (popup) {
+                popup.style.fontFamily = "'Poppins', sans-serif";
+                popup.style.borderRadius = '15px';
+            }
+
+            const title = document.querySelector('.tour-details-title');
+            if (title) {
+                title.style.color = '#FF6B35';
+                title.style.fontSize = '1.5em';
+                title.style.fontWeight = '600';
+            }
+        }
+    });
+}
+
+// Modal functionality replaced with SweetAlert
+//     const overlay = document.getElementById('detailsOverlay');
+//     const closeBtn = document.getElementById('detailsClose');
+
+//     function closeModal() {
+//         modal.classList.remove('show');
+//         setTimeout(() => {
+//             modal.style.display = 'none';
+//             document.body.style.overflow = 'auto';
+//         }, 300);
+//     }
+//
+//     if (overlay) {
+//         overlay.addEventListener('click', closeModal);
+//     }
+//
+//     if (closeBtn) {
+//         closeBtn.addEventListener('click', closeModal);
+//     }
+//
+//     // Close on ESC key
+//     document.addEventListener('keydown', (e) => {
+//         if (e.key === 'Escape' && modal.classList.contains('show')) {
+//             closeModal();
+//         }
+//     });
+// });

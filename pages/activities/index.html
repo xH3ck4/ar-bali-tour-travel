@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <!-- Header -->
@@ -132,7 +133,10 @@
                             <span>• Marine Life Guarantee</span>
                             <span>• Underwater Photos</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Scuba Diving - Nusa Penida', 1740000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Scuba Diving - Nusa Penida')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Scuba Diving - Nusa Penida', 1740000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -156,7 +160,10 @@
                             <span>• Helmet & Gear</span>
                             <span>• Refreshments</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('ATV Adventure Tour', 1215000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('ATV Adventure Tour')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('ATV Adventure Tour', 1215000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -180,7 +187,10 @@
                             <span>• Take Home Artwork</span>
                             <span>• Certificate</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Traditional Painting Workshop', 915000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Traditional Painting Workshop')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Traditional Painting Workshop', 915000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -204,7 +214,10 @@
                             <span>• Flower Bath</span>
                             <span>• Herbal Tea</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Balinese Traditional Spa', 1365000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Balinese Traditional Spa')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Balinese Traditional Spa', 1365000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -228,7 +241,10 @@
                             <span>• Photo Session</span>
                             <span>• Luxury Transport</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Helicopter Sightseeing Tour', 3690000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Helicopter Sightseeing Tour')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Helicopter Sightseeing Tour', 3690000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -252,7 +268,10 @@
                             <span>• Marine Guide</span>
                             <span>• Lunch Included</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Snorkeling in Menjangan Island', 765000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Snorkeling in Menjangan Island')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Snorkeling in Menjangan Island', 765000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -276,7 +295,10 @@
                             <span>• Safety Equipment</span>
                             <span>• Professional Guides</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Zip Line & Jungle Adventure', 1065000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Zip Line & Jungle Adventure')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Zip Line & Jungle Adventure', 1065000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -300,7 +322,10 @@
                             <span>• Live Music</span>
                             <span>• Photo Service</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Sunset Catamaran Cruise', 1140000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Sunset Catamaran Cruise')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Sunset Catamaran Cruise', 1140000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
 
@@ -324,7 +349,10 @@
                             <span>• Cultural Explanation</span>
                             <span>• Photo Opportunities</span>
                         </div>
-                        <button class="btn btn-primary" onclick="addToCart('Traditional Dance Performance', 615000)">Book Now</button>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Traditional Dance Performance')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Traditional Dance Performance', 615000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -505,6 +533,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Product Details Modal replaced with SweetAlert -->
 
     <script src="../../assets/js/script.js"></script>
     <script src="../../assets/js/activities.js"></script>

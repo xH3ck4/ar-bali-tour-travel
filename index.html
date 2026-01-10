@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <!-- Header -->
@@ -111,6 +112,9 @@
                     <div class="tour-image">
                         <img src="assets/images/tour-ubud.jpg" alt="Ubud Rice Terraces Tour">
                         <div class="tour-badge">Popular</div>
+                        <div class="tour-overlay">
+                            <span>Click for Details</span>
+                        </div>
                     </div>
                     <div class="tour-content">
                         <h3>Ubud Cultural Tour</h3>
@@ -119,13 +123,19 @@
                             <span class="duration"><i class="fas fa-clock"></i> 8 Hours</span>
                             <span class="price">Rp 1,215,000</span>
                         </div>
-                        <button class="btn btn-outline" onclick="addToCart('Ubud Cultural Tour', 1215000)">Book Now</button>
+                        <div class="tour-actions">
+                            <button class="btn btn-details" onclick="showTourDetails('Ubud Cultural Tour')">Details</button>
+                            <button class="btn btn-outline" onclick="addToCart('Ubud Cultural Tour', 1215000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tour-card">
                     <div class="tour-image">
                         <img src="assets/images/tour-batur.jpg" alt="Mount Batur Sunrise Trek">
                         <div class="tour-badge">Adventure</div>
+                        <div class="tour-overlay">
+                            <span>Click for Details</span>
+                        </div>
                     </div>
                     <div class="tour-content">
                         <h3>Mount Batur Sunrise</h3>
@@ -134,13 +144,19 @@
                             <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
                             <span class="price">Rp 915,000</span>
                         </div>
-                        <button class="btn btn-outline" onclick="addToCart('Mount Batur Sunrise', 915000)">Book Now</button>
+                        <div class="tour-actions">
+                            <button class="btn btn-details" onclick="showTourDetails('Mount Batur Sunrise Trek')">Details</button>
+                            <button class="btn btn-outline" onclick="addToCart('Mount Batur Sunrise', 915000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tour-card">
                     <div class="tour-image">
                         <img src="assets/images/tour-beaches.jpg" alt="Beach Hopping Tour">
                         <div class="tour-badge">Relaxing</div>
+                        <div class="tour-overlay">
+                            <span>Click for Details</span>
+                        </div>
                     </div>
                     <div class="tour-content">
                         <h3>South Bali Beaches</h3>
@@ -149,7 +165,10 @@
                             <span class="duration"><i class="fas fa-clock"></i> 10 Hours</span>
                             <span class="price">Rp 1,365,000</span>
                         </div>
-                        <button class="btn btn-outline" onclick="addToCart('South Bali Beaches', 1365000)">Book Now</button>
+                        <div class="tour-actions">
+                            <button class="btn btn-details" onclick="showTourDetails('South Bali Beach Tour')">Details</button>
+                            <button class="btn btn-outline" onclick="addToCart('South Bali Beach Tour', 1365000)">Book Now</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -413,5 +432,6 @@
     </div>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/tours.js"></script>
 </body>
 </html>
