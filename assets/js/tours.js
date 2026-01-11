@@ -683,6 +683,8 @@ function generateTourBookingMessage(bookingDetails) {
     const tourNames = {
         'ubud-cultural': 'Ubud Cultural Tour',
         'batur-sunrise': 'Mount Batur Sunrise Trek',
+        'batur-jeep': 'Mount Batur Sunrise Jeep Tour',
+        'lovina-dolphin': 'Lovina Dolphin Adventure Tour',
         'south-beach': 'South Bali Beach Tour',
         'tanah-lot': 'Tanah Lot Temple Tour',
         'cooking-class': 'Traditional Cooking Class',
@@ -787,6 +789,61 @@ const tourDetailsData = {
             'Additional food and beverages'
         ],
         importantNotes: 'Requires moderate fitness level. Wear proper hiking shoes and warm layers. Minimum age: 10 years. Duration: Approximately 6-8 hours. Weather dependent - may be rescheduled in case of extreme conditions.'
+    },
+    'Mount Batur Sunrise Jeep Tour': {
+        title: 'Mount Batur Sunrise Jeep Tour',
+        itinerary: [
+            '02:00 AM → Hotel pickup',
+            '03:00 AM → Arrive at Mount Batur area',
+            '03:30 AM → Start jeep adventure to sunrise point',
+            '05:30 AM → Reach sunrise viewing area',
+            '06:00 AM → Enjoy spectacular sunrise',
+            '06:30 AM → Breakfast with mountain views',
+            '07:30 AM → Scenic return journey',
+            '09:00 AM → Return to hotel'
+        ],
+        included: [
+            'Professional jeep driver',
+            '4x4 Jeep vehicle',
+            'Hotel pickup and drop-off',
+            'Sunrise breakfast',
+            'Entrance fees',
+            'Safety equipment'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages',
+            'Hot springs entrance'
+        ],
+        importantNotes: 'Suitable for all fitness levels. Bring warm clothing as it can be chilly at sunrise. Duration: Approximately 5 hours. Weather dependent - may be rescheduled in case of extreme conditions.'
+    },
+    'Lovina Dolphin Adventure Tour': {
+        title: 'Lovina Dolphin Adventure Tour',
+        itinerary: [
+            '05:30 AM → Hotel pickup',
+            '06:30 AM → Arrive at Lovina Beach',
+            '07:00 AM → Board traditional boat for dolphin watching',
+            '07:30 AM → Dolphin watching experience',
+            '09:00 AM → Return to shore',
+            '09:30 AM → Breakfast at beachside restaurant',
+            '10:30 AM → Return to hotel'
+        ],
+        included: [
+            'Professional boat crew',
+            'Traditional boat',
+            'Hotel pickup and drop-off',
+            'Dolphin watching guide',
+            'Breakfast',
+            'Life jackets'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional food and beverages',
+            'Snorkeling equipment'
+        ],
+        importantNotes: 'Best experience at sunrise when dolphins are most active. Weather dependent. Bring light clothing, hat, and sunscreen. Duration: Approximately 4 hours.'
     },
     'South Bali Beach Tour': {
         title: 'South Bali Beach Tour',

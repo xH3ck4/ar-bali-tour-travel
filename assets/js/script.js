@@ -294,16 +294,9 @@ function generateCheckoutMessage() {
     });
 
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const serviceFee = subtotal * 0.05;
-    const finalTotal = subtotal + serviceFee;
-    
-    const subtotalFormatted = formatRupiah(subtotal);
-    const serviceFeeFormatted = formatRupiah(serviceFee);
-    const totalFormatted = formatRupiah(finalTotal);
-    
+    const totalFormatted = formatRupiah(subtotal);
+
     message += "💰 *Price Summary:*\n";
-    message += `Subtotal: ${subtotalFormatted}\n`;
-    message += `Service Fee (5%): ${serviceFeeFormatted}\n`;
     message += `*Total: ${totalFormatted}*\n\n`;
     message += "Please provide booking details and availability.\n\n";
     message += "📞 Contact Information:\n";

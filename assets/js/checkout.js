@@ -665,8 +665,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function displayCartSummary() {
     const cartItemsSummary = document.getElementById('cartItemsSummary');
-    const subtotalElement = document.getElementById('subtotal');
-    const serviceFeeElement = document.getElementById('serviceFee');
     const finalTotalElement = document.getElementById('finalTotal');
     const orderSummary = document.querySelector('.order-summary');
 
@@ -676,11 +674,9 @@ function displayCartSummary() {
         orderSummary.style.visibility = 'visible';
     }
 
-    if (!cartItemsSummary || !subtotalElement || !serviceFeeElement || !finalTotalElement) {
+    if (!cartItemsSummary || !finalTotalElement) {
         console.error('Cart summary elements not found:', {
             cartItemsSummary: !!cartItemsSummary,
-            subtotalElement: !!subtotalElement,
-            serviceFeeElement: !!serviceFeeElement,
             finalTotalElement: !!finalTotalElement
         });
         // Retry after a short delay if elements not found
@@ -696,8 +692,6 @@ function displayCartSummary() {
     const cartData = getCart();
     if (cartData.length === 0) {
         cartItemsSummary.innerHTML = '<p class="checkout-empty-cart">No items in cart</p>';
-        subtotalElement.textContent = 'Rp 0';
-        serviceFeeElement.textContent = 'Rp 0';
         finalTotalElement.innerHTML = '<strong>Rp 0</strong>';
         return;
     }
@@ -738,15 +732,10 @@ function displayCartSummary() {
         cartItemsSummary.appendChild(itemElement);
     });
 
-    const serviceFee = subtotal * 0.05; // 5% service fee
-    const finalTotal = subtotal + serviceFee;
+    const finalTotal = subtotal;
 
-    const subtotalFormatted = formatRupiah(subtotal);
-    const serviceFeeFormatted = formatRupiah(serviceFee);
     const finalTotalFormatted = formatRupiah(finalTotal);
 
-    subtotalElement.textContent = subtotalFormatted;
-    serviceFeeElement.textContent = serviceFeeFormatted;
     finalTotalElement.innerHTML = `<strong>${finalTotalFormatted}</strong>`;
     
     // Ensure order summary is visible (already declared at function start)
@@ -891,19 +880,14 @@ function generateCheckoutMessage(bookingDetails) {
 
     // ========== PAYMENT SUMMARY ==========
     const subtotal = cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const serviceFee = subtotal * 0.05;
-    const finalTotal = subtotal + serviceFee;
+    const finalTotal = subtotal;
 
     const subtotalFormatted = formatRupiah(subtotal);
-    const serviceFeeFormatted = formatRupiah(serviceFee);
     const finalTotalFormatted = formatRupiah(finalTotal);
 
     message += "💰 *PAYMENT SUMMARY*\n";
     message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
-    message += `Subtotal (${cartData.length} item${cartData.length > 1 ? 's' : ''}): ${subtotalFormatted}\n`;
-    message += `Service Fee (5%): ${serviceFeeFormatted}\n`;
-    message += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-    message += `*TOTAL AMOUNT: ${finalTotalFormatted}*\n`;
+    message += `Total Amount (${cartData.length} item${cartData.length > 1 ? 's' : ''}): ${finalTotalFormatted}\n`;
     message += "\n";
     
     // Add rental type breakdown if there are car rentals

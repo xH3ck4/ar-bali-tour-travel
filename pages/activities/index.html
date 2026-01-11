@@ -28,6 +28,7 @@
                     <a href="../tours/index.html" class="nav-link">Tours</a>
                     <a href="index.html" class="nav-link active">Activities</a>
                     <a href="../../car-rental.html" class="nav-link">Car Rental</a>
+                    <a href="../blog/index.html" class="nav-link">Blog</a>
                     <a href="../../index.html#contact" class="nav-link">Contact</a>
                 </div>
                 <div class="nav-cart">
@@ -114,38 +115,12 @@
         <div class="container">
             <div class="activities-grid" id="activitiesGrid">
                 <!-- Activity Card 1 -->
-                <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="beginner">
-                    <div class="activity-image">
-                        <img src="../../assets/images/activity-diving.jpg" alt="Scuba Diving in Nusa Penida" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
-                        <div class="activity-badge">Popular</div>
-                        <div class="activity-price">Rp 1,740,000</div>
-                    </div>
-                    <div class="activity-content">
-                        <h3>Scuba Diving - Nusa Penida</h3>
-                        <p>Explore Bali's underwater paradise with crystal-clear waters and abundant marine life. Perfect for both beginners and experienced divers.</p>
-                        <div class="activity-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
-                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner-Friendly</span>
-                        </div>
-                        <div class="activity-features">
-                            <span>• Professional Instructor</span>
-                            <span>• Full Equipment</span>
-                            <span>• Marine Life Guarantee</span>
-                            <span>• Underwater Photos</span>
-                        </div>
-                        <div class="activity-actions">
-                            <button class="btn btn-outline" data-activity="Scuba Diving - Nusa Penida">Details</button>
-                            <button class="btn btn-primary" data-cart-item="Scuba Diving - Nusa Penida" data-price="1740000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Activity Card 2 -->
                 <div class="activity-card" data-category="adventure" data-duration="half-day" data-difficulty="intermediate">
                     <div class="activity-image">
                         <img src="../../assets/images/activity-atv.jpg" alt="ATV Adventure Tour" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
                         <div class="activity-badge">Adventure</div>
-                        <div class="activity-price">Rp 1,215,000</div>
+                        <div class="activity-price">Rp 500,000</div>
                     </div>
                     <div class="activity-content">
                         <h3>ATV Adventure Tour</h3>
@@ -162,44 +137,18 @@
                         </div>
                         <div class="activity-actions">
                             <button class="btn btn-outline" onclick="showActivityDetails('ATV Adventure Tour')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('ATV Adventure Tour', 1215000)">Book Now</button>
+                            <button class="btn btn-primary" onclick="addToCart('ATV Adventure Tour', 500000)">Book Now</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Activity Card 3 -->
-                <div class="activity-card" data-category="cultural" data-duration="half-day" data-difficulty="beginner">
-                    <div class="activity-image">
-                        <img src="../../assets/images/activity-painting.jpg" alt="Traditional Painting Workshop" onerror="this.src='https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400'">
-                        <div class="activity-badge">Creative</div>
-                        <div class="activity-price">Rp 915,000</div>
-                    </div>
-                    <div class="activity-content">
-                        <h3>Traditional Painting Workshop</h3>
-                        <p>Learn the ancient art of Balinese painting with local artists. Create your own masterpiece to take home.</p>
-                        <div class="activity-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 3 Hours</span>
-                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
-                        </div>
-                        <div class="activity-features">
-                            <span>• Local Artist Instructor</span>
-                            <span>• All Materials Included</span>
-                            <span>• Take Home Artwork</span>
-                            <span>• Certificate</span>
-                        </div>
-                        <div class="activity-actions">
-                            <button class="btn btn-outline" onclick="showActivityDetails('Traditional Painting Workshop')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Traditional Painting Workshop', 915000)">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Activity Card 4 -->
                 <div class="activity-card" data-category="wellness" data-duration="half-day" data-difficulty="beginner">
                     <div class="activity-image">
                         <img src="../../assets/images/activity-spa.jpg" alt="Balinese Traditional Spa" onerror="this.src='https://images.unsplash.com/photo-1596178060810-fb4bd482ee2c?w=400'">
                         <div class="activity-badge">Relaxing</div>
-                        <div class="activity-price">Rp 1,365,000</div>
+                        <div class="activity-price">Rp 1,200,000</div>
                     </div>
                     <div class="activity-content">
                         <h3>Balinese Traditional Spa</h3>
@@ -216,44 +165,18 @@
                         </div>
                         <div class="activity-actions">
                             <button class="btn btn-outline" onclick="showActivityDetails('Balinese Traditional Spa')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Balinese Traditional Spa', 1365000)">Book Now</button>
+                            <button class="btn btn-primary" onclick="addToCart('Balinese Traditional Spa', 1200000)">Book Now</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Activity Card 5 -->
-                <div class="activity-card" data-category="aerial" data-duration="half-day" data-difficulty="beginner">
-                    <div class="activity-image">
-                        <img src="../../assets/images/activity-helicopter.jpg" alt="Helicopter Tour" onerror="this.src='https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400'">
-                        <div class="activity-badge">Premium</div>
-                        <div class="activity-price">Rp 3,690,000</div>
-                    </div>
-                    <div class="activity-content">
-                        <h3>Helicopter Sightseeing Tour</h3>
-                        <p>Get breathtaking aerial views of Bali's volcanoes, beaches, and rice terraces on a luxury helicopter tour.</p>
-                        <div class="activity-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
-                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
-                        </div>
-                        <div class="activity-features">
-                            <span>• Professional Pilot</span>
-                            <span>• Stunning Views</span>
-                            <span>• Photo Session</span>
-                            <span>• Luxury Transport</span>
-                        </div>
-                        <div class="activity-actions">
-                            <button class="btn btn-outline" onclick="showActivityDetails('Helicopter Sightseeing Tour')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Helicopter Sightseeing Tour', 3690000)">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Activity Card 6 -->
                 <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="beginner">
                     <div class="activity-image">
                         <img src="../../assets/images/activity-snorkeling.jpg" alt="Snorkeling Adventure" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
                         <div class="activity-badge">Family</div>
-                        <div class="activity-price">Rp 765,000</div>
+                        <div class="activity-price">Rp 400,000</div>
                     </div>
                     <div class="activity-content">
                         <h3>Snorkeling in Menjangan Island</h3>
@@ -270,88 +193,223 @@
                         </div>
                         <div class="activity-actions">
                             <button class="btn btn-outline" onclick="showActivityDetails('Snorkeling in Menjangan Island')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Snorkeling in Menjangan Island', 765000)">Book Now</button>
+                            <button class="btn btn-primary" onclick="addToCart('Snorkeling in Menjangan Island', 400000)">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Activity Card 7 -->
-                <div class="activity-card" data-category="adventure" data-duration="full-day" data-difficulty="advanced">
+                <!-- New Activity Card 7 -->
+                <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="intermediate">
                     <div class="activity-image">
-                        <img src="../../assets/images/activity-zipline.jpg" alt="Zip Line Adventure" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
-                        <div class="activity-badge">Thrilling</div>
-                        <div class="activity-price">Rp 1,065,000</div>
+                        <img src="../../assets/images/activity-rafting.jpg" alt="Ayung River Rafting Shared Package" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+                        <div class="activity-badge">Adventure</div>
+                        <div class="activity-price">Rp 350,000</div>
                     </div>
                     <div class="activity-content">
-                        <h3>Zip Line & Jungle Adventure</h3>
-                        <p>Fly through the jungle canopy on thrilling zip lines and explore hidden trails in Bali's lush forests.</p>
+                        <h3>Ayung River Rafting Shared Package</h3>
+                        <p>Experience thrilling white-water rafting on Bali's Ayung River with professional guides and safety equipment.</p>
                         <div class="activity-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
-                            <span class="difficulty"><i class="fas fa-chart-line"></i> Advanced</span>
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Intermediate</span>
                         </div>
                         <div class="activity-features">
-                            <span>• Multiple Zip Lines</span>
-                            <span>• Jungle Trekking</span>
-                            <span>• Safety Equipment</span>
                             <span>• Professional Guides</span>
+                            <span>• Safety Equipment</span>
+                            <span>• River Views</span>
+                            <span>• Group Activity</span>
                         </div>
                         <div class="activity-actions">
-                            <button class="btn btn-outline" onclick="showActivityDetails('Zip Line & Jungle Adventure')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Zip Line & Jungle Adventure', 1065000)">Book Now</button>
+                            <button class="btn btn-outline" onclick="showActivityDetails('Ayung River Rafting Shared Package')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Ayung River Rafting Shared Package', 350000)">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Activity Card 8 -->
-                <div class="activity-card" data-category="nightlife" data-duration="half-day" data-difficulty="beginner">
+                <!-- New Activity Card 8 -->
+                <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="intermediate">
                     <div class="activity-image">
-                        <img src="../../assets/images/activity-sunset.jpg" alt="Sunset Catamaran Cruise" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400'">
-                        <div class="activity-badge">Romantic</div>
-                        <div class="activity-price">Rp 1,140,000</div>
+                        <img src="../../assets/images/activity-rafting.jpg" alt="Ayung River Rafting Private Package" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+                        <div class="activity-badge">Premium</div>
+                        <div class="activity-price">Rp 1,800,000</div>
                     </div>
                     <div class="activity-content">
-                        <h3>Sunset Catamaran Cruise</h3>
-                        <p>Sail into the sunset on a luxury catamaran with champagne, canapés, and stunning ocean views.</p>
+                        <h3>Ayung River Rafting Private Package</h3>
+                        <p>Enjoy a private rafting experience on Bali's Ayung River with personalized attention and exclusive service.</p>
                         <div class="activity-meta">
                             <span class="duration"><i class="fas fa-clock"></i> 3 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Private Rafting</span>
+                            <span>• Personal Guide</span>
+                            <span>• Premium Equipment</span>
+                            <span>• Refreshments</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Ayung River Rafting Private Package')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Ayung River Rafting Private Package', 1800000)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Activity Card 9 -->
+                <div class="activity-card" data-category="adventure" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-horse.jpg" alt="Beach Horse Riding Experience" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
+                        <div class="activity-badge">Family</div>
+                        <div class="activity-price">Rp 400,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Beach Horse Riding Experience</h3>
+                        <p>Ride horses along Bali's pristine beaches for a unique and memorable equestrian experience.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 1 Hour</span>
                             <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
                         </div>
                         <div class="activity-features">
-                            <span>• Luxury Catamaran</span>
-                            <span>• Champagne & Canapés</span>
-                            <span>• Live Music</span>
-                            <span>• Photo Service</span>
+                            <span>• Experienced Guides</span>
+                            <span>• Beach Trails</span>
+                            <span>• Safety Instructions</span>
+                            <span>• Photo Opportunities</span>
                         </div>
                         <div class="activity-actions">
-                            <button class="btn btn-outline" onclick="showActivityDetails('Sunset Catamaran Cruise')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Sunset Catamaran Cruise', 1140000)">Book Now</button>
+                            <button class="btn btn-outline" onclick="showActivityDetails('Beach Horse Riding Experience')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Beach Horse Riding Experience', 400000)">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Activity Card 9 -->
-                <div class="activity-card" data-category="cultural" data-duration="half-day" data-difficulty="beginner">
+                <!-- New Activity Card 10 -->
+                <div class="activity-card" data-category="adventure" data-duration="half-day" data-difficulty="intermediate">
                     <div class="activity-image">
-                        <img src="../../assets/images/activity-dance.jpg" alt="Traditional Dance Performance" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400'">
-                        <div class="activity-badge">Cultural</div>
-                        <div class="activity-price">Rp 615,000</div>
+                        <img src="../../assets/images/activity-atv.jpg" alt="ATV Quad Bike Adventure" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
+                        <div class="activity-badge">Adventure</div>
+                        <div class="activity-price">Rp 800,000</div>
                     </div>
                     <div class="activity-content">
-                        <h3>Traditional Dance Performance</h3>
-                        <p>Witness authentic Balinese dance performances featuring Kecak, Legong, and other traditional dances.</p>
+                        <h3>ATV Quad Bike Adventure</h3>
+                        <p>Explore Bali's landscapes on powerful ATV quad bikes through exciting trails and scenic routes.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• ATV Quad Bikes</span>
+                            <span>• Safety Gear</span>
+                            <span>• Professional Instruction</span>
+                            <span>• Scenic Routes</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('ATV Quad Bike Adventure')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('ATV Quad Bike Adventure', 800000)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Activity Card 11 -->
+                <div class="activity-card" data-category="cultural" data-duration="full-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-safari.jpg" alt="Bali Safari & Marine Park Ticket" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+                        <div class="activity-badge">Family</div>
+                        <div class="activity-price">Rp 520,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Bali Safari & Marine Park Ticket</h3>
+                        <p>Experience wildlife encounters and marine life at Bali's premier safari and marine park.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 6 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Wildlife Shows</span>
+                            <span>• Marine Park</span>
+                            <span>• Animal Encounters</span>
+                            <span>• Educational Tours</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('Bali Safari & Marine Park Ticket')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Bali Safari & Marine Park Ticket', 520000)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Activity Card 12 -->
+                <div class="activity-card" data-category="adventure" data-duration="half-day" data-difficulty="intermediate">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-utv.jpg" alt="UTV Buggy Single Ride" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
+                        <div class="activity-badge">Adventure</div>
+                        <div class="activity-price">Rp 800,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>UTV Buggy Single Ride</h3>
+                        <p>Experience the thrill of driving a UTV buggy through Bali's exciting off-road trails.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 1 Hour</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• UTV Buggy</span>
+                            <span>• Safety Briefing</span>
+                            <span>• Off-Road Trails</span>
+                            <span>• Professional Guide</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('UTV Buggy Single Ride')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('UTV Buggy Single Ride', 800000)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Activity Card 13 -->
+                <div class="activity-card" data-category="adventure" data-duration="half-day" data-difficulty="intermediate">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-utv.jpg" alt="UTV Buggy Adventure" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400'">
+                        <div class="activity-badge">Adventure</div>
+                        <div class="activity-price">Rp 1,200,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>UTV Buggy Adventure</h3>
+                        <p>Extended UTV buggy adventure exploring multiple trails and scenic viewpoints in Bali.</p>
+                        <div class="activity-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
+                            <span class="difficulty"><i class="fas fa-chart-line"></i> Intermediate</span>
+                        </div>
+                        <div class="activity-features">
+                            <span>• Extended Adventure</span>
+                            <span>• Multiple Trails</span>
+                            <span>• Scenic Views</span>
+                            <span>• Refreshments</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn btn-outline" onclick="showActivityDetails('UTV Buggy Adventure')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('UTV Buggy Adventure', 1200000)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Activity Card 14 -->
+                <div class="activity-card" data-category="water" data-duration="half-day" data-difficulty="beginner">
+                    <div class="activity-image">
+                        <img src="../../assets/images/activity-watersport.jpg" alt="Sea Watersport Activities" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+                        <div class="activity-badge">Fun</div>
+                        <div class="activity-price">Rp 250,000</div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Sea Watersport Activities</h3>
+                        <p>Enjoy various watersport activities in Bali's beautiful coastal waters with professional instructors.</p>
                         <div class="activity-meta">
                             <span class="duration"><i class="fas fa-clock"></i> 2 Hours</span>
                             <span class="difficulty"><i class="fas fa-chart-line"></i> Beginner</span>
                         </div>
                         <div class="activity-features">
-                            <span>• Traditional Costumes</span>
-                            <span>• Live Gamelan Music</span>
-                            <span>• Cultural Explanation</span>
-                            <span>• Photo Opportunities</span>
+                            <span>• Multiple Activities</span>
+                            <span>• Professional Instructors</span>
+                            <span>• Safety Equipment</span>
+                            <span>• Beach Location</span>
                         </div>
                         <div class="activity-actions">
-                            <button class="btn btn-outline" onclick="showActivityDetails('Traditional Dance Performance')">Details</button>
-                            <button class="btn btn-primary" onclick="addToCart('Traditional Dance Performance', 615000)">Book Now</button>
+                            <button class="btn btn-outline" onclick="showActivityDetails('Sea Watersport Activities')">Details</button>
+                            <button class="btn btn-primary" onclick="addToCart('Sea Watersport Activities', 250000)">Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -373,15 +431,17 @@
                             <label for="activitySelect">Select Activity</label>
                             <select id="activitySelect" name="activitySelect" required>
                                 <option value="">Choose an activity</option>
-                                <option value="scuba-diving">Scuba Diving - Nusa Penida - Rp 1,740,000</option>
-                                <option value="atv-tour">ATV Adventure Tour - Rp 1,215,000</option>
-                                <option value="painting-workshop">Traditional Painting Workshop - Rp 915,000</option>
-                                <option value="balinese-spa">Balinese Traditional Spa - Rp 1,365,000</option>
-                                <option value="helicopter-tour">Helicopter Sightseeing Tour - Rp 3,690,000</option>
-                                <option value="snorkeling">Snorkeling in Menjangan Island - Rp 765,000</option>
-                                <option value="zipline">Zip Line & Jungle Adventure - Rp 1,065,000</option>
-                                <option value="sunset-cruise">Sunset Catamaran Cruise - Rp 1,140,000</option>
-                                <option value="dance-performance">Traditional Dance Performance - Rp 615,000</option>
+                                <option value="atv-tour">ATV Adventure Tour - Rp 500,000</option>
+                                <option value="balinese-spa">Balinese Traditional Spa - Rp 1,200,000</option>
+                                <option value="snorkeling">Snorkeling in Menjangan Island - Rp 400,000</option>
+                                <option value="ayung-shared">Ayung River Rafting Shared Package - Rp 350,000</option>
+                                <option value="ayung-private">Ayung River Rafting Private Package - Rp 1,800,000</option>
+                                <option value="horse-riding">Beach Horse Riding Experience - Rp 400,000</option>
+                                <option value="atv-quad">ATV Quad Bike Adventure - Rp 800,000</option>
+                                <option value="bali-safari">Bali Safari & Marine Park Ticket - Rp 520,000</option>
+                                <option value="utv-single">UTV Buggy Single Ride - Rp 800,000</option>
+                                <option value="utv-adventure">UTV Buggy Adventure - Rp 1,200,000</option>
+                                <option value="sea-watersport">Sea Watersport Activities - Rp 250,000</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -459,8 +519,9 @@
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-tripadvisor"></i></a>
+                        <a href="https://wa.me/6281337742281" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:arbalitourandtravel@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" class="social-link"><i class="fas fa-map-marker-alt"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -469,6 +530,7 @@
                         <li><a href="../../pages/tours/index.html">Tours</a></li>
                         <li><a href="../../pages/activities/index.html">Activities</a></li>
                         <li><a href="../../car-rental.html">Car Rental</a></li>
+                        <li><a href="../../pages/blog/index.html">Blog</a></li>
                         <li><a href="../../index.html#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -485,20 +547,28 @@
                     <h4>Contact Information</h4>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+62 123 456 7890</span>
+                            <a href="https://wa.me/6281337742281" target="_blank" class="contact-logo-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <span><a href="https://wa.me/6281337742281" target="_blank" class="contact-link">0813-3774-2281</a></span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@arbali-tour.com</span>
+                            <a href="mailto:arbalitourandtravel@gmail.com" class="contact-logo-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <span><a href="mailto:arbalitourandtravel@gmail.com" class="contact-link">arbalitourandtravel@gmail.com</a></span>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>+62 123 456 7890</span>
+                            <a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" class="contact-logo-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </a>
+                            <span><a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" class="contact-link-primary">Jl. Griya Anyar, Kuta, Denpasar Selatan, Kabupaten Badung, Bali 80221</a></span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Sanur, Bali, Indonesia</span>
+                            <a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" class="contact-logo-link">
+                                <i class="fas fa-google"></i>
+                            </a>
+                            <span><a href="https://www.google.com/maps?q=-8.7209469,115.1845626" target="_blank" class="contact-link-primary">View on Google Maps <i class="fas fa-external-link-alt contact-link-icon-small"></i></a></span>
                         </div>
                     </div>
                 </div>
