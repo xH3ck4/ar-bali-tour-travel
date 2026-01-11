@@ -38,6 +38,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Typography */
@@ -497,8 +499,13 @@ p {
 
 .tours-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .tour-card {
@@ -507,6 +514,11 @@ p {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .tour-card:hover {
@@ -1233,6 +1245,7 @@ p {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .modal .modal-content {
@@ -1243,10 +1256,22 @@ p {
     background: white;
     border-radius: var(--border-radius-lg);
     max-width: 800px;
-    width: 90%;
+    width: 95%;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .modal .modal-header {
@@ -1255,12 +1280,18 @@ p {
     align-items: center;
     padding: 1.5rem;
     border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 .modal .modal-header h3 {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .modal .modal-close {
@@ -1270,13 +1301,14 @@ p {
     color: var(--gray-600);
     cursor: pointer;
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .modal .modal-close:hover {
@@ -1307,6 +1339,7 @@ p {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .activity-modal .modal-content {
@@ -1317,10 +1350,11 @@ p {
     background: white;
     border-radius: var(--border-radius-lg);
     max-width: 800px;
-    width: 90%;
+    width: 95%;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.3s ease-out;
 }
 
 .activity-modal .modal-header {
@@ -1329,12 +1363,18 @@ p {
     align-items: center;
     padding: 1.5rem;
     border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 .activity-modal .modal-header h3 {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .activity-modal .modal-close {
@@ -1344,13 +1384,14 @@ p {
     color: var(--gray-600);
     cursor: pointer;
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .activity-modal .modal-close:hover {
@@ -1381,6 +1422,7 @@ p {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .car-modal .modal-content {
@@ -1391,10 +1433,11 @@ p {
     background: white;
     border-radius: var(--border-radius-lg);
     max-width: 800px;
-    width: 90%;
+    width: 95%;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.3s ease-out;
 }
 
 .car-modal .modal-header {
@@ -1403,12 +1446,18 @@ p {
     align-items: center;
     padding: 1.5rem;
     border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 .car-modal .modal-header h3 {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .car-modal .modal-close {
@@ -1418,13 +1467,14 @@ p {
     color: var(--gray-600);
     cursor: pointer;
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .car-modal .modal-close:hover {
@@ -1734,6 +1784,11 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px !important;
+        max-width: 100% !important;
+    }
+
     .nav-menu {
         display: none;
     }
@@ -1743,7 +1798,7 @@ p {
     }
 
     .hero {
-        padding: 100px 15px 60px;
+        padding: 100px 15px 60px !important;
         min-height: 80vh;
     }
 
@@ -1788,7 +1843,40 @@ p {
 
     .services-grid,
     .tours-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        justify-items: center !important;
+    }
+
+    .tour-card {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .tour-content {
+        padding: 1rem !important;
+    }
+
+    .tour-actions {
+        padding: 0 1rem 1rem 1rem !important;
+        gap: 0.5rem !important;
+    }
+
+    .tour-actions .btn {
+        flex: 1 !important;
+        padding: 10px 8px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .tour-card {
+        margin: 0 auto;
+        max-width: 100%;
     }
 
     .nav-container {
@@ -1842,31 +1930,91 @@ p {
     .cart-footer-buttons .btn {
         width: 100%;
     }
-}
 
-@media (max-width: 480px) {
-    .car-fleet .car-card .car-actions {
+    /* Tours page specific mobile styles */
+    .tour-categories {
+        padding: 3rem 0 !important;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
 
+    .category-card {
+        padding: 1.5rem !important;
+    }
+
+    .tour-filters {
+        padding: 1.5rem 0 !important;
+    }
+
+    .filters-container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+    }
+
+    .search-box {
+        min-width: auto !important;
+        width: 100% !important;
+    }
+
+    .filter-options {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    .filter-options select {
+        flex: 1 !important;
+        min-width: 120px !important;
+    }
+
+    .tours-section {
+        padding: 2rem 0 !important;
+    }
+
+    .booking-form-container {
+        padding: 2rem 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .container {
+        padding: 0 10px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .car-fleet .car-card .car-actions {
+        gap: 1rem !important;
+    }
+
     .car-fleet .car-card .car-actions .btn {
-        padding: 10px 8px !important;
+        padding: 10px 6px !important;
         font-size: 0.8rem !important;
         min-height: 40px !important;
     }
 
     .car-fleet .car-card .car-actions .details-btn {
-        padding: 10px 8px !important;
+        padding: 10px 6px !important;
         min-height: 40px !important;
     }
 
-    .container {
-        padding: 0 15px;
-    }
-
     .hero {
-        padding: 90px 10px 50px;
+        padding: 90px 10px 50px !important;
         min-height: 70vh;
+        margin: 0 !important;
+        width: 100% !important;
     }
 
     .hero-title {
@@ -1887,16 +2035,306 @@ p {
     }
 
     .nav-container {
-        padding: 0 15px;
+        padding: 0 10px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .section-header {
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
     }
 
     .section-header h2 {
-        font-size: 2rem;
+        font-size: 1.75rem !important;
+        margin: 0 0 1rem 0 !important;
+        padding: 0 !important;
     }
 
     .service-card,
     .tour-card {
-        padding: 1.5rem;
+        padding: 1rem !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Tours page specific mobile styles */
+    .tours-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        justify-items: center !important;
+    }
+
+    .tour-card {
+        width: 100% !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        justify-items: center !important;
+    }
+
+    .category-card {
+        width: 100% !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+    }
+
+    .filters-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .search-box {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .filter-options {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    .filter-options select {
+        flex: 1 !important;
+        margin: 0 2px !important;
+    }
+
+    .booking-form-container {
+        padding: 1.5rem 0.5rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .form-row {
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0.5rem !important;
+    }
+
+    .footer {
+        padding: 2rem 10px 1rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .footer-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+}
+
+    /* Modal Mobile Responsiveness */
+    .modal .modal-content,
+    .activity-modal .modal-content,
+    .car-modal .modal-content {
+        width: 98% !important;
+        max-width: none !important;
+        max-height: 95vh !important;
+        margin: 10px !important;
+    }
+
+    .modal .modal-header,
+    .activity-modal .modal-header,
+    .car-modal .modal-header {
+        padding: 1rem !important;
+    }
+
+    .modal .modal-header h3,
+    .activity-modal .modal-header h3,
+    .car-modal .modal-header h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .modal .modal-close,
+    .activity-modal .modal-close,
+    .car-modal .modal-close {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1.5rem !important;
+    }
+
+    .modal .modal-body,
+    .activity-modal .modal-body,
+    .car-modal .modal-body {
+        padding: 1rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Modal content specific mobile styles */
+    .modal-section h4 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .modal-list li {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 0 !important;
+    }
+
+    .modal-important-notes {
+        font-size: 0.85rem !important;
+        padding: 0.75rem !important;
+    }
+}
+
+/* ============================================
+   FULL SCREEN RESPONSIVE STYLES - Tours Page
+   ============================================ */
+
+.tours-fullscreen {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.tours-fullscreen .container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+}
+
+.tours-fullscreen .tour-categories {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 3rem 0 !important;
+}
+
+.tours-fullscreen .categories-grid {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important;
+    justify-items: center !important;
+}
+
+.tours-fullscreen .tour-filters {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2rem 0 !important;
+}
+
+.tours-fullscreen .filters-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    max-width: none !important;
+}
+
+.tours-fullscreen .tours-section {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 3rem 0 !important;
+}
+
+.tours-fullscreen .tours-grid {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 1.5rem !important;
+    justify-items: center !important;
+}
+
+.tours-fullscreen .tour-card {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+}
+
+.tours-fullscreen .booking-section {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 3rem 0 !important;
+}
+
+.tours-fullscreen .booking-form-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2rem 1rem !important;
+    max-width: none !important;
+}
+
+@media (max-width: 768px) {
+    .tours-fullscreen .categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .tours-fullscreen .category-card {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .tours-fullscreen .tours-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .tours-fullscreen .tour-card {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .tours-fullscreen .filters-container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .tours-fullscreen .search-box {
+        width: 100% !important;
+    }
+
+    .tours-fullscreen .filter-options {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tours-fullscreen .container {
+        padding: 0 10px !important;
+    }
+
+    .tours-fullscreen .tour-categories {
+        padding: 2rem 0 !important;
+    }
+
+    .tours-fullscreen .tour-filters {
+        padding: 1.5rem 0 !important;
+    }
+
+    .tours-fullscreen .tours-section {
+        padding: 2rem 0 !important;
+    }
+
+    .tours-fullscreen .booking-section {
+        padding: 2rem 0 !important;
+    }
+
+    .tours-fullscreen .booking-form-container {
+        padding: 1.5rem 0.5rem !important;
     }
 }
 

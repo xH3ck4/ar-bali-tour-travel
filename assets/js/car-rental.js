@@ -499,6 +499,30 @@ const carDetailsData = {
         ],
         importantNotes: 'This package is specifically for Nusa Penida Island tour only. Duration is 8 hours maximum. For mainland Bali, please select other car options.'
     },
+    'Toyota Avanza/Xenia/SPV - Nusa Penida Island': {
+        title: 'Toyota Avanza/Xenia/SPV - Nusa Penida Island',
+        included: [
+            'Car (Avanza, Xenia, or SPV model)',
+            'Professional driver',
+            'Fuel',
+            'Parking fees',
+            'Toll fees',
+            'Driver personal expenses',
+            'Driver as a guide (Travel Guide)',
+            'Service for Nusa Penida Island area only (8 Hours)',
+            'Free Tailor Made Itinerary (Please Chat Admin on WhatsApp or Email)'
+        ],
+        notIncluded: [
+            'Any food',
+            'Any tickets',
+            'Personal expenses',
+            'Overtime Price 10% from Fullday Rate Per Hour',
+            'Driver accomodation if required to stay overnight',
+            'Tip',
+            'Anything not mentioned'
+        ],
+        importantNotes: 'This package is specifically for Nusa Penida Island tour only. Duration is 8 hours maximum. Vehicle model (Avanza/Xenia/SPV) will be assigned based on availability. For mainland Bali, please select other car options.'
+    },
     'Toyota Innova Reborn': {
         title: 'Toyota Innova Reborn',
         included: [

@@ -706,6 +706,224 @@ const activityDetailsData = {
         ],
         importantNotes: 'Duration: Approximately 2 hours. Please inform about any medical conditions or allergies. Pregnant women should consult before booking. Minimum age: 16 years. Arrive 15 minutes early for consultation.'
     },
+    'Ayung River Rafting Shared Package': {
+        title: 'Ayung River Rafting Shared Package',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Arrive at rafting base camp',
+            '09:30 AM → Safety briefing and equipment fitting',
+            '10:00 AM → Start rafting adventure (Class II-III rapids)',
+            '12:00 PM → Break for refreshments',
+            '12:30 PM → Continue rafting',
+            '01:30 PM → Finish rafting and change',
+            '02:00 PM → Lunch',
+            '03:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional rafting guide',
+            'Rafting equipment (helmet, life jacket, paddle)',
+            'Safety briefing',
+            'Rafting through Ayung River rapids',
+            'Lunch',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Professional photos',
+            'Swimwear and towel'
+        ],
+        importantNotes: 'Duration: Approximately 5 hours. Minimum age: 12 years (with adult supervision). Minimum weight: 40kg. Maximum weight: 110kg. Cannot participate if pregnant, have heart conditions, or recent surgeries. Bring swimwear, towel, and change of clothes. Weather dependent - may be rescheduled in case of heavy rain.'
+    },
+    'Ayung River Rafting Private Package': {
+        title: 'Ayung River Rafting Private Package',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Private rafting briefing',
+            '09:30 AM → Start private rafting experience',
+            '11:30 AM → Private break with refreshments',
+            '12:00 PM → Continue private rafting',
+            '01:00 PM → Finish and change',
+            '01:30 PM → Private lunch experience',
+            '02:30 PM → Hotel drop-off'
+        ],
+        included: [
+            'Private rafting guide',
+            'Private raft (just your group)',
+            'Premium rafting equipment',
+            'Personalized safety briefing',
+            'Private lunch',
+            'Refreshments and snacks',
+            'Hotel pickup and drop-off',
+            'Insurance coverage',
+            'Professional photos'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Alcoholic beverages',
+            'Extra equipment rental'
+        ],
+        importantNotes: 'Duration: Approximately 6 hours. Private experience for your group only. Minimum age: 12 years. Cannot participate if pregnant, have heart conditions, or recent surgeries. Bring swimwear, towel, and change of clothes. Weather dependent.'
+    },
+    'Beach Horse Riding Experience': {
+        title: 'Beach Horse Riding Experience',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Arrive at beach stable',
+            '09:30 AM → Horse selection and safety briefing',
+            '10:00 AM → Start beach horse riding',
+            '11:00 AM → Riding along the beach shoreline',
+            '12:00 PM → Return to stable',
+            '12:30 PM → Refreshments and photos',
+            '01:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Experienced horse riding guide',
+            'Well-trained beach horses',
+            'Safety equipment (helmet, riding boots if needed)',
+            'Safety briefing',
+            'Beach riding experience',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Photo opportunities'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Professional photography',
+            'Swimwear (for beach access)'
+        ],
+        importantNotes: 'Duration: Approximately 3 hours. No riding experience required. Minimum age: 8 years (with adult supervision). Maximum weight: 90kg. Wear comfortable clothes and closed-toe shoes. Cannot participate if pregnant. Weather dependent - may be rescheduled in case of rough sea conditions.'
+    },
+    'ATV Quad Bike Adventure': {
+        title: 'ATV Quad Bike Adventure',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Arrive at ATV adventure park',
+            '09:30 AM → Safety briefing and ATV selection',
+            '10:00 AM → Start ATV riding experience',
+            '11:30 AM → Break and refreshments',
+            '12:00 PM → Continue ATV adventure',
+            '01:00 PM → Advanced trails (optional)',
+            '02:00 PM → Return and photo session',
+            '03:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional ATV instructor',
+            'ATV quad bike',
+            'Safety equipment (helmet, goggles, gloves)',
+            'Safety briefing',
+            'Fuel and maintenance',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Professional photos',
+            'Change of clothes'
+        ],
+        importantNotes: 'Duration: Approximately 5 hours. Minimum age: 16 years. Valid driver\'s license required. Maximum weight: 120kg. Wear long pants, closed-toe shoes, and clothes that can get dirty. Cannot participate if pregnant or have back problems. Weather dependent.'
+    },
+    'UTV Buggy Single Ride': {
+        title: 'UTV Buggy Single Ride',
+        itinerary: [
+            '09:00 AM → Hotel pickup',
+            '10:00 AM → Arrive at UTV adventure center',
+            '10:30 AM → Safety briefing and equipment',
+            '11:00 AM → Start UTV buggy ride',
+            '12:00 PM → Return to center',
+            '12:30 PM → Refreshments',
+            '01:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional UTV guide',
+            'UTV buggy vehicle',
+            'Safety equipment',
+            'Safety briefing',
+            'Fuel',
+            'Refreshments',
+            'Hotel pickup and drop-off'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Professional photos'
+        ],
+        importantNotes: 'Duration: Approximately 3 hours. Minimum age: 18 years. Valid driver\'s license required. Cannot participate if pregnant or have certain medical conditions. Weather dependent.'
+    },
+    'UTV Buggy Adventure': {
+        title: 'UTV Buggy Adventure',
+        itinerary: [
+            '08:00 AM → Hotel pickup',
+            '09:00 AM → Arrive at UTV adventure center',
+            '09:30 AM → Extended safety briefing',
+            '10:00 AM → Start UTV adventure',
+            '12:00 PM → Break with lunch',
+            '01:00 PM → Continue adventure trails',
+            '03:00 PM → Return to center',
+            '03:30 PM → Refreshments and photos',
+            '04:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional UTV guide',
+            'UTV buggy vehicle',
+            'Safety equipment',
+            'Extended safety briefing',
+            'Fuel',
+            'Lunch',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Photo opportunities'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Professional photos',
+            'Alcoholic beverages'
+        ],
+        importantNotes: 'Duration: Approximately 6 hours. Minimum age: 18 years. Valid driver\'s license required. Includes multiple trails and scenic viewpoints. Cannot participate if pregnant or have certain medical conditions. Weather dependent.'
+    },
+    'Sea Watersport Activities': {
+        title: 'Sea Watersport Activities',
+        itinerary: [
+            '09:00 AM → Hotel pickup',
+            '10:00 AM → Arrive at beach watersport center',
+            '10:30 AM → Equipment fitting and safety briefing',
+            '11:00 AM → Start watersport activities',
+            '12:30 PM → Break and refreshments',
+            '01:00 PM → Continue activities',
+            '02:30 PM → Return to center',
+            '03:00 PM → Hotel drop-off'
+        ],
+        included: [
+            'Professional watersport instructor',
+            'Watersport equipment',
+            'Safety equipment',
+            'Safety briefing',
+            'Refreshments',
+            'Hotel pickup and drop-off',
+            'Insurance coverage'
+        ],
+        notIncluded: [
+            'Personal expenses',
+            'Tips and gratuities',
+            'Additional activities',
+            'Professional photos',
+            'Swimwear and towel'
+        ],
+        importantNotes: 'Duration: Approximately 4 hours. Activities may include banana boat, jet ski, parasailing, or similar based on availability. Minimum age varies by activity (8-18 years). Cannot participate if pregnant. Weather dependent - sea conditions may affect activities.'
+    },
     'Helicopter Sightseeing Tour': {
         title: 'Helicopter Sightseeing Tour',
         itinerary: [
