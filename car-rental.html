@@ -104,6 +104,39 @@
         </div>
     </section>
 
+    <!-- Filter and Search -->
+    <section class="car-filters">
+        <div class="container">
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" id="carSearch" placeholder="Search cars...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-options">
+                    <select id="durationFilter">
+                        <option value="">Duration</option>
+                        <option value="half-day">Half Day (6 hours)</option>
+                        <option value="full-day">Full Day (12 hours)</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="">Price Range</option>
+                        <option value="budget">Budget (Rp 0 - Rp 1,000,000)</option>
+                        <option value="mid">Mid Range (Rp 1,000,000 - Rp 2,500,000)</option>
+                        <option value="premium">Premium (Rp 2,500,000+)</option>
+                    </select>
+                    <select id="seatsFilter">
+                        <option value="">Seats</option>
+                        <option value="7-seats">7 Seats</option>
+                        <option value="10-seats">10 Seats</option>
+                        <option value="14-seats">14 Seats</option>
+                        <option value="19-seats">19 Seats</option>
+                        <option value="22-seats">22+ Seats</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Car Fleet -->
     <section class="car-fleet">
         <div class="container">
@@ -124,7 +157,7 @@
             <!-- Car Grid -->
             <div class="cars-grid">
                 <!-- Avanza / Xenia / APV / Mobilio / Ertiga / Sigra -->
-                <div class="car-card" data-category="sedan">
+                <div class="car-card" data-category="sedan" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-avanza.jpg" alt="Avanza / Xenia / APV / Mobilio / Ertiga / Sigra" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Toyota+Avanza'">
                         <div class="car-badge bali-badge">Economy</div>
@@ -164,7 +197,7 @@
                 </div>
 
                 <!-- Toyota Avanza/Xenia/SPV Nusa Penida Island -->
-                <div class="car-card" data-category="sedan">
+                <div class="car-card" data-category="sedan" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-avanza-nusapenida.jpg" alt="Toyota Avanza/Xenia/SPV - Nusa Penida Island" onerror="this.src='https://via.placeholder.com/800x500/F7931E/FFFFFF?text=Toyota+Avanza'">
                         <div class="car-badge bali-badge">Economy</div>
@@ -244,7 +277,7 @@
                 </div>
 
                 <!-- Toyota Hiace -->
-                <div class="car-card" data-category="van">
+                <div class="car-card" data-category="van" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-hiace.jpg" alt="Toyota Hiace" onerror="this.src='https://via.placeholder.com/800x500/FF6B35/FFFFFF?text=Toyota+Hiace'">
                         <div class="car-badge bali-badge">Van / Group</div>
@@ -284,7 +317,7 @@
                 </div>
 
                 <!-- Toyota Hiace Premio -->
-                <div class="car-card" data-category="van">
+                <div class="car-card" data-category="van" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-hiace-premio.jpg" alt="Toyota Hiace Premio" onerror="this.src='https://via.placeholder.com/800x500/F7931E/FFFFFF?text=Hiace+Premio'">
                         <div class="car-badge bali-badge">Comfort / Van</div>
@@ -324,7 +357,7 @@
                 </div>
 
                 <!-- Elf Giga Long -->
-                <div class="car-card" data-category="van">
+                <div class="car-card" data-category="van" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-elf-giga.jpg" alt="Elf Giga Long" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Elf+Giga+Long'">
                         <div class="car-badge bali-badge">Mini Bus</div>
@@ -364,7 +397,7 @@
                 </div>
 
                 <!-- Premio Luxury -->
-                <div class="car-card" data-category="luxury">
+                <div class="car-card" data-category="luxury" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-premio-luxury.jpg" alt="Premio Luxury" onerror="this.src='https://via.placeholder.com/800x500/FF6B35/FFFFFF?text=Premio+Luxury'">
                         <div class="car-badge bali-badge">Luxury</div>
@@ -404,7 +437,7 @@
                 </div>
 
                 <!-- Bus 22, 28, 33, 35, 48, 54 Seats -->
-                <div class="car-card" data-category="van">
+                <div class="car-card" data-category="van" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-bus.jpg" alt="Bus 22, 28, 33, 35, 48, 54 Seats" onerror="this.src='https://via.placeholder.com/800x500/F7931E/FFFFFF?text=Big+Bus'">
                         <div class="car-badge bali-badge">Big Group</div>
@@ -444,7 +477,7 @@
                 </div>
 
                 <!-- Toyota Alphard 2024/2025 -->
-                <div class="car-card" data-category="luxury">
+                <div class="car-card" data-category="luxury" data-duration="half-day,full-day">
                     <div class="car-image">
                         <img src="assets/images/car-alphard.jpg" alt="Toyota Alphard 2024/2025" onerror="this.src='https://via.placeholder.com/800x500/2D5F5D/FFFFFF?text=Toyota+Alphard+2024'">
                         <div class="car-badge bali-badge">Premium Luxury</div>

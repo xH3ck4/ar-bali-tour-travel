@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryCards.forEach(card => {
             card.addEventListener('click', () => {
                 const category = card.getAttribute('data-category');
+                const isDisabled = card.style.opacity === '0.5' || card.style.cursor === 'not-allowed';
+
+                if (isDisabled) return; // Don't do anything for disabled categories
 
                 // Remove active class from all categories
                 categoryCards.forEach(c => c.classList.remove('active'));
@@ -74,16 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Price filter
             if (filters.price) {
-                const price = parseInt(card.querySelector('.tour-price').textContent.replace('$', ''));
+                const priceText = card.querySelector('.tour-price').textContent;
+                const price = parseInt(priceText.replace(/[^\d]/g, ''));
                 switch (filters.price) {
                     case 'budget':
-                        if (price >= 50) show = false;
+                        if (price >= 300000) show = false;
                         break;
                     case 'mid':
-                        if (price < 50 || price >= 100) show = false;
+                        if (price < 300000 || price >= 500000) show = false;
                         break;
                     case 'premium':
-                        if (price < 100) show = false;
+                        if (price < 500000) show = false;
                         break;
                 }
             }
@@ -681,16 +685,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function generateTourBookingMessage(bookingDetails) {
     const tourNames = {
-        'ubud-cultural': 'Ubud Cultural Tour',
         'batur-sunrise': 'Mount Batur Sunrise Trek',
         'batur-jeep': 'Mount Batur Sunrise Jeep Tour',
-        'lovina-dolphin': 'Lovina Dolphin Adventure Tour',
-        'south-beach': 'South Bali Beach Tour',
-        'tanah-lot': 'Tanah Lot Temple Tour',
-        'cooking-class': 'Traditional Cooking Class',
-        'east-bali': 'East Bali Cultural Journey',
-        'waterfalls': 'Hidden Waterfalls Adventure',
-        'nusa-dua': 'Nusa Dua Beach Experience'
+        'lovina-dolphin': 'Lovina Dolphin Adventure Tour'
     };
 
     const timeSlots = {
@@ -734,34 +731,6 @@ function generateTourBookingMessage(bookingDetails) {
 
 // Tour details data
 const tourDetailsData = {
-    'Ubud Cultural Tour': {
-        title: 'Ubud Cultural Tour',
-        itinerary: [
-            '08:00 AM → Hotel pickup from your accommodation',
-            '09:00 AM → Visit Tegalalang Rice Terrace for stunning views',
-            '10:30 AM → Explore Ubud Monkey Forest Sanctuary',
-            '12:00 PM → Traditional Balinese lunch at local restaurant',
-            '01:30 PM → Visit local artisan villages (silver, wood carving)',
-            '03:00 PM → Watch traditional Balinese dance performance',
-            '04:00 PM → Visit Ubud Palace and Ubud Market',
-            '05:00 PM → Return to hotel'
-        ],
-        included: [
-            'Professional English-speaking guide',
-            'Air-conditioned vehicle with driver',
-            'Hotel pickup and drop-off',
-            'Entrance fees to all attractions',
-            'Traditional dance performance ticket',
-            'Lunch at local restaurant'
-        ],
-        notIncluded: [
-            'Personal expenses',
-            'Tips and gratuities',
-            'Additional food and beverages',
- 'Optional activities not mentioned'
-        ],
-        importantNotes: 'Duration: Approximately 8 hours. Comfortable walking shoes recommended. Please bring camera, sunscreen, and hat. Traditional dress code may apply for temple visits.'
-    },
     'Mount Batur Sunrise Trek': {
         title: 'Mount Batur Sunrise Trek',
         itinerary: [
@@ -845,179 +814,6 @@ const tourDetailsData = {
         ],
         importantNotes: 'Best experience at sunrise when dolphins are most active. Weather dependent. Bring light clothing, hat, and sunscreen. Duration: Approximately 4 hours.'
     },
-    'South Bali Beach Tour': {
-        title: 'South Bali Beach Tour',
-        itinerary: [
-            '09:00 AM → Hotel pickup',
-            '10:00 AM → Visit Jimbaran Beach',
-            '11:30 AM → Explore Nusa Dua Beach area',
-            '01:00 PM → Seafood lunch at Jimbaran',
-            '02:30 PM → Visit Padang Padang Beach',
-            '04:00 PM → Uluwatu Temple and Kecak dance show',
-            '06:00 PM → Sunset viewing',
-            '07:00 PM → Return to hotel'
-        ],
-        included: [
-            'Professional guide',
-            'Air-conditioned vehicle',
-            'Hotel pickup and drop-off',
-            'Entrance fees',
-            'Seafood lunch',
-            'Kecak dance performance ticket'
-        ],
-        notIncluded: [
-            'Water sports activities',
-            'Personal expenses',
-            'Tips and gratuities',
-            'Additional food and beverages'
-        ],
-        importantNotes: 'Duration: Approximately 10 hours. Bring swimwear, towel, sunscreen, and camera. Temple visit requires proper attire (sarong provided).'
-    },
-    'Tanah Lot Temple Tour': {
-        title: 'Tanah Lot Temple Tour',
-        itinerary: [
-            '03:00 PM → Hotel pickup',
-            '04:00 PM → Arrive at Tanah Lot Temple',
-            '04:30 PM → Explore temple and surrounding area',
-            '05:30 PM → Witness traditional ceremonies',
-            '06:30 PM → Sunset viewing',
-            '07:30 PM → Return to hotel'
-        ],
-        included: [
-            'Professional guide',
-            'Air-conditioned vehicle',
-            'Hotel pickup and drop-off',
-            'Entrance fees',
-            'Sarong rental'
-        ],
-        notIncluded: [
-            'Personal expenses',
-            'Tips and gratuities',
-            'Food and beverages',
-            'Additional activities'
-        ],
-        importantNotes: 'Duration: Approximately 4 hours. Best time to visit is during sunset. Proper attire required for temple visit. High tide may limit access to temple.'
-    },
-    'Traditional Cooking Class': {
-        title: 'Traditional Cooking Class',
-        itinerary: [
-            '08:00 AM → Hotel pickup',
-            '09:00 AM → Visit local market for ingredients',
-            '10:00 AM → Arrive at cooking class location',
-            '10:30 AM → Introduction and traditional cooking methods',
-            '11:00 AM → Hands-on cooking session',
-            '01:00 PM → Enjoy your prepared meal',
-            '02:00 PM → Receive recipe booklet and certificate',
-            '03:00 PM → Return to hotel'
-        ],
-        included: [
-            'Professional cooking instructor',
-            'All ingredients and cooking equipment',
-            'Market tour',
-            'Recipe booklet',
-            'Certificate of completion',
-            'Lunch with prepared dishes',
-            'Hotel pickup and drop-off'
-        ],
-        notIncluded: [
-            'Personal expenses',
-            'Tips and gratuities',
-            'Additional food and beverages',
-            'Transportation beyond included areas'
-        ],
-        importantNotes: 'Duration: Approximately 5 hours. Suitable for all skill levels. Please inform about dietary restrictions or allergies in advance. Vegetarian options available.'
-    },
-    'East Bali Cultural Journey - 2 Days': {
-        title: 'East Bali Cultural Journey - 2 Days',
-        itinerary: [
-            'Day 1:',
-            '08:00 AM → Hotel pickup',
-            '10:00 AM → Visit Tenganan Ancient Village',
-            '12:00 PM → Lunch at local restaurant',
-            '02:00 PM → Explore Tirta Gangga Water Palace',
-            '04:00 PM → Check-in at local homestay',
-            '06:00 PM → Traditional dinner',
-            '',
-            'Day 2:',
-            '08:00 AM → Breakfast at homestay',
-            '09:00 AM → Visit Virgin Beach',
-            '11:00 AM → Explore traditional villages',
-            '01:00 PM → Lunch',
-            '03:00 PM → Return journey',
-            '05:00 PM → Hotel drop-off'
-        ],
-        included: [
-            'Professional guide',
-            'Air-conditioned vehicle',
-            'Hotel pickup and drop-off',
-            '1 night accommodation at local homestay',
-            'All meals (breakfast, lunch, dinner)',
-            'Entrance fees to all attractions',
-            'Cultural activities'
-        ],
-        notIncluded: [
-            'Personal expenses',
-            'Tips and gratuities',
-            'Additional food and beverages',
-            'Optional activities'
-        ],
-        importantNotes: 'Duration: 2 days, 1 night. Accommodation is basic but comfortable. Bring comfortable walking shoes, camera, and light clothing. Cultural sensitivity required when visiting traditional villages.'
-    },
-    'Hidden Waterfalls Adventure': {
-        title: 'Hidden Waterfalls Adventure',
-        itinerary: [
-            '08:00 AM → Hotel pickup',
-            '09:30 AM → Arrive at first waterfall location',
-            '10:00 AM → Jungle trekking to waterfalls',
-            '12:00 PM → Picnic lunch at natural pool',
-            '01:00 PM → Continue to additional waterfalls',
-            '03:00 PM → Swimming and relaxation',
-            '04:30 PM → Return journey',
-            '06:00 PM → Hotel drop-off'
-        ],
-        included: [
-            'Professional local guide',
-            'Air-conditioned vehicle',
-            'Hotel pickup and drop-off',
-            'Entrance fees',
-            'Picnic lunch',
-            'Safety equipment'
-        ],
-        notIncluded: [
-            'Personal expenses',
-            'Tips and gratuities',
-            'Additional food and beverages',
-            'Swimming gear (bring your own)'
-        ],
-        importantNotes: 'Duration: Approximately 8 hours. Requires moderate fitness level. Wear proper hiking shoes and swimwear. Bring towel, change of clothes, and waterproof camera. Some areas may be slippery.'
-    },
-    'Nusa Dua Beach Experience': {
-        title: 'Nusa Dua Beach Experience',
-        itinerary: [
-            '09:00 AM → Hotel pickup',
-            '10:00 AM → Arrive at Nusa Dua Beach',
-            '10:30 AM → Beach activities and relaxation',
-            '12:30 PM → Lunch at beachside restaurant',
-            '02:00 PM → Water sports (optional)',
-            '04:00 PM → Explore resort area',
-            '05:00 PM → Return to hotel'
-        ],
-        included: [
-            'Professional guide',
-            'Air-conditioned vehicle',
-            'Hotel pickup and drop-off',
-            'Beach access',
-            'Lunch',
-            'Beach facilities'
-        ],
-        notIncluded: [
-            'Water sports activities',
-            'Personal expenses',
-            'Tips and gratuities',
-            'Additional food and beverages'
-        ],
-        importantNotes: 'Duration: Approximately 4 hours. Family-friendly activity. Bring swimwear, towel, sunscreen, and camera. Water sports available at additional cost.'
-    }
 };
 
 // Show tour details modal

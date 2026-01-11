@@ -64,33 +64,33 @@
                 <p>Find the perfect tour that matches your interests and preferences</p>
             </div>
             <div class="categories-grid">
-                <div class="category-card" data-category="cultural">
-                    <div class="category-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3>Cultural Tours</h3>
-                    <p>Immerse yourself in Bali's rich cultural heritage, traditional ceremonies, and ancient temples.</p>
-                </div>
-                <div class="category-card" data-category="nature">
+                <div class="category-card active" data-category="nature">
                     <div class="category-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
                     <h3>Nature & Adventure</h3>
                     <p>Explore stunning landscapes, hike volcanoes, and experience Bali's natural beauty.</p>
                 </div>
-                <div class="category-card" data-category="beach">
+                <div class="category-card" data-category="cultural" style="opacity: 0.5; cursor: not-allowed;">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Cultural Tours</h3>
+                    <p>Coming soon - Bali's rich cultural heritage and traditional ceremonies.</p>
+                </div>
+                <div class="category-card" data-category="beach" style="opacity: 0.5; cursor: not-allowed;">
                     <div class="category-icon">
                         <i class="fas fa-umbrella-beach"></i>
                     </div>
                     <h3>Beach & Relaxation</h3>
-                    <p>Visit pristine beaches, luxury resorts, and enjoy the perfect tropical getaway.</p>
+                    <p>Coming soon - Pristine beaches and luxury resorts for tropical getaways.</p>
                 </div>
-                <div class="category-card" data-category="food">
+                <div class="category-card" data-category="food" style="opacity: 0.5; cursor: not-allowed;">
                     <div class="category-icon">
                         <i class="fas fa-utensils"></i>
                     </div>
                     <h3>Culinary Experiences</h3>
-                    <p>Discover Bali's vibrant food culture with cooking classes and local dining experiences.</p>
+                    <p>Coming soon - Discover Bali's vibrant food culture and cooking classes.</p>
                 </div>
             </div>
         </div>
@@ -113,9 +113,9 @@
                     </select>
                     <select id="priceFilter">
                         <option value="">Price Range</option>
-                        <option value="budget">$0 - $50</option>
-                        <option value="mid">$50 - $100</option>
-                        <option value="premium">$100+</option>
+                        <option value="budget">Budget (Rp 0 - Rp 300,000)</option>
+                        <option value="mid">Mid Range (Rp 300,000 - Rp 500,000)</option>
+                        <option value="premium">Premium (Rp 500,000+)</option>
                     </select>
                     <select id="groupFilter">
                         <option value="">Group Size</option>
@@ -132,39 +132,13 @@
     <section class="tours-section">
         <div class="container">
             <div class="tours-grid" id="toursGrid">
-                <!-- Tour Card 1 -->
-                <div class="tour-card" data-category="cultural" data-duration="full-day" data-price="mid" data-group="private,small">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-ubud.jpg" alt="Ubud Cultural Tour" onerror="this.src='https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400'">
-                        <div class="tour-badge">Most Popular</div>
-                        <div class="tour-price">Rp 1,215,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>Ubud Cultural Tour</h3>
-                        <p>Explore the artistic heart of Bali with traditional dance performances, monkey forest visits, and sacred temples.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 8 Hours</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Max 8</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Traditional Dance Performance</span>
-                            <span>• Monkey Forest Sanctuary</span>
-                            <span>• Rice Terrace Views</span>
-                            <span>• Local Artisan Villages</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="Ubud Cultural Tour">Details</button>
-                            <button class="btn btn-primary" data-cart-item="Ubud Cultural Tour" data-price="1215000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Tour Card 2 -->
                 <div class="tour-card" data-category="nature" data-duration="full-day" data-price="mid" data-group="private,small">
                     <div class="tour-image">
                         <img src="../../assets/images/tour-batur.jpg" alt="Mount Batur Sunrise Trek" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400'">
                         <div class="tour-badge">Adventure</div>
-                        <div class="tour-price">Rp 700,000</div>
+                        <div class="tour-price">Rp 700,000/pax</div>
                     </div>
                     <div class="tour-content">
                         <h3>Mount Batur Sunrise Trek</h3>
@@ -186,174 +160,18 @@
                     </div>
                 </div>
 
-                <!-- Tour Card 3 -->
-                <div class="tour-card" data-category="beach" data-duration="full-day" data-price="premium" data-group="private,small">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-beaches.jpg" alt="South Bali Beach Tour" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400'">
-                        <div class="tour-badge">Relaxation</div>
-                        <div class="tour-price">Rp 1,365,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>South Bali Beach Tour</h3>
-                        <p>Visit pristine beaches, luxury resorts, and hidden coves for the perfect tropical beach experience.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 10 Hours</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Max 8</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Jimbaran Beach</span>
-                            <span>• Luxury Resort Visit</span>
-                            <span>• Seafood Lunch</span>
-                            <span>• Water Sports</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="South Bali Beach Tour">Details</button>
-                            <button class="btn btn-primary" data-cart-item="South Bali Beach Tour" data-price="1365000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Tour Card 4 -->
-                <div class="tour-card" data-category="cultural" data-duration="half-day" data-price="budget" data-group="small,large">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-tanah-lot.jpg" alt="Tanah Lot Temple Tour" onerror="this.src='https://images.unsplash.com/photo-1573790387438-4da905039392?w=400'">
-                        <div class="tour-badge">Iconic</div>
-                        <div class="tour-price">Rp 615,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>Tanah Lot Temple Tour</h3>
-                        <p>Visit Bali's most iconic sea temple, perched on a rock formation surrounded by the Indian Ocean.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 4 Hours</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Max 15</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Iconic Sea Temple</span>
-                            <span>• Sunset Views</span>
-                            <span>• Traditional Offerings</span>
-                            <span>• Photo Opportunities</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="Tanah Lot Temple Tour">Details</button>
-                            <button class="btn btn-primary" data-cart-item="Tanah Lot Temple Tour" data-price="615000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Tour Card 5 -->
-                <div class="tour-card" data-category="food" data-duration="half-day" data-price="mid" data-group="private,small">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-cooking.jpg" alt="Bali Cooking Class" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400'">
-                        <div class="tour-badge">Culinary</div>
-                        <div class="tour-price">Rp 1,065,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>Traditional Cooking Class</h3>
-                        <p>Learn to prepare authentic Balinese dishes with fresh local ingredients and traditional cooking methods.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 5 Hours</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Max 6</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Local Market Visit</span>
-                            <span>• Traditional Recipes</span>
-                            <span>• Hands-on Cooking</span>
-                            <span>• Lunch with Locals</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="Traditional Cooking Class">Details</button>
-                            <button class="btn btn-primary" data-cart-item="Traditional Cooking Class" data-price="1065000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Tour Card 6 -->
-                <div class="tour-card" data-category="nature" data-duration="multi-day" data-price="premium" data-group="private">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-east-bali.jpg" alt="East Bali Exploration" onerror="this.src='https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400'">
-                        <div class="tour-badge">Premium</div>
-                        <div class="tour-price">Rp 3,690,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>East Bali Cultural Journey</h3>
-                        <p>A 2-day exploration of Bali's eastern region, featuring ancient villages, pristine beaches, and cultural experiences.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 2 Days</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Private</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Traditional Villages</span>
-                            <span>• Tirta Gangga Water Palace</span>
-                            <span>• Virgin Beaches</span>
-                            <span>• Local Homestay</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="East Bali Cultural Journey - 2 Days">Details</button>
-                            <button class="btn btn-primary" data-cart-item="East Bali Cultural Journey - 2 Days" data-price="3690000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Tour Card 7 -->
-                <div class="tour-card" data-category="nature" data-duration="full-day" data-price="mid" data-group="private,small">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-waterfalls.jpg" alt="Bali Waterfalls Tour" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400'">
-                        <div class="tour-badge">Adventure</div>
-                        <div class="tour-price">Rp 990,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>Hidden Waterfalls Adventure</h3>
-                        <p>Discover Bali's most beautiful waterfalls with jungle treks, natural pools, and refreshing swims.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 8 Hours</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Max 8</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Jungle Trekking</span>
-                            <span>• Natural Pools</span>
-                            <span>• Local Guide</span>
-                            <span>• Picnic Lunch</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="Hidden Waterfalls Adventure">Details</button>
-                            <button class="btn btn-primary" data-cart-item="Hidden Waterfalls Adventure" data-price="990000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Tour Card 8 -->
-                <div class="tour-card" data-category="beach" data-duration="half-day" data-price="budget" data-group="small,large">
-                    <div class="tour-image">
-                        <img src="../../assets/images/tour-nusa-dua.jpg" alt="Nusa Dua Beach Tour" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400'">
-                        <div class="tour-badge">Family</div>
-                        <div class="tour-price">Rp 540,000</div>
-                    </div>
-                    <div class="tour-content">
-                        <h3>Nusa Dua Beach Experience</h3>
-                        <p>Relax on Bali's most luxurious beach area with pristine white sand, crystal clear waters, and resort views.</p>
-                        <div class="tour-meta">
-                            <span class="duration"><i class="fas fa-clock"></i> 4 Hours</span>
-                            <span class="group-size"><i class="fas fa-users"></i> Max 12</span>
-                        </div>
-                        <div class="tour-features">
-                            <span>• Luxury Beach Area</span>
-                            <span>• Water Activities</span>
-                            <span>• Resort Views</span>
-                            <span>• Relaxing Atmosphere</span>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn btn-outline" data-tour="Nusa Dua Beach Experience">Details</button>
-                            <button class="btn btn-primary" data-cart-item="Nusa Dua Beach Experience" data-price="540000">Book Now</button>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Tour Card 9 -->
                 <div class="tour-card" data-category="nature" data-duration="half-day" data-price="budget" data-group="private,small">
                     <div class="tour-image">
                         <img src="../../assets/images/tour-batur.jpg" alt="Mount Batur Sunrise Jeep Tour" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400'">
                         <div class="tour-badge">Adventure</div>
-                        <div class="tour-price">Rp 400,000</div>
+                        <div class="tour-price">Rp 400,000/pax</div>
                     </div>
                     <div class="tour-content">
                         <h3>Mount Batur Sunrise Jeep Tour</h3>
@@ -380,7 +198,7 @@
                     <div class="tour-image">
                         <img src="../../assets/images/tour-beaches.jpg" alt="Lovina Dolphin Adventure Tour" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
                         <div class="tour-badge">Adventure</div>
-                        <div class="tour-price">Rp 200,000</div>
+                        <div class="tour-price">Rp 200,000/pax</div>
                     </div>
                     <div class="tour-content">
                         <h3>Lovina Dolphin Adventure Tour</h3>
@@ -419,16 +237,9 @@
                             <label for="tourSelect">Select Tour</label>
                             <select id="tourSelect" name="tourSelect" required>
                                 <option value="">Choose a tour</option>
-                                <option value="ubud-cultural">Ubud Cultural Tour - Rp 1,215,000</option>
                                 <option value="batur-sunrise">Mount Batur Sunrise Trek - Rp 700,000</option>
                                 <option value="batur-jeep">Mount Batur Sunrise Jeep Tour - Rp 400,000</option>
                                 <option value="lovina-dolphin">Lovina Dolphin Adventure Tour - Rp 200,000</option>
-                                <option value="south-beach">South Bali Beach Tour - Rp 1,365,000</option>
-                                <option value="tanah-lot">Tanah Lot Temple Tour - Rp 615,000</option>
-                                <option value="cooking-class">Traditional Cooking Class - Rp 1,065,000</option>
-                                <option value="east-bali">East Bali Cultural Journey - Rp 3,690,000</option>
-                                <option value="waterfalls">Hidden Waterfalls Adventure - Rp 990,000</option>
-                                <option value="nusa-dua">Nusa Dua Beach Experience - Rp 540,000</option>
                             </select>
                         </div>
                         <div class="form-group">

@@ -4,10 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const activityCards = document.querySelectorAll('.activity-card');
     const categoryCards = document.querySelectorAll('.category-card');
 
+    // Only run activities page specific code if elements exist
+    const searchInput = document.getElementById('activitySearch');
+    const durationFilter = document.getElementById('durationFilter');
+    const priceFilter = document.getElementById('priceFilter');
+    const categoryFilter = document.getElementById('categoryFilter');
+
+    // Check if we're on activities page (only run if search/filter elements exist)
+    if (searchInput && durationFilter && priceFilter && categoryFilter) {
+
     // Category filtering
     categoryCards.forEach(card => {
         card.addEventListener('click', () => {
             const category = card.getAttribute('data-category');
+            const isDisabled = card.style.opacity === '0.5' || card.style.cursor === 'not-allowed';
+
+            if (isDisabled) return; // Don't do anything for disabled categories
 
             // Remove active class from all categories
             categoryCards.forEach(c => c.classList.remove('active'));
@@ -17,6 +29,36 @@ document.addEventListener('DOMContentLoaded', () => {
             filterActivities({ category: category });
         });
     });
+
+        // Search functionality
+        searchInput.addEventListener('input', () => {
+            filterActivities({ search: searchInput.value.toLowerCase() });
+        });
+
+        // Filter dropdowns
+        durationFilter.addEventListener('change', () => {
+            filterActivities({ duration: durationFilter.value });
+        });
+
+        priceFilter.addEventListener('change', () => {
+            filterActivities({ price: priceFilter.value });
+        });
+
+        categoryFilter.addEventListener('change', () => {
+            const selectedCategory = categoryFilter.value;
+            if (selectedCategory === 'aerial' || selectedCategory === 'nightlife') {
+                // Show notification for coming soon categories
+                if (typeof showNotification !== 'undefined') {
+                    showNotification('This category is coming soon!', 'info');
+                } else {
+                    alert('This category is coming soon!');
+                }
+                categoryFilter.value = ''; // Reset selection
+                return;
+            }
+            filterActivities({ category: selectedCategory });
+        });
+    }
 
     // Activity booking form handling
     const activityBookingForm = document.getElementById('activityBookingForm');
@@ -57,13 +99,85 @@ document.addEventListener('DOMContentLoaded', () => {
             activityBookingForm.reset();
         });
     }
+});
 
-    // Add CSS styles
+// Add CSS styles
     const style = document.createElement('style');
     style.textContent = `
         .activity-categories {
             padding: 5rem 0;
             background: var(--gray-100);
+        }
+
+        .activity-filters {
+            padding: 2rem 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .filters-container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-options select {
+            padding: 12px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-options select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
 
         .categories-grid {
@@ -287,6 +401,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 height: 40vh;
             }
 
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: auto;
+            }
+
+            .filter-options {
+                justify-content: center;
+            }
+
             .categories-grid {
                 grid-template-columns: 1fr;
             }
@@ -505,37 +632,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
-});
 
-function filterActivities(filters = {}) {
-    const activityCards = document.querySelectorAll('.activity-card');
+    // Combined filtering function
+    function filterActivities(filters = {}) {
+        const activityCards = document.querySelectorAll('.activity-card');
 
-    activityCards.forEach(card => {
-        let show = true;
+        activityCards.forEach(card => {
+            let show = true;
 
-        // Category filter
-        if (filters.category && card.getAttribute('data-category') !== filters.category) {
-            show = false;
-        }
+            // Search filter
+            if (filters.search) {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const features = Array.from(card.querySelectorAll('.activity-features span')).map(span => span.textContent.toLowerCase());
 
-        // Show/hide card with animation
-        if (show) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeIn 0.5s ease-in-out';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
+                const searchMatch = title.includes(filters.search) ||
+                                  description.includes(filters.search) ||
+                                  features.some(feature => feature.includes(filters.search));
+
+                if (!searchMatch) show = false;
+            }
+
+            // Category filter
+            if (filters.category && card.getAttribute('data-category') !== filters.category) {
+                show = false;
+            }
+
+            // Duration filter
+            if (filters.duration && card.getAttribute('data-duration') !== filters.duration) {
+                show = false;
+            }
+
+            // Price filter
+            if (filters.price) {
+                const priceText = card.querySelector('.activity-price').textContent;
+                const price = parseInt(priceText.replace(/[^\d]/g, ''));
+                switch (filters.price) {
+                    case 'budget':
+                        if (price >= 300000) show = false;
+                        break;
+                    case 'mid':
+                        if (price < 300000 || price >= 600000) show = false;
+                        break;
+                    case 'premium':
+                        if (price < 600000) show = false;
+                        break;
+                }
+            }
+
+            // Show/hide card with animation
+            if (show) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeIn 0.5s ease-in-out';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
 
 function generateActivityBookingMessage(bookingDetails) {
     const activityNames = {
         'scuba-diving': 'Scuba Diving - Nusa Penida',
-        'atv-tour': 'ATV Adventure Tour',
+        'atv-tour': 'ATV Quad Bike Adventure - Single',
         'painting-workshop': 'Traditional Painting Workshop',
         'balinese-spa': 'Balinese Traditional Spa',
         'helicopter-tour': 'Helicopter Sightseeing Tour',
-        'snorkeling': 'Snorkeling in Menjangan Island',
+        'snorkeling': 'Snorkeling in Penida Island',
         'zipline': 'Zip Line & Jungle Adventure',
         'sunset-cruise': 'Sunset Catamaran Cruise',
         'dance-performance': 'Traditional Dance Performance'
@@ -620,7 +782,7 @@ const activityDetailsData = {
         ],
         importantNotes: 'Requires PADI Open Water certification or equivalent. Minimum age: 12 years. Medical clearance may be required. Duration: Approximately 6 hours. Bring swimwear, towel, and change of clothes. Weather dependent - may be rescheduled in case of rough sea conditions.'
     },
-    'ATV Adventure Tour': {
+    'ATV Quad Bike Adventure - Single': {
         title: 'ATV Adventure Tour',
         itinerary: [
             '08:00 AM → Hotel pickup',
@@ -801,7 +963,7 @@ const activityDetailsData = {
         ],
         importantNotes: 'Duration: Approximately 3 hours. No riding experience required. Minimum age: 8 years (with adult supervision). Maximum weight: 90kg. Wear comfortable clothes and closed-toe shoes. Cannot participate if pregnant. Weather dependent - may be rescheduled in case of rough sea conditions.'
     },
-    'ATV Quad Bike Adventure': {
+    'ATV Quad Bike Adventure - Couple/Tandem': {
         title: 'ATV Quad Bike Adventure',
         itinerary: [
             '08:00 AM → Hotel pickup',
@@ -953,8 +1115,8 @@ const activityDetailsData = {
         ],
         importantNotes: 'Duration: Approximately 2 hours (flight time varies). Weather dependent - may be rescheduled in case of poor visibility or bad weather. Weight restrictions apply. Minimum age: 2 years. Advance booking recommended.'
     },
-    'Snorkeling in Menjangan Island': {
-        title: 'Snorkeling in Menjangan Island',
+    'Snorkeling in Penida Island': {
+        title: 'Snorkeling in Penida Island',
         itinerary: [
             '06:00 AM → Hotel pickup',
             '08:30 AM → Arrive at Pemuteran harbor',

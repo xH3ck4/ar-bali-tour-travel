@@ -5,6 +5,112 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const carCards = document.querySelectorAll('.car-card');
 
+    // Check if we're on car rental page (only run if search/filter elements exist)
+    const searchInput = document.getElementById('carSearch');
+    const durationFilter = document.getElementById('durationFilter');
+    const priceFilter = document.getElementById('priceFilter');
+    const seatsFilter = document.getElementById('seatsFilter');
+
+    if (searchInput && durationFilter && priceFilter && seatsFilter) {
+        // Search functionality
+        searchInput.addEventListener('input', () => {
+            filterCars({ search: searchInput.value.toLowerCase() });
+        });
+
+        // Filter dropdowns
+        durationFilter.addEventListener('change', () => {
+            filterCars({ duration: durationFilter.value });
+        });
+
+        priceFilter.addEventListener('change', () => {
+            filterCars({ price: priceFilter.value });
+        });
+
+        seatsFilter.addEventListener('change', () => {
+            filterCars({ seats: seatsFilter.value });
+        });
+
+        // Combined filtering function
+        function filterCars(filters = {}) {
+            const carCards = document.querySelectorAll('.car-card');
+
+            carCards.forEach(card => {
+                let show = true;
+
+                // Search filter
+                if (filters.search) {
+                    const titleElement = card.querySelector('h3');
+                    const descriptionElement = card.querySelector('p');
+                    const specsElements = card.querySelectorAll('.car-specs span');
+
+                    const title = titleElement ? titleElement.textContent.toLowerCase() : '';
+                    const description = descriptionElement ? descriptionElement.textContent.toLowerCase() : '';
+                    const specs = Array.from(specsElements).map(span => span.textContent.toLowerCase());
+
+                    const searchMatch = title.includes(filters.search) ||
+                                      description.includes(filters.search) ||
+                                      specs.some(spec => spec.includes(filters.search));
+
+                    if (!searchMatch) show = false;
+                }
+
+                // Category filter (existing filter buttons)
+                if (filters.category && card.getAttribute('data-category') !== filters.category) {
+                    show = false;
+                }
+
+                // Duration filter
+                if (filters.duration) {
+                    const durationElement = card.querySelector('.price-option[data-type="' + filters.duration + '"] .duration');
+                    if (durationElement) {
+                        const durationText = durationElement.textContent;
+                        if (!durationText.includes(filters.duration === 'half-day' ? 'Half Day' : 'Full Day')) {
+                            show = false;
+                        }
+                    }
+                }
+
+                // Price filter
+                if (filters.price) {
+                    const priceElement = card.querySelector('.price-option[data-type="FD"] .price');
+                    if (priceElement) {
+                        const priceText = priceElement.textContent;
+                        const price = parseInt(priceText.replace(/[^\d]/g, ''));
+                        switch (filters.price) {
+                            case 'budget':
+                                if (price >= 1000000) show = false;
+                                break;
+                            case 'mid':
+                                if (price < 1000000 || price >= 2500000) show = false;
+                                break;
+                            case 'premium':
+                                if (price < 2500000) show = false;
+                                break;
+                        }
+                    }
+                }
+
+                // Seats filter
+                if (filters.seats) {
+                    const specsElement = card.querySelector('.car-specs');
+                    if (specsElement) {
+                        const specsText = specsElement.textContent;
+                        const seatsMatch = specsText.includes(filters.seats.replace('-seats', ' Seats'));
+                        if (!seatsMatch) show = false;
+                    }
+                }
+
+                // Show/hide card with animation
+                if (show) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    }
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
@@ -72,8 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
             bookingForm.reset();
         });
     }
+});
 
-    // Add CSS animations
+// Add CSS animations
     const style = document.createElement('style');
     style.textContent = `
         @keyframes fadeIn {
@@ -85,6 +192,77 @@ document.addEventListener('DOMContentLoaded', () => {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .car-filters {
+            padding: 2rem 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .filters-container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-options select {
+            padding: 12px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-options select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
 
         .filter-buttons {
@@ -326,6 +504,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 height: 40vh;
             }
 
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: auto;
+            }
+
+            .filter-options {
+                justify-content: center;
+            }
+
             .form-row {
                 flex-direction: column;
                 gap: 1rem;
@@ -384,9 +575,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     `;
     document.head.appendChild(style);
-});
 
-function generateCarBookingMessage(bookingDetails, duration) {
+    function generateCarBookingMessage(bookingDetails, duration) {
     const locations = {
         'ngurah-rai-airport': 'Ngurah Rai International Airport',
         'denpasar': 'Denpasar City',

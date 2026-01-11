@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: `
                 <div class="blog-post-content">
                     <div class="blog-post-image">
-                        <img src="../../assets/images/activity-dance.jpg" alt="Balinese Traditional Dance" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800'">
+                        <img src="../../assets/images/blog-dance.jpg" alt="Balinese Traditional Dance" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800'">
                     </div>
 
                     <div class="blog-post-meta">
@@ -542,6 +542,12 @@ document.addEventListener('DOMContentLoaded', () => {
             box-shadow: var(--shadow-lg);
         }
 
+        .blog-card:hover .read-more-btn {
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+        }
+
         .blog-image {
             position: relative;
             height: 200px;
@@ -613,8 +619,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         .read-more-btn:hover {
-            background: var(--primary-dark);
+            background: var(--secondary-color);
+            color: white;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
         }
 
         .blog-filters {
