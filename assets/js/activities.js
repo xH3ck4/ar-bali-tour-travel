@@ -700,7 +700,11 @@ function generateActivityBookingMessage(bookingDetails) {
         'snorkeling': 'Snorkeling in Penida Island',
         'zipline': 'Zip Line & Jungle Adventure',
         'sunset-cruise': 'Sunset Catamaran Cruise',
-        'dance-performance': 'Traditional Dance Performance'
+        'dance-performance': 'Traditional Dance Performance',
+        'ferry-gili-oneway': 'Fast Ferry Bali-Gili Island Lombok One Way',
+        'ferry-gili-return': 'Fast Ferry Bali-Gili Island Lombok Return',
+        'ferry-penida-oneway': 'Bali - Nusa Penida Fast Ferry One Way',
+        'ferry-penida-return': 'Bali - Nusa Penida Fast Ferry Return'
     };
 
     const timeSlots = {
@@ -1023,8 +1027,8 @@ const activityDetailsData = {
         ],
         importantNotes: 'Duration: Approximately 3 hours. Minimum age: 18 years. Valid driver\'s license required. Cannot participate if pregnant or have certain medical conditions. Weather dependent.'
     },
-    'UTV Buggy Adventure': {
-        title: 'UTV Buggy Adventure',
+    'UTV Buggy Adventure - Couple/Tandem': {
+        title: 'UTV Buggy Adventure - Couple/Tandem',
         itinerary: [
             '08:00 AM → Hotel pickup',
             '09:00 AM → Arrive at UTV adventure center',
@@ -1287,6 +1291,103 @@ const activityDetailsData = {
             'Meals or services not mentioned in the package details'
         ],
         importantNotes: 'Show schedules (Bali Agung, Rhythm of Africa, Fire Dance etc.) have fixed times; check when booking to ensure availability. Night Safari begins after dusk; walking safari part may have different terms. Some packages (premium / Rhino / Leopard / Dragon) may include special seatings or priority access — may have limited availability. Children under certain age (often below 3 years) may enter free; other children may have discounted rates depending on height or age. Advanced booking recommended for premium / dining / underwater show packages to ensure reservation.'
+    },
+    'Fast Ferry Bali-Gili Island Lombok One Way': {
+        title: 'Fast Ferry Bali-Gili Island Lombok One Way',
+        itinerary: [
+            'Check-in time → Arrive at Padang Bai harbor 30 minutes before departure',
+            'Ferry departure → Comfortable ferry journey to Gili Islands',
+            'Arrival → Disembark at Gili Trawangan harbor',
+            'End of service → Ready to explore the Gili Islands'
+        ],
+        included: [
+            'Fast ferry ticket from Bali to Gili Islands',
+            'Comfortable seating on modern ferry',
+            'Life jacket and safety equipment',
+            'Professional crew',
+            'Harbor fees'
+        ],
+        notIncluded: [
+            'Hotel transfers',
+            'Meals and beverages',
+            'Personal expenses',
+            'Tips and gratuities',
+            'Island activities'
+        ],
+        importantNotes: 'Duration: Approximately 1 hour. Check-in required 30 minutes before departure. Bring valid ID/passport. Subject to weather conditions - may be delayed or cancelled. Children under 3 years travel free, 3-12 years half price. Life jackets must be worn during journey.'
+    },
+    'Fast Ferry Bali-Gili Island Lombok Return': {
+        title: 'Fast Ferry Bali-Gili Island Lombok Return',
+        itinerary: [
+            'Check-in time → Arrive at Padang Bai harbor 30 minutes before departure',
+            'Outbound journey → Ferry to Gili Trawangan',
+            'Return journey → Flexible return schedule',
+            'Arrival back → Return to Padang Bai harbor'
+        ],
+        included: [
+            'Round trip fast ferry tickets',
+            'Comfortable seating both ways',
+            'Safety equipment and life jackets',
+            'Professional crew assistance',
+            'Harbor fees for both journeys'
+        ],
+        notIncluded: [
+            'Hotel transfers',
+            'Meals and beverages during journey',
+            'Personal expenses',
+            'Tips and gratuities',
+            'Accommodation on Gili Islands'
+        ],
+        importantNotes: 'Duration: Approximately 1 hour each way. Flexible return schedule within operational hours. Check-in required 30 minutes before each departure. Valid ID/passport required. Weather dependent - subject to cancellation. Children pricing: under 3 free, 3-12 half price.'
+    },
+    'Bali - Nusa Penida Fast Ferry One Way': {
+        title: 'Bali - Nusa Penida Fast Ferry One Way',
+        itinerary: [
+            'Check-in time → Arrive at Sanur harbor 30 minutes before departure',
+            'Ferry departure → Scenic journey to Nusa Penida',
+            'Arrival → Disembark at Buyuk harbor, Nusa Penida',
+            'End of service → Ready for island exploration'
+        ],
+        included: [
+            'Fast ferry ticket from Sanur to Nusa Penida',
+            'Comfortable ferry seating',
+            'Life jacket and safety equipment',
+            'Professional ferry crew',
+            'Harbor transfer fees'
+        ],
+        notIncluded: [
+            'Hotel transfers from Sanur',
+            'Return ferry ticket',
+            'Meals and refreshments',
+            'Personal expenses',
+            'Island activities and tours'
+        ],
+        importantNotes: 'Duration: Approximately 45 minutes. Check-in 30 minutes before departure. Bring valid ID. Weather dependent - may be cancelled in rough seas. Children under 3 free, 3-12 years half price. Nusa Penida is famous for its cliffs and beaches.'
+    },
+    'Bali - Nusa Penida Fast Ferry Return': {
+        title: 'Bali - Nusa Penida Fast Ferry Return',
+        itinerary: [
+            'Outbound → Check-in at Sanur harbor for Nusa Penida',
+            'Ferry journey → 45-minute trip to Buyuk harbor',
+            'Island time → Flexible time to explore Nusa Penida',
+            'Return → Check-in for return journey to Sanur',
+            'Homeward journey → Return ferry to Bali'
+        ],
+        included: [
+            'Round trip ferry tickets',
+            'Comfortable seating both directions',
+            'Safety equipment and life jackets',
+            'Professional crew for both journeys',
+            'Harbor fees included'
+        ],
+        notIncluded: [
+            'Hotel transfers',
+            'Meals and beverages on ferry',
+            'Personal expenses on the island',
+            'Tips and gratuities',
+            'Additional island activities'
+        ],
+        importantNotes: 'Duration: 45 minutes each way. Flexible return schedule. Check-in required 30 minutes before each departure. Valid ID required. Subject to weather conditions. Perfect for day trips to explore Nusa Penida\'s stunning landscapes, beaches, and viewpoints.'
     }
 };
 
