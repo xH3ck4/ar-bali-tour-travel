@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>Beach Activities</h3>
                         <ul>
                             <li><strong>Surfing:</strong> Best at Kuta, Uluwatu, and Canggu</li>
-                            <li><strong>Snorkeling:</strong> Excellent at Menjangan Island and Nusa Penida</li>
+                            <li><strong>Snorkeling:</strong> Excellent at Penida Island and Nusa Penida</li>
                             <li><strong>Diving:</strong> World-class sites around the island</li>
                             <li><strong>Beach Clubs:</strong> Social scene at Seminyak and Canggu</li>
                             <li><strong>Yoga:</strong> Morning sessions at various beaches</li>

@@ -1124,7 +1124,7 @@ const activityDetailsData = {
         itinerary: [
             '06:00 AM → Hotel pickup',
             '08:30 AM → Arrive at Pemuteran harbor',
-            '09:00 AM → Boat transfer to Menjangan Island',
+            '09:00 AM → Boat transfer to Penida Island',
             '09:30 AM → First snorkeling session',
             '11:00 AM → Break and refreshments',
             '11:30 AM → Second snorkeling session',
@@ -1135,7 +1135,7 @@ const activityDetailsData = {
         included: [
             'Professional marine guide',
             'Full snorkeling equipment',
-            'Boat transfer to Menjangan Island',
+            'Boat transfer to Penida Island',
             'Multiple snorkeling sites',
             'Lunch',
             'Refreshments',
@@ -1148,7 +1148,7 @@ const activityDetailsData = {
             'Additional activities',
             'Underwater camera rental'
         ],
-        importantNotes: 'Duration: Approximately 5 hours. Suitable for all swimming levels. Bring swimwear, towel, sunscreen, and waterproof camera. Weather dependent - may be rescheduled in case of rough sea conditions. Menjangan Island is part of West Bali National Park.'
+        importantNotes: 'Duration: Approximately 5 hours. Suitable for all swimming levels. Bring swimwear, towel, sunscreen, and waterproof camera. Weather dependent - may be rescheduled in case of rough sea conditions. Penida Island is part of West Bali National Park.'
     },
     'Zip Line & Jungle Adventure': {
         title: 'Zip Line & Jungle Adventure',
