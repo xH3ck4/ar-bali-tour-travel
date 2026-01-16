@@ -232,7 +232,7 @@ const mockData = {
         },
         2: {
             title: 'Mount Batur Sunrise Trek',
-            image: '../../assets/images/tour-batur.jpg',
+            image: '../../assets/images/tour-batur-trek.jpg',
             price: 65,
             duration: '6 Hours',
             groupSize: 'Max 6',
