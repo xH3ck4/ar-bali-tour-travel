@@ -461,10 +461,16 @@ document.addEventListener('click', (e) => {
         }
     }
 
-    // Handle cart buttons
-    if (e.target.matches('.btn-outline[data-cart-item]')) {
+    // Handle generic "add to cart" buttons (Tours, Activities, etc.)
+    if (e.target.matches('[data-cart-item]')) {
         const itemName = e.target.getAttribute('data-cart-item');
         const price = parseInt(e.target.getAttribute('data-price'));
+
+        if (!itemName || isNaN(price)) {
+            console.warn('Invalid cart item or price on element:', e.target);
+            return;
+        }
+
         addToCart(itemName, price);
     }
 
